@@ -1,0 +1,563 @@
+<div class="row full-width-search" style="padding:145px 0px !important;">
+	<div class="offer-slider col-md-8" id="offer-slider-toggle" style="margin-top:0px; margin-left:90px; width:57.9%;">
+					<div class="item">
+						<h3>Verify and Clean Your Data in 3 Easy Steps</h3>
+					</div>
+			</div>
+	
+		<div class="container clear-padding">
+			<div class="col-md-8 tran-search-box">
+			
+			<div id="tabs" ng-controller="TabsCtrl"  class="search-section tran-search-box tabpanel">
+        <ul class="nav nav-tabs search-top">
+            <li class="suri text-center {{fonts}}" style="cursor:default; font-weight:normal;" ng-repeat="tab in tabs" 
+                ng-class="{active:isActiveTab(tab.url)}" 
+                ng-click="onClickTab(tab)">{{tab.title}}</li>
+        </ul>
+        <div id="mainView">
+            <div ng-include="currentTab"></div>
+        </div>
+    </div>
+    <script type="text/ng-template" id="one.tpl.html">
+		<div role="tabpanel"  id="email-address" style="padding:20px;">
+								<div ng-controller="emailctrl">
+									<div class="col-md-12 product-search-title">Email Verification</div>
+									<div class="col-md-6 col-sm-6 search-col-padding">
+										<div class="input-group">
+											<input type="email"  class="form-control searchtxtbgcolor"  ng-model="email" name="email" required placeholder="rayestevez@gmail.com">
+											<span class="input-group-addon"><i class="fa fa-at fa-fw"></i></span>
+										</div>
+										
+									</div>
+									<div class="clearfix"></div>
+									<div class="col-md-12 search-col-padding">
+										<button type="submit" ng-click="verify()" class="search-button btn transition-effect">Verify</button>
+									</div>
+									<div class="clearfix"></div>
+									<ul style="display:none">
+  
+</ul>
+			</div>
+							</div>
+	</script>
+	
+	<script type="text/ng-template" id="two.tpl.html">
+		<div role="tabpanel" class="tab-pane" id="postal-address" style="padding:20px;">
+								
+									<div class="col-md-12 product-search-title">Postal Address Verification</div>
+									<div class="col-md-6 search-col-padding">
+										<div class="input-group">
+											<input type="text" name="postal-address" ng-model="postal" class="form-control searchtxtbgcolor" required placeholder="E.g. New York">
+											<span class="input-group-addon"><i class="fa fa-map-marker fa-fw"></i></span>
+										</div>
+									</div>
+									<div class="clearfix"></div>
+									<div class="col-md-12 search-col-padding">
+										<button type="submit" ng-click="verify()" class="search-button btn transition-effect">Verify</button>
+									</div>
+									<div class="clearfix"></div>
+								
+</div>
+	</script>
+	
+	<script type="text/ng-template" id="three.tpl.html">
+		<div role="tabpanel" class="tab-pane" id="phone-number" style="padding:20px;">
+									<div ng-controller="phnecntrl">
+									<div class="col-md-12 product-search-title">Phone Verification</div>
+									<div class="col-md-6 col-sm-6 search-col-padding">
+										<div class="input-group">
+											<input type="phone" name="phone"  class="form-control searchtxtbgcolor" required placeholder="+448001234567">
+											<span class="input-group-addon"><i class="fa fa-mobile fa-fw"></i></span>
+										</div>
+									</div>
+									<div class="col-md-12 search-col-padding">
+										<button type="submit" ng-click="verify()" class="search-button btn transition-effect">Verify</button>
+									</div>
+									<div id="phoneDetails" class="clearfix"></div>
+							
+								</div>
+							</div>
+	</script>
+			
+			
+			
+			
+				<!--div role="tabpanel">
+					<!-- BEGIN: CATEGORY TAB -->
+					<!--ul class="nav nav-tabs search-top" role="tablist">
+						<li role="presentation" class="active text-center">
+							<a href="#email-address" aria-controls="flight" role="tab" data-toggle="tab">
+								<i class="fa fa-envelope"></i> 
+								<span>EMAIL</SPAN>
+							</a>
+						</li>
+						<li role="presentation" class="text-center">
+							<a href="#postal-address" aria-controls="hotel" role="tab" data-toggle="tab">
+								<i class="fa fa-location-arrow"></i> 
+								<span>POSTAL</span>
+							</a>
+						</li>
+						<li role="presentation" class="text-center">
+							<a href="#phone-number" aria-controls="holiday" role="tab" data-toggle="tab">
+								<i class="fa fa-phone"></i>
+								<span>PHONE</span>
+							</a>
+						</li>
+						
+					</ul>
+					<!-- END: CATEGORY TAB -->
+
+					<!-- BEGIN: TAB PANELS -->
+					<!--div class="tab-content">
+							<!-- BEGIN: FLIGHT SEARCH -->
+							<!--div role="tabpanel" class="tab-pane active" id="email-address">
+								<div ng-controller="emailctrl">
+									<div class="col-md-12 product-search-title">Email Verification</div>
+									<div class="col-md-6 col-sm-6 search-col-padding">
+										<div class="input-group">
+											<input type="email" ng-model="email" class="form-control" name="email" placeholder="rayestevez@gmail.com">
+											<span class="input-group-addon"><i class="fa fa-at fa-fw"></i></span>
+										</div>
+										{{email}}
+									</div>
+									<div class="clearfix"></div>
+									<div class="col-md-12 search-col-padding">
+										<button type="submit" ng-click="verify()" class="search-button btn transition-effect">Verify</button>
+									</div>
+									<div class="clearfix"></div>
+									<ul style="display:none">
+  
+</ul>
+								</div>	
+							</div>
+							
+							
+							
+							<div role="tabpanel" class="tab-pane" id="postal-address">
+								<form >
+									<div class="col-md-12 product-search-title">Postal Address Verification</div>
+									<div class="col-md-12 search-col-padding">
+										<div class="input-group">
+											<input type="text" name="postal-address" class="form-control" required placeholder="E.g. New York">
+											<span class="input-group-addon"><i class="fa fa-map-marker fa-fw"></i></span>
+										</div>
+									</div>
+									<div class="clearfix"></div>
+									<div class="col-md-12 search-col-padding">
+										<button type="submit" class="search-button btn transition-effect">Verify</button>
+									</div>
+									<div class="clearfix"></div>
+								</form>
+							</div>
+							
+							<div role="tabpanel" class="tab-pane" id="phone-number">
+								<div ng-controller="phnecntrl" >
+									<div class="col-md-12 product-search-title">Phone Verification</div>
+									<div class="col-md-6 col-sm-6 search-col-padding">
+										<div class="input-group">
+											<input type="phone" name="phone" ng-model="phone" class="form-control" required placeholder="+448001234567">
+											<span class="input-group-addon"><i class="fa fa-mobile fa-fw"></i></span>
+										</div>
+									</div>
+									<div class="col-md-12 search-col-padding">
+										<button type="submit" ng-click="verify()" class="search-button btn transition-effect">Verify</button>
+									</div>
+									<div id="phoneDetails" class="clearfix">{{phone}}</div>
+								</div>
+								
+							</div>
+							
+							
+						</div>
+						
+				</div-->
+			</div>
+			
+			
+			
+			<div class="offer-slider" id="offer-slider-toggle">
+				<div class="owl-carousel col-md-4 text-right" id="offer1">
+					<div class="item">
+						<h3>Verify and Clean your data in 3 easy steps</h3>
+						<a href="#">KNOW MORE</a>
+					</div>
+					<div class="item">
+						<h3>Verify and Clean your data in 3 easy steps</h3>
+						<a href="#">KNOW MORE</a>
+					</div>
+					<div class="item">
+						<h3>Verify and Clean your data in 3 easy steps</h3>
+						<a href="#">KNOW MORE</a>
+					</div>
+				</div>
+			</div>
+			<div class="offer-slider col-md-8" id="offer-slider-toggle" style="margin-top:0px; width:66.6%;">
+					<div class="item">
+						<h3 class="text-center">Upload a file of up to 100 records for FREE</h3>
+						<div style="width:19%; margin:auto;">
+						<a href="#/login" class="center-block"><img src="assets/images/upload-icon.png" style="width:80%;"></a>
+						</div>
+					</div>
+			</div>
+		</div>
+		
+	</div>
+	<!-- END: SEARCH SECTION -->
+
+<!-- BEGIN: HOW IT WORK -->
+<section id="how-it-work">
+		<div class="row work-row">
+			<div class="container">
+				<div class="section-title text-center">
+					<h2>WHAT WE DO?</h2>
+					
+					<p>
+						DMPHUB is a platform that will enable the small-and-midsize-business (SMB) market to manage, maintain, and enhance their customer and prospect data.  It will be a cloud base platform that will allow users to easily conduct numerous DM and DP tasks to ensure the quality and integrity of their data
+					</p>
+				</div>
+				
+				<ul class="ch-grid work-step">
+					<li class="col-md-4  text-center">
+						<div class="ch-item">				
+							<div class="ch-info-wrap">
+								<div class="ch-info">
+									<div class="ch-info-front">
+									<i class="fa fa-envelope"></i>
+						<h5>Email Verification & Hygiene</h5>
+						<p>This module will allow users to verify the syntax, deliverability, and identify high risk emails from their lists.</p>
+									
+									</div>
+									<div class="ch-info-back">
+										<i class="fa fa-envelope"></i>
+						<h5>Email Verification & Hygiene</h5>
+						<p>This module will allow users to verify the syntax, deliverability, and identify high risk emails from their lists.<br>
+						<a href="#">Read More</a></p>
+						
+									</div>	
+								</div>
+							</div>
+						</div>
+					</li>
+					<li class="col-md-4">
+						<div class="ch-item">
+							<div class="ch-info-wrap">
+								<div class="ch-info">
+									<div class="ch-info-front">
+									<i class="fa fa-home"></i>
+						<h5>Postal Address Verification & Hygiene</h5>
+						<p>This module will allow users to standardize, and verify postal deliverability. Additional processing includes national-change-of-address (NCOA).</p>
+									</div>
+									<div class="ch-info-back">
+										<i class="fa fa-home"></i>
+						<h5>Postal Address Verification & Hygiene</h5>
+						<p>This module will allow users to standardize, and verify postal deliverability. Additional processing includes national-change-of-address (NCOA).<br>
+						<a href="#">Read More</a></p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</li>
+					<li class="col-md-4">
+						<div class="ch-item">
+							<div class="ch-info-wrap">
+								<div class="ch-info">
+									<div class="ch-info-front">
+									<i class="fa fa-phone"></i>
+									<h5>Phone Verification</h5>
+						<p>This module will allow users to verify the format, identify if landline or mobile, carrier or vendor where available, and identify some do-no-call (DNC) phones.</p>
+									</div>
+									<div class="ch-info-back">
+									<i class="fa fa-phone"></i>
+										<h5>Phone Verification</h5>
+						<p>This module will allow users to verify the format, identify if landline or mobile, carrier or vendor where available, and identify some do-no-call (DNC) phones.<br>
+						<a href="#">Read More</a></p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</li>
+				</ul>
+				
+				<!--div class="work-step">
+					<div class="col-md-4 col-sm-4 text-center">
+						<i class="fa fa-envelope"></i>
+						<h5>Email Verification & Hygiene</h5>
+						<p>This module will allow users to verify the syntax, deliverability, and identify high risk emails from their lists.</p>
+					</div>
+					<div class="col-md-4 col-sm-4 text-center">
+						<i class="fa fa-home"></i>
+						<h5>Postal Address Verification & Hygiene</h5>
+						<p>This module will allow users to standardize, and verify postal deliverability. Additional processing includes national-change-of-address (NCOA).</p>
+					</div>
+					<div class="col-md-4 col-sm-4 text-center">
+						<i class="fa fa-phone"></i>
+						<h5>Phone Verification</h5>
+						<p>This module will allow users to verify the format, identify if landline or mobile, carrier or vendor where available, and identify some do-no-call (DNC) phones.</p>
+					</div>
+				</div-->
+				
+				<ul class="ch-grid work-step">
+					<li class="col-md-4  text-center">
+						<div class="ch-item">				
+							<div class="ch-info-wrap">
+								<div class="ch-info">
+									<div class="ch-info-front">
+									<i class="fa fa-line-chart"></i>
+						<h5>List Quality Analysis</h5>
+						<p>The List Analysis module allows users to analyze any customer or prospect list to get a summary of the quality of the data.</p>
+									
+									</div>
+									<div class="ch-info-back">
+										<i class="fa fa-line-chart"></i>
+						<h5>List Quality Analysis</h5>
+						<p>The List Analysis module allows users to analyze any customer or prospect list to get a summary of the quality of the data.<br>
+						<a href="#">Read More</a></p>
+						
+									</div>	
+								</div>
+							</div>
+						</div>
+					</li>
+					<li class="col-md-4">
+						<div class="ch-item">
+							<div class="ch-info-wrap">
+								<div class="ch-info">
+									<div class="ch-info-front">
+									<i class="fa fa-files-o"></i>
+						<h5>Data De-Duplication</h5>
+						<p>This module will allow user to identify and remove duplicates from their file (email, individuals, emails, phones, mobile, company)</p>
+									</div>
+									<div class="ch-info-back">
+										<i class="fa fa-files-o"></i>
+						<h5>Data De-Duplication</h5>
+						<p>This module will allow user to identify and remove duplicates from their file (email, individuals, emails, phones, mobile, company)<br>
+						<a href="#">Read More</a></p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</li>
+					<li class="col-md-4">
+						<div class="ch-item">
+							<div class="ch-info-wrap">
+								<div class="ch-info">
+									<div class="ch-info-front">
+									<i class="fa fa-plus"></i>
+						<h5>Data Enhancement</h5>
+						<p>The Data Enhance module allows users to append missing and valuable information to their customer or prospect lists. </p>
+									</div>
+									<div class="ch-info-back">
+									<i class="fa fa-plus"></i>
+						<h5>Data Enhancement</h5>
+						<p>The Data Enhance module allows users to append missing and valuable information to their customer or prospect lists. <br>
+						<a href="#">Read More</a></p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</li>
+				</ul>
+				
+				
+				<!--div class="work-step">
+					<div class="col-md-4 col-sm-4 text-center">
+						<i class="fa fa-line-chart"></i>
+						<h5>List Quality Analysis</h5>
+						<p>The List Analysis module allows users to analyze any customer or prospect list to get a summary of the quality of the data.</p>
+					</div>
+					<div class="col-md-4 col-sm-4 text-center">
+						<i class="fa fa-files-o"></i>
+						<h5>Data De-Duplication</h5>
+						<p>This module will allow user to identify and remove duplicates from their file (email, individuals, emails, phones, mobile, company)</p>
+					</div>
+					<div class="col-md-4 col-sm-4 text-center">
+						<i class="fa fa-plus"></i>
+						<h5>Data Enhancement</h5>
+						<p>The Data Enhance module allows users to append missing and valuable information to their customer or prospect lists. </p>
+					</div>
+				</div-->
+				
+			</div>
+		</div>
+</section>
+<!--END: HOW IT WORK -->
+
+
+<!-- BEGIN: Pricing Section -->
+<section id="home-top-destination">
+	<div class="row image-background">
+		<div class="td-overlay">
+			<div class="container">
+				<div class="light-section-title text-center">
+					<h2>PRICING</h2>
+				
+		
+					<p>
+						Lorem Ipsum is simply dummy text. Lorem Ipsum is simply dummy text of the printing and typesetting industry.<br>
+						Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.
+					</p>
+				</div>
+				<div class="col-md-12 col-sm-12 col-xs-12">
+				 <div id="pricing-table" class="clear  wow slideInUp">
+    <div class="plan">
+        <h3>Free <p style="font-size:10px !important; margin-top:10px;">For Life</p><span>$0</span></h3>
+                
+        <ul>
+            <li>Verify upto 250 emails</li>
+            <li>Verify upto 250 postals</li>
+            <li>Verify upto 250 phones</li>
+		<li class="disabled">Suppresion</li>
+		<li class="disabled">N.C.O.A</li>
+		<li class="disabled">Deceased</li>
+		<li>List Analysis (limit 1)</li>
+		<li class="disabled">Data Enhance</li>
+		<li class="disabled">API Tools</li>
+		<li>1GB Storage</li>		
+        </ul>
+<a class="pricing-signup" href="#/register">Sign up</a> 		
+    </div>
+    <div class="plan" id="most-popular">
+        <h3>Small Business<span>$99/mo</span></h3>
+               
+        <ul>
+            <li>Verify upto 5000 Emails</li>
+            <li>Verify upto 5000 Postals</li>
+            <li>Verify upto 5000 Phones</li>
+	    <li>Parse & Verify upto 5000 names</li>
+<li>Suppresion</li>
+<li>Quarterly N.C.O.A (5000)</li>
+<li>Quarterly Deceased</li>
+<li>List Analysis</li>
+<li>Data Enhance</li>
+<li>API Tools</li>
+<li>2GB Storage</li>	    
+        </ul>  
+<a class="pricing-signup" href="#/register">Sign up</a>		
+    </div>
+    <div class="plan">
+        <h3>Mid Market <p style="font-size:10px !important; margin-top:10px;">Best Value</p><span>$249/mo</span></h3>
+		
+        <ul>
+            <li>Verify upto 100,000 Emails</li>
+            <li>Verify upto 100,000 Postal</li>
+            <li>Verify upto 100,000 Phones</li>
+			<li>Parse & Verify 100,000 names</li>
+<li>Suppresion</li>
+<li>Quarterly N.C.O.A (50,000)</li>
+<li>Quarterly Deceased (50,000)</li>
+<li>List Analysis</li>
+<li>Data Enhance (50,000)</li>
+<li>API Tools</li>
+<li>10GB Storage</li>			
+        </ul>
+		<a class="pricing-signup" href="#/register">Sign up</a> 
+    </div>
+    <div class="plan">
+        <h3>Enterprise<span>$999/mo</span></h3>
+        		
+        <ul>
+            <li>Verify upto 500,000 Emails</li>
+            <li>Verify upto 500,000 Postal</li>
+            <li>Verify upto 500,000 Phones</li>
+			<li>Parse & Verify 500,000 names</li>
+<li>Suppresion</li>
+<li>Quarterly N.C.O.A (250,000)</li>
+<li>Quarterly Deceased (250,000)</li>
+<li>List Analysis (Unlimited)</li>
+<li>Data Enhance (50,000)</li>
+<li>API Tools</li>
+<li>25GB Storage</li>			
+        </ul>
+		<a class="pricing-signup" href="#/register">Sign up</a>
+    </div> 	
+</div></div>
+			</div>
+		</div>
+	</div>
+</section>
+<!-- END: TOP DESTINATION SECTION -->
+
+<!-- END: RECENT BLOG POST -->
+
+<!-- START: WHY CHOOSE US SECTION -->
+<!--section id="why-choose-us">
+	<div class="row choose-us-row">
+		<div class="container clear-padding">
+			<div class="light-section-title text-center">
+				<h2>WHY CHOOSE US?</h2>
+				<h4>REASONS TO TRUST US</h4>
+				<div class="space"></div>
+				<p>
+					Lorem Ipsum is simply dummy text. Lorem Ipsum is simply dummy text of the printing and typesetting industry.<br>
+					Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.
+				</p>
+			</div>
+			<div class="col-md-4 col-sm-4 wow slideInLeft">
+				<div class="choose-us-item text-center">
+					<div class="choose-icon"><i class="fa fa-filter"></i></div>
+					<h4>Unique Features</h4>
+					<p>Lorem Ipsum is simply dummy text. Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+					<a href="#">KNOW MORE</a>
+				</div>
+			</div>
+			<div class="col-md-4 col-sm-4 wow slideInUp">
+				<div class="choose-us-item text-center">
+					<div class="choose-icon"><i class="fa fa-phone"></i></div>
+					<h4>Dedicated Support</h4>
+					<p>Lorem Ipsum is simply dummy text. Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+					<a href="#">KNOW MORE</a>
+				</div>
+			</div>
+			<div class="col-md-4 col-sm-4 wow slideInRight">
+				<div class="choose-us-item text-center">
+					<div class="choose-icon"><i class="fa fa-smile-o"></i></div>
+					<h4>Lowest Price</h4>
+					<p>Lorem Ipsum is simply dummy text. Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+					<a href="#">KNOW MORE</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</section-->
+
+<section id="contactus">
+<div class="row choose-us-row" style="background-color:#fff; padding:20px 5px;">
+		<div class="container clear-padding">
+			<div class="light-section-title text-center">
+			<h2 style="color:#1c2857;">CONTACT US</h2>
+		<div class="container clear-padding">
+			<div class="col-md-6 col-sm-6 col-lg-6 col-xs-12" style="margin-right:20px; margin-top:20px;">
+				<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3806.1941302419573!2d78.37890601417746!3d17.450420105578925!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb93ded9f6f0d7%3A0xa3d91e5d00d50b63!2sCyber+Towers!5e0!3m2!1sen!2sin!4v1464690832829" width="600" height="380" frameborder="0" style="border:0" allowfullscreen></iframe>
+			</div>
+			<div class="col-md-5 col-sm-6 col-lg-5 col-xs-12 contact-form">
+				<div class="col-md-12">
+					
+				</div>
+				<form >
+					<div class="col-md-6 col-sm-6">
+						<input type="text" name="name" required class="form-control" placeholder="Your Name">
+					</div>
+					<div class="col-md-6 col-sm-6">
+						<input type="email" name="email" required class="form-control" placeholder="Your Email">
+					</div>
+					<div class="clearfix"></div>
+					<div class="col-md-12">
+						<input type="text" name="message-title" required class="form-control" placeholder="Message Title">
+					</div>
+					<div class="clearfix"></div>
+					<div class="col-md-12">
+						<textarea class="form-control" rows="5" id="comment" placeholder="Your Message"></textarea>
+					</div>
+					<div class="clearfix"></div>
+					<div class="text-center">
+						<button type="submit" class="btn btn-default submit-review">SEND YOUR MESSAGE</button>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+	</div>
+	</div>
+
+</section>
+<!-- END: WHY CHOOSE US SECTION -->
