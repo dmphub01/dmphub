@@ -1,0 +1,98 @@
+<div class="site-wrapper">
+
+	<div class="clearfix"></div>
+	<div class="row transparent-menu" id="transparent-menu-toggle" style="position:fixed; width:100%;height:80px;">
+		<div class="container-fluid clear-padding">
+		<div class="col-md-12 col-sm-12 col-xs-12 col-lg-12">
+			<!-- BEGIN: HEADER -->
+			<div class="navbar-wrapper">
+				<div class="navbar navbar-default" role="navigation">
+					<!-- BEGIN: NAV-CONTAINER -->
+					<div class="nav-container">
+						<div class="navbar-header">
+							<!-- BEGIN: TOGGLE BUTTON (RESPONSIVE)-->
+							<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+								<span class="sr-only">Toggle navigation</span>
+								<span class="icon-bar"></span>
+								<span class="icon-bar"></span>
+								<span class="icon-bar"></span>
+							</button>
+							
+							<!-- BEGIN: LOGO -->
+							
+							<a class="navbar-brand" href="#home/"><img src="assets/images/logo-edited-2.png" style="margin-top:-15px;"> </a>
+						</div>
+						
+						<!-- BEGIN: NAVIGATION -->       
+						<div class="navbar-collapse collapse" ng-controller="MainCtrl">
+						<div class="clear-padding user-logged col-md-2 col-lg-2 col-sm-12 col-xs-12">
+			<a type="button" class="transition-effect signup" href="#/register">
+							<i class="fa fa-user"></i>&nbsp;Sign Up
+						</a>
+						<a type="button" class="transition-effect signin" href="#/login"><i class="fa fa-sign-in"></i>&nbsp;Log In</a>
+						
+					</div>
+							<ul class="nav navbar-nav navbar-right" style="margin-top:10px;">
+								<li class="dropdown">
+									<a href="#home/"> HOME</a>
+						
+								</li>
+								<li class="dropdown mega">
+									<a href="#why-choose-us" ng-href="##why-choose-uss">ABOUT US</a>
+									
+									<div class="clearfix"></div>
+								</li>
+								<li class="dropdown mega">
+									<a href="#how-it-work"  ng-href="##how-it-work">PRODUCTS</a>
+									
+									<div class="clearfix"></div>
+								</li> 
+								<li class="dropdown mega">
+									<a href=""> RESOURCES</a>
+									
+									<div class="clearfix"></div>
+								</li>
+								<li class="dropdown mega">
+									<a href="#home-top-destination" ng-href="##home-top-destination">PRICING</a>
+									
+									<div class="clearfix"></div>
+								</li>
+								<li class="dropdown mega">
+									<a href="#home/#contactus">CONTACT US</a>
+									
+									<div class="clearfix"></div>
+								</li>
+								<li class="dropdown">
+									<a href="">SUPPORT</a>
+									
+									<div class="clearfix"></div>
+								</li>
+								
+							</ul>
+							
+						</div>
+						<!-- END: NAVIGATION -->
+						
+					</div>
+					<!--END: NAV-CONTAINER -->
+					
+				</div>
+				</div>
+				
+				</div>
+			
+			
+			<!-- END: HEADER -->
+		</div>
+	</div>
+</div>
+
+<!--script>
+$(function() { 
+    $('#transparent-menu-toggle').on('click','.mega', function ( e ) {
+        e.preventDefault();
+        $(this).parents('#transparent-menu-toggle').find('.active').removeClass('active').end().end().addClass('active');
+        $(activeTab).show();
+    });
+});
+</script-->

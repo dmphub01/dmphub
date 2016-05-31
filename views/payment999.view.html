@@ -1,0 +1,360 @@
+
+<body style="background-color:#fff; padding:20px 5px;">
+<div id="wrap">
+	<div id="accordian">
+		<div class="step" id="step1">
+			<div class="number">
+				<span>1</span>
+			</div>
+			<div class="title">
+				<h1>Email Address</h1>
+			</div>
+			<div class="ui-icon-close">
+				<i class="fa fa-plus-circle" onclick="showDiv5()" style="font-size:40px; margin-top:6px; float:right; margin-right:40px;"></i>
+			</div>
+		</div>
+		<div class="content" id="email">
+			<form class="go-right payment-form">
+				<div>
+        <input type="email" name="email" value="" id="email-address" placeholder="Enter Email Address" data-trigger="change" data-validation-minlength="1" data-type="email" data-required="true" data-error-message="Enter a valid email address."/>
+        </div>
+				<!--button class="login">Login</button-->
+				<a class="create pricing249-button" href="#/register">Register</a>
+			</form>
+			<button class="continue" onclick="showDiv()">Continue</button>
+		</div>
+		
+		<div class="step" id="step2">
+			<div class="number">
+				<span>2</span>
+			</div>
+			<div class="title">
+				<h1>Billing Information</h1>
+			</div>
+			<div>
+				<i class="fa fa-plus-circle" onclick="showDiv6()" style="font-size:40px; margin-top:6px; float:right; margin-right:40px;"></i>
+			</div>
+		</div>
+		<div class="content" id="address" style="display:none;">
+			<form class="go-right payment-form" style="width:28%;">
+				<div>
+				<input type="name" name="first_name" value="" id="first_name" placeholder="First Name" data-trigger="change" data-validation-minlength="1" data-type="name" data-required="true" data-error-message="Enter Your First Name"/>
+        </div>
+				<div>
+				
+				<input type="name" name="last_name" value="" id="last_name" placeholder="Last Name" data-trigger="change" data-validation-minlength="1" data-type="name" data-required="true" data-error-message="Enter Your Last Name"/>
+				</div>
+				<div>
+				<input type="phone" name="telephone" value="" id="telephone" placeholder="Phone Number" data-trigger="change" data-validation-minlength="1" data-type="number" data-required="true" data-error-message="Enter Your Telephone Number"/>
+				</div>
+				<div>
+				<input type="text" name="company" value="" id="company" placeholder="Company" data-trigger="change" data-validation-minlength="1" data-type="name" data-required="false"/>
+				</div>
+				<div>
+				<input type="text" name="address" value="" id="address" placeholder="Adress" data-trigger="change" data-validation-minlength="1" data-type="text" data-required="true" data-error-message="Enter Your Billing Address"/>
+				</div>
+				<div>
+				<input type="text" name="city" value="" id="city" placeholder="Enter City" data-trigger="change" data-validation-minlength="1" data-type="text" data-required="true" data-error-message="Enter Your Billing City"/>
+				</div>
+				<div>
+				<div class="state_options">
+        			<div class="select">
+                 		<select id="state">
+                  	 		<option value = "1">Alabama</option>
+                   			<option value = "2">Alaska</option>
+                   			<option value = "3">Arkansas</option>
+                   			<option value = "4">Etc.</option>
+                 		</select>
+                 	</div>
+                  <label class="state" for="state">State</label>
+          		</div>
+				</div>
+				<div>
+				<input type="text" name="zip" value="" id="zip" placeholder="12345" data-trigger="change" data-validation-minlength="1" data-type="text" data-required="true" data-error-message="Enter Your Billing Zip Code"/><label for="zip">Zip Code</label>
+				</div>
+				<div>
+				<div class="country_options">
+				  <label class="country" for="country">Country</label>
+        			<div class="select">
+                 		<select id="country">
+                  	 		<option value = "1">United States</option>
+                   			<option value = "2">United Kingdom</option>
+                   			<option value = "3">Uganda</option>
+                   			<option value = "4">Etc.</option>
+                 		</select>
+                 	</div>
+          		</div>
+				</div>
+				<div>
+				<input type="checkbox"/>
+				<label class="same" for="same_as_shipping">Same As Shipping Address</label><span></span>
+				</div>
+			</form>
+			<button class="continue" onclick="showDiv3()">Continue</button>
+		</div>
+		<!--div class="step" id="step3">
+			<div class="number">
+				<span>3</span>
+			</div>
+			<div class="title">
+				<h1>Shipping Information</h1>
+			</div>
+			<div>
+				<i class="fa fa-plus-circle" onclick="showDiv7()" style="font-size:40px; margin-top:6px; float:right; margin-right:40px;"></i>
+			</div>
+		</div>
+		<div class="content" id="shipping" style="display:none;">
+			<form class=" payment-form">
+				<div>
+					<input type="radio" id="shipping_1" value="1"/><label for="shipping_1"> Standard Shipping <span class="price">$4.00</span></label>
+        </div>
+				<div>		
+					<input type="radio" id="shipping_2" value="2"/><label for="shipping_2"> Express Shipping <span class="price">$8.00</span></label>
+				</div>
+				<div>		
+					<input type="radio" id="shipping_3" value="3"/><label for="shipping_3"> Overnight Shipping <span class="price">$12.00</span></label>
+				</div>
+			</form>
+			<button class="continue" onclick="showDiv3()">Continue</button>
+		</div-->
+		<div class="step" id="step4">
+			<div class="number">
+				<span>3</span>
+			</div>
+			<div class="title">
+				<h1>Payment Information</h1>
+			</div>
+			<div>
+				<i class="fa fa-plus-circle" onclick="showDiv8()" style="font-size:40px; margin-top:6px; float:right; margin-right:40px;"></i>
+			</div>
+		</div>
+		<div class="content" id="payment" style="display:none;">
+			<div class="left credit_card" id="creditcard-info">
+			<form method="post" action="#">
+
+  <div>
+    <div>
+      <input type="radio" name="choice-animals" id="choice-animals-dogs" required>
+      <label for="choice-animals-dogs">Credit Card</label>
+    
+      <div class="reveal-if-active">
+        <form class="go-right payment-form">
+				<div>
+				
+				<input type="text" name="card_number" value="" id="card_number" placeholder="xxxx-xxxx-xxxx-xxxx" data-trigger="change" data-validation-minlength="1" data-type="name" data-required="true" data-error-message="Enter Your Credit Card Number"/>
+				
+				<input type="text" name="card_number" value="" id="card_number" placeholder="Name On Card" data-trigger="change" data-validation-minlength="1" data-type="name" data-required="true" data-error-message="Enter Name As per Card"/>
+				</div>
+				<div>
+				  <div class="expiry">	
+				      <div class="month_select">
+				        <select name="exp_month" value="" id="exp_month" placeholder="" data-trigger="change" data-type="name" data-required="true" data-error-message="Enter Your Credit Card Expiration Date">
+							<option value = "1">01 (Jan)</option>
+                   			<option value = "2">02 (Feb)</option>
+                   			<option value = "3">03 (Mar)</option>
+                   			<option value = "4">04 (Apr)</option>
+                   			<option value = "5">05 (May)</option>
+                   			<option value = "6">06 (Jun)</option>
+                   			<option value = "7">07 (Jul)</option>
+                   			<option value = "8">08 (Aug)</option>
+                   			<option value = "9">09 (Sep)</option>
+                   			<option value = "10">10 (Oct)</option>
+                   			<option value = "11">11 (Nov)</option>
+                   			<option value = "12">12 (Dec)</option>
+                        </select>
+                      </div>
+                      <span class="divider">-</span>
+                      <div class="year_select">
+				        <select name="exp_year" value="" id="exp_year" placeholder="" data-trigger="change" data-type="name" data-required="true" data-error-message="Enter Your Credit Card Expiration Date">
+                   			<option value = "3">16 </option>
+                   			<option value = "4">17 </option>
+                   			<option value = "5">18 </option>
+                   			<option value = "6">19 </option>
+                   			<option value = "7">20 </option>
+                   			<option value = "8">22 </option>
+                   			<option value = "9">23 </option>
+                   			<option value = "10">24</option>
+                   			<option value = "11">25</option>
+                   			<option value = "12">26</option>
+							<option value = "13">27</option>
+                   			<option value = "14">28</option>
+                        </select>
+            	      </div>
+            	    </div>
+                 <label class="exp_date" for="Exp_Date">Exp Date</label>
+            	  </div>
+            	<div class="sec_num">
+              <div>
+				        <input type="text" name="ccv" value="" id="ccv" placeholder="123" data-trigger="change" data-validation-minlength="3" data-type="name" data-required="true" data-error-message="Enter Your Card Security Code"/>
+                <label for="ccv">Security Code</label>
+				      </div>
+				      </div>
+			      </form>
+      </div>
+    </div>
+    
+    <div style="width:100%; float:left; margin-top:60px;">
+      <input type="radio" name="choice-animals" id="choice-animals-cats">
+      <label for="choice-animals-cats">Debit Card</label>
+    
+      <div class="reveal-if-active">
+        <form class="go-right payment-form">
+				<div>
+				
+				<input type="text" name="card_number" value="" id="card_number" placeholder="xxxx-xxxx-xxxx-xxxx" data-trigger="change" data-validation-minlength="1" data-type="name" data-required="true" data-error-message="Enter Your Credit Card Number"/>
+		
+				<input type="text" name="card_number" value="" id="card_number" placeholder="Name On Card" data-trigger="change" data-validation-minlength="1" data-type="name" data-required="true" data-error-message="Enter Name As per Card"/>
+				</div>
+				<div>
+				  <div class="expiry">	
+				      <div class="month_select">
+				        <select name="exp_month" value="" id="exp_month" placeholder="" data-trigger="change" data-type="name" data-required="true" data-error-message="Enter Your Credit Card Expiration Date">
+							<option value = "1">01 (Jan)</option>
+                   			<option value = "2">02 (Feb)</option>
+                   			<option value = "3">03 (Mar)</option>
+                   			<option value = "4">04 (Apr)</option>
+                   			<option value = "5">05 (May)</option>
+                   			<option value = "6">06 (Jun)</option>
+                   			<option value = "7">07 (Jul)</option>
+                   			<option value = "8">08 (Aug)</option>
+                   			<option value = "9">09 (Sep)</option>
+                   			<option value = "10">10 (Oct)</option>
+                   			<option value = "11">11 (Nov)</option>
+                   			<option value = "12">12 (Dec)</option>
+                        </select>
+                      </div>
+                      <span class="divider">-</span>
+                      <div class="year_select">
+				        <select name="exp_year" value="" id="exp_year" placeholder="" data-trigger="change" data-type="name" data-required="true" data-error-message="Enter Your Credit Card Expiration Date">
+							<option value = "3">16 </option>
+                   			<option value = "4">17 </option>
+                   			<option value = "5">18 </option>
+                   			<option value = "6">19 </option>
+                   			<option value = "7">20 </option>
+                   			<option value = "8">22 </option>
+                   			<option value = "9">23 </option>
+                   			<option value = "10">24</option>
+                   			<option value = "11">25</option>
+                   			<option value = "12">26</option>
+							<option value = "13">27</option>
+                   			<option value = "14">28</option>
+                        </select>
+            	      </div>
+            	    </div>
+                 <label class="exp_date" for="Exp_Date" style="margin-top:0px !important;">Exp Date</label>
+            	  </div>
+            	<div class="sec_num">
+              <div>
+				        <input type="text" name="ccv" value="" id="ccv" placeholder="123" data-trigger="change" data-validation-minlength="3" data-type="name" data-required="true" data-error-message="Enter Your Card Security Code"/>
+                <label for="ccv">Security Code</label>
+				      </div>
+				      </div>
+			      </form>
+      </div>
+    </div>
+	<div style="width:100%; float:left; margin-top:80px;">
+      <input type="radio" name="choice-animals" id="choice-animals-cats">
+      <label for="choice-animals-cats">Paypal Payment</label>
+    
+      <div class="reveal-if-active">
+        <form action="https://www.sandbox.paypal.com/cgi-bin/webscr" method="post" target="_top">
+<input type="hidden" name="cmd" value="_s-xclick">
+<input type="hidden" name="hosted_button_id" value="Y4TWFREHR6E2W">
+<input type="image" src="assets/images/paypal_payment.png" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+<img alt="" border="0" src="assets/images/paypal-payment.png" width="1" height="1">
+</form>
+      </div>
+    </div>
+	
+	<!--div style="width:100%; float:left; margin-top:30px;">
+      <input type="radio" name="choice-animals" id="choice-animals-cats" class="tooltip-demo">
+      <a href="#"><img src="assets/images/ach.png" style="width:12%;"></a>
+    </div-->
+	
+	
+  </div>
+</form>
+			</div>	
+			<div class="right">
+				<div class="accepted">
+					<span><img onclick="showDiv20()" src="assets/images/paypal-icon.png"></span>
+					<span><img onclick="showDiv21()" src="assets/images/ach.png"></span>
+					<span><img src="assets/images/Maestro-icon.png"></span>
+					<span><img src="assets/images/Master-Card-icon.png"></span>
+					<span><img src="assets/images/visa.png"></span>
+				</div>
+				<div class="secured">
+					<img class="lock" src="assets/images/lock.png">
+					<p class="security info">What, well you mean like a date? Doc? Am I to understand you're still hanging around with Doctor Emmett Brown, McFly? Tardy slip for you, Miss Parker. And one for you McFly I believe that makes four in a row. Now let me give you a nickle's worth of advice, young man. This so called Doctor Brown is dangerous, he's a real nuttcase.</p>
+				</div>
+			</div>
+			<button class="continue" onclick="showDiv4()">Continue</button>
+
+ 		</div>
+	
+ 		<div class="step" id="step5">
+			<div class="number">
+				<span>4</span>
+			</div>
+			<div class="title">
+				<h1>Finalize Order</h1>
+			</div>
+			<div>
+				<i class="fa fa-plus-circle" onclick="showDiv9()" style="font-size:40px; margin-top:6px; float:right; margin-right:40px;"></i>
+			</div>
+		</div>
+		<div class="content" id="final_products" style="display:none;">
+			<div class="left" id="ordered">
+				<div class="products">
+					<div class="product_image">
+						
+					</div>
+					<div class="product_details">
+						<span class="product_name">Enterprise Plan</span>
+						
+						<span class="price">$999/month</span>
+					</div>
+				</div>
+				<div class="totals">
+					<span class="subtitle">Subtotal <span id="sub_price">$999/month</span></span>
+				</div>
+				<div class="final">
+					<span class="title">Total <span id="calculated_total">$999/month</span></span>
+				</div>
+			</div>	
+			<div class="right" id="reviewed">
+				<div class="billing" style="margin-bottom:25px;">
+					<span class="title">Billing:</span>
+					<div class="address_reviewed">
+						<span class="name">John Smith</span>
+						<span class="address">123 Main Street</span>
+						<span class="location">Everytown, USA, 12345</span>
+						<span class="phone">(123)867-5309</span>
+					</div>
+				</div>
+				<div class="shipping" style="margin-bottom:25px;">
+					<span class="title">Shipping:</span>
+					<div class="address_reviewed">
+						<span class="name">John Smith</span>
+						<span class="address">123 Main Street</span>
+						<span class="location">Everytown, USA, 12345</span>
+						<span class="phone">(123)867-5309</span>
+					</div>
+				</div>
+				<div class="payment" style="margin-bottom:10px;">
+					<span class="title">Payment:</span>
+					<div class="payment_reviewed">
+						<span class="method">Visa</span>
+						<span class="number_hidden">xxxx-xxxx-xxxx-1111</span>
+					</div>
+				</div>
+				<div id="complete">
+				<a class="big_button" id="complete" href="http://dmphub01.github.io/dmphub/dashboard">Complete Order</a>
+				<span class="sub">By selecting this button you agree to the purchase and subsequent payment for this order.</span> 
+				</div>
+			</div>
+	</div>
+
+</div>
+</div>
+</body>
