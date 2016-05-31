@@ -30,11 +30,10 @@ jQuery(function($){
 					slide_counter           :   1,		//Display slide numbers
 					slide_captions          :   1,		//Slide caption (Pull from "title" in slides array)
 					slides 					:  	[		//Slideshow Images
-														{image : 'assets/images/sliders-1.jpg', title : 'Slide 1'},   
-														{image : 'assets/images/sliders-3.jpg', title : 'Slide 3'},
-														{image : 'assets/images/sliders-4.jpg', title : 'Slide 4'},
-														{image : 'assets/images/sliders-5.jpg', title : 'Slide 5'},
-														{image : 'assets/images/sliders-6.jpg', title : 'Slide 6'}
+														{image : 'assets/images/slider-1.jpg', title : 'Slide 1'},   
+														{image : 'assets/images/slider-2.jpg', title : 'Slide 2'},
+														{image : 'assets/images/slider-3.jpg', title : 'Slide 3'},
+														
 												]
 												
 				}); 
