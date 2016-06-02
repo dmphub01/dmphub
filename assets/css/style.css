@@ -883,7 +883,6 @@ h5 {
 .search-section .product-search-title {
 	font-size: 18px;
 	display: block;
-	font-weight: 800;
 	color: #fff; letter-spacing:1px;
 }
 .search-section .search-col-padding {
@@ -7899,7 +7898,7 @@ input[type="checkbox"]:checked ~ .reveal-if-active {
     margin-right: 4px;
 }
 #mainView {
-    background: rgba(0, 0, 0, 0.9);
+    background: rgba(10, 49, 82, 0.9);
     clear: both;
     padding: 0 1em 30px 0px;
 }
