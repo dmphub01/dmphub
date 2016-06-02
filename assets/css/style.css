@@ -109,7 +109,7 @@ body, html {
 	 text-rendering: optimizeLegibility !important;
 	-webkit-font-smoothing: antialiased;
 	color: #07253F;
-	font-size: 15px; font-family: 'Microsoft JhengHei' !important;
+	font-size: 15px; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif !important;
 }
 a {
 	text-decoration: none;
@@ -500,14 +500,14 @@ h5 {
 	border-color: transparent;
 }
 .transparent-menu .navbar-nav > li > a {
-	color: #1c2857;
-	font-size: 13px;
+	color: #1c2857 !important;
+	font-size: 15px;
 	padding: 10px 15px;
 	transition: all 0.3s ease;
 	-ms-transition: all 0.3s ease;
 	-moz-transition: all 0.3s ease;
 	-webkit-transition: all 0.3s ease;
-	-o-transition: all 0.3s ease;  font-family: 'Microsoft JhengHei' !important; font-weight:bold;
+	-o-transition: all 0.3s ease;  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif !important;
 }
 .transparent-menu .navbar-nav > li > a:hover{
 	background-color:#d4af37; color:#fff !important; border-radius:5px;
@@ -557,21 +557,21 @@ h5 {
 	color: #194374;
 }
 .transparent-menu  .navbar-default .navbar-toggle {
-	color: #ffffff;
+	color: #ffffff; background:#000;
 }
 .transparent-menu  .navbar-default .navbar-toggle .icon-bar {
-	background: #ffffff;
+	background: #fff;
 }
 .transparent-menu .navbar-default .navbar-toggle:focus,
 .transparent-menu .navbar-default .navbar-toggle:hover {
-	background: transparent;
+	background: #000; color:#fff !important;
 }
 @media (max-width: 991px) {
 	.nav-container .mega-menu .desc {
 		display: none;
 	}
     .navbar-header {
-        float: none;
+        float: none; height:78px;
     }
     .navbar-left,.navbar-right {
         float: none !important;
@@ -884,7 +884,6 @@ h5 {
 	font-size: 18px;
 	display: block;
 	font-weight: 800;
-	text-transform: uppercase;
 	color: #fff; letter-spacing:1px;
 }
 .search-section .search-col-padding {
@@ -983,7 +982,6 @@ h5 {
     margin-top: 10px;
     padding: 10px 30px;
 	font-size: 15px;
-	text-transform: uppercase;
 	letter-spacing: 1px;
 	color: #fff;
 	transition: all 0.3s ease;
@@ -3671,15 +3669,14 @@ h5 {
 .submit-review {
 	background: #d4af37 none repeat scroll 0 0;
     border: medium none;
-    border-radius: 10;
     color: #ffffff;
     font-size: 18px;
     margin-top: 20px;
-    padding: 10px 50px;
+    padding: 10px 50px; border-radius:0px;
 }
 .submit-review:hover {
 	background: #fff;
-	color: #d4af37; border-radius:0px; border:2px solid #d4af37;
+	color: #d4af37; border-radius:8px; border:2px solid #d4af37;
 	
 }
 .submit-review:focus {background-color:#d4af37; color:#fff;}
@@ -4879,7 +4876,7 @@ h5 {
 	margin: 30px 0px;
 }
 .contact-form {
-	padding: 30px 15px; margin-top:10px; margin-left:20px;
+	padding: 30px 15px; margin-top:10px;
 }
 .contact-form .form-control {
 	height: 40px;
@@ -6833,7 +6830,7 @@ h5 {
 }
 .main-footer-sub .form-control {
 	background: #fff;
-	border-radius: 0;
+	border-radius: 5px 0px 0px 5px;
 	height: 40px;
 	color: #fff;
 	border: none;
@@ -6843,7 +6840,7 @@ h5 {
 	border: none;
 	background: #d4af37;
 	color: #fff;
-	width: 100%;
+	width: 100%; border-radius:0px 5px 5px 0px;
 }
 .main-footer-sub button i {
 	margin-right: 5px;
@@ -6913,7 +6910,7 @@ h5 {
 .we-accept h4 {
 	color: #fff;
 	margin-top: 0px;
-	text-transform: uppercase;
+
 	font-weight: 800;
 	margin-bottom: 15px;
 	letter-spacing: 1px;
@@ -7493,13 +7490,13 @@ h5 {
 }
 
 #pricing-table .plan {
-	font: 12px 'Microsoft JhengHei' !important;
+	font: 12px 'Helvetica Neue', Helvetica, Arial, sans-serif !important;
 	text-shadow: 0 1px rgba(255,255,255,.8);        
 	background: #fff;      
 	border: 1px solid #ddd;
 	color: #333;
 	padding: 20px;
-	width:25%;
+
 	float: left;
 	
 	position: relative;margin-bottom:10px;
@@ -7515,7 +7512,7 @@ h5 {
 	border-radius: 5px;
 	-moz-box-shadow: 20px 0 10px -10px rgba(0, 0, 0, .15), -20px 0 10px -10px rgba(0, 0, 0, .15);
 	-webkit-box-shadow: 20px 0 10px -10px rgba(0, 0, 0, .15), -20px 0 10px -10px rgba(0, 0, 0, .15);
-	box-shadow: 20px 0 10px -10px rgba(0, 0, 0, .15), -20px 0 10px -10px rgba(0, 0, 0, .15);    
+	box-shadow: 20px 0 10px -10px rgba(0, 0, 0, .15), -20px 0 10px -10px rgba(0, 0, 0, .15);    margin-bottom:10px;
 }
 
 #pricing-table .plan:nth-child(1) {
@@ -7564,7 +7561,7 @@ h5 {
 
 #pricing-table h3 span {
 	display: block;
-	font: 25px/100px 'Microsoft JhengHei' !important;
+	font: 25px/100px 'Helvetica Neue', Helvetica, Arial, sans-serif !important;
 	color: #1c2857;
 	background: #fff;
 	border: 5px solid #fff;
@@ -7604,8 +7601,8 @@ h5 {
 	padding: 8px 20px;
 	margin: 20px 0 0 0;  
 	color: #fff;
-	font: 14px 'Microsoft JhengHei' !important;
-	font: 14px 'Microsoft JhengHei' !important;
+	font: 14px 'Helvetica Neue', Helvetica, Arial, sans-serif !important;
+	font: 14px 'Helvetica Neue', Helvetica, Arial, sans-serif !important;
 	text-transform: uppercase;
 	text-decoration: none;
 	display: inline-block;       
@@ -7701,13 +7698,13 @@ h5 {
 .flight-details2 input{ border:none;}
 
 
-.signin { background:#d4af37;padding:7px; color:#fff; margin-right:10px; margin-top:7px; font-family: 'Microsoft JhengHei' !important;}
-.signup {background:#d4af37;padding:7px; color:#fff; margin-right:10px; margin-top:7px; font-family: 'Microsoft JhengHei' !important;}
-.signin:hover {color:#fff !important;}
-.signup:hover {color:#fff !important;}
-.signin:focus, .signup:focus { color:#fff !important}
+.signin { background:#d4af37;padding:7px; color:#fff !important; margin-right:10px; margin-top:7px; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif !important;}
+.signup {background:#d4af37;padding:7px; color:#fff !important; margin-right:10px; margin-top:7px; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif !important;}
+.signin:hover {color:#fff !important; border-radius:10px;}
+.signup:hover {color:#fff !important; border-radius:10px;}
+.signin:focus, .signup:focus { color:#fff !important; background:#d4af37 !important;}
 
-.user-logged {margin-top:35px; float:right; margin-left:30px;}
+.user-logged {margin-top:-8px; float:right; margin-left:10px;}
 
 .register {background:transparent; color:#F7941D; border:none;}
 
@@ -7727,7 +7724,7 @@ h5 {
 
 .forms { background-color:#fff; padding:20px 10px;overflow:hidden; padding-left:20px !important;}
 
-.forms h2 { font-family:'Microsoft JhengHei' !important; color:#F7941D; }
+.forms h2 { font-family:'Helvetica Neue', Helvetica, Arial, sans-serif !important; color:#F7941D; }
 
 .signup-form { overflow:hidden; margin-top:20px; box-shadow:0px 0px 5px #333; padding:25px; margin-bottom:20px; background-color:#1c2857; color:#fff;}
 .signup-form h3 {margin-top:0px!important;margin-bottom:10px;}
@@ -7768,15 +7765,10 @@ h5 {
 	padding: 8px 20px;
 	margin: 20px 0 0 0;  
 	color: #fff;
-	font: 14px 'Microsoft JhengHei' !important;
-	text-transform: uppercase;
+	font: 14px 'Helvetica Neue', Helvetica, Arial, sans-serif !important;
 	text-decoration: none;
 	display: inline-block;       
 	background-color: #d4af37;
-	
-	-moz-border-radius: 3px;
-	-webkit-border-radius: 3px;
-	border-radius: 3px;     
 	text-shadow: 0 1px 0 rgba(0,0,0,.3);        
 	-moz-box-shadow: 0 1px 0 rgba(255, 255, 255, .5), 0 2px 0 rgba(0, 0, 0, .7);
 	-webkit-box-shadow: 0 1px 0 rgba(255, 255, 255, .5), 0 2px 0 rgba(0, 0, 0, .7);
@@ -7876,7 +7868,7 @@ input[type="checkbox"]:checked ~ .reveal-if-active {
 	margin-top: 25px;
 }
 
-	.pricing-signup:hover {color:#fff !important;}
+	.pricing-signup:hover {color:#fff !important; border-radius:5px;}
 	
 	.pricing249-button {float:right; padding:5px 15px; width:200px; background-color:#194374; color:#fff;font-size:1.6em; border-radius:2px; text-align:center;}
 	
@@ -7897,7 +7889,7 @@ input[type="checkbox"]:checked ~ .reveal-if-active {
 
 .suri {
     float: left;
- background: rgba(10, 49, 82, 0.5);
+ background: rgba(10, 49, 82, 0.9);
     color: #fff;
     padding: 15px 30px 15px 30px;
     border: none;
@@ -7907,7 +7899,7 @@ input[type="checkbox"]:checked ~ .reveal-if-active {
     margin-right: 4px;
 }
 #mainView {
-    background: rgba(0, 0, 0, 0.5);
+    background: rgba(0, 0, 0, 0.9);
     clear: both;
     padding: 0 1em 30px 0px;
 }
@@ -7963,7 +7955,7 @@ input[type="checkbox"]:checked ~ .reveal-if-active {
 .input-container {
   position:relative;
 }
-.navbar-right {margin-top: 25px !important;}
+.navbar-right {margin-top: 19px !important;}
 
 .tran-search-box .nav-tabs { border-bottom: 4px solid #d4af37;}
 
@@ -7971,7 +7963,7 @@ input[type="checkbox"]:checked ~ .reveal-if-active {
 label { font-weight:normal !important}
 
 
-.transparent-menu {height: 94px !important; }
+.transparent-menu {height: 78px !important; }
 
 
 /*    HoverEffects */
@@ -8042,3 +8034,8 @@ label { font-weight:normal !important}
 .flexslider .slides .embed-responsive.embed-responsive-16by9 {
     padding-bottom: 48.1%;
 }
+
+.navbar-brand {margin-top:5px;}
+
+
+#offer-slider-toggle h3 {color:#fff; font-weight:600;}

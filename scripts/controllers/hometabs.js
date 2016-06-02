@@ -1,15 +1,15 @@
 //angular.module('TabsApp', [])
 app.controller('TabsCtrl', ['$scope', function ($scope) {
     $scope.tabs = [{
-            title: 'EMAIL',
+            title: 'Email',
             url: 'one.tpl.html',
 			image:'fa fa-envelope'
         }, {
-            title: 'POSTAL',
+            title: 'Postal',
             url: 'two.tpl.html',
 			image:'fa fa-location-arrow'
         }, {
-            title: 'PHONE',
+            title: 'Phone',
             url: 'three.tpl.html',
 			image:'fa fa-phone',
 			fonts:'Microsoft JhengHei'
