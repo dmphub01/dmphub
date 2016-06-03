@@ -24,14 +24,23 @@
 									<div class="col-md-12 product-search-title">Email Verification</div>
 									<div class="col-md-6 col-sm-6 search-col-padding">
 										<div class="input-group">
-											<input type="email"  class="form-control searchtxtbgcolor"  ng-model="email" name="email" required placeholder="rayestevez@gmail.com">
+											<!--input type="email"  class="form-control searchtxtbgcolor"  ng-model="email" name="email" required placeholder="rayestevez@gmail.com"-->
+											<select class="mail-dropdown" id="emailselect">
+												<option value="email1">rayestevezgmail.com</option>
+												<option value="email1">rayestevez@gmailcom</option>
+												<option value="email1">rayestevez@gmail.com</option>
+												<option value="email1">rayestevezgmailcom</option>
+												<option value="email1">Rayestevez@gmail.com</option>
+											</select>
 											<span class="input-group-addon"><i class="fa fa-at fa-fw"></i></span>
 										</div>
-										
 									</div>
+									<div class="or-text">OR</div>
+									<div>
+									<a type="submit" class="search-button btn transition-effect">Bulk Upload&nbsp;&nbsp;<i class="fa fa-upload"></i></a></div>
 									<div class="clearfix"></div>
 									<div class="col-md-12 search-col-padding">
-										<button type="submit" ng-click="verify()" class="search-button btn transition-effect">Verify</button>
+							<input type="submit" id="btnsubmit" onclick="isEmail($('#emailselect option:selected').text())" class="search-button btn transition-effect" value="Verify"/>
 									</div>
 									<div class="clearfix"></div>
 									<ul style="display:none">
@@ -66,19 +75,33 @@
 									<div class="col-md-12 product-search-title">Phone Verification</div>
 									<div class="col-md-6 col-sm-6 search-col-padding">
 										<div class="input-group">
-											<input type="phone" name="phone"  class="form-control searchtxtbgcolor" required placeholder="+448001234567">
-											<span class="input-group-addon"><i class="fa fa-mobile fa-fw"></i></span>
+											<!--input type="email"  class="form-control searchtxtbgcolor"  ng-model="email" name="email" required placeholder="rayestevez@gmail.com"-->
+											<select class="phone-dropdown" id="phoneselect">
+												<option value="phone">(123) 456 7899</option>
+												<option value="phone">123456789910</option>
+												<option value="phone">(123)-456-7899</option>
+												<option value="phone">12345678990</option>
+												<option value="phone">(123).456.7899</option>
+											</select>
+											<span class="input-group-addon"><i class="fa fa-at fa-fw"></i></span>
 										</div>
 									</div>
-									<div class="col-md-12 search-col-padding">
-										<button type="submit" ng-click="verify()" class="search-button btn transition-effect">Verify</button>
+									<div class="or-text">OR</div>
+									<div>
+									<a type="submit" class="search-button btn transition-effect">Bulk Upload&nbsp;&nbsp;<i class="fa fa-upload"></i></a></div>
 									</div>
-									<div id="phoneDetails" class="clearfix"></div>
+									<div class="col-md-12 search-col-padding">
+							<input type="submit" onclick="isPhone($('#phoneselect option:selected').text())" class="search-button btn transition-effect" value="Verify"/>
+									</div>
+									<div class="clearfix"></div>
+									
+									
 							
 								</div>
 							</div>
 	</script>
-			
+
+
 			
 			
 			
@@ -172,14 +195,14 @@
 						
 				</div-->
 			</div>
-			<div class="offer-slider col-md-12 col-lg-12 col-sm-12 col-xs-12" id="offer-slider-toggle" style="margin-top:0px;">
+			<!--div class="offer-slider col-md-12 col-lg-12 col-sm-12 col-xs-12" id="offer-slider-toggle" style="margin-top:0px;">
 					<div class="item2">
 						<h3 class="text-center">Upload a file of up to 100 records for FREE</h3>
 						<div style="width:19%; margin:auto;">
 						<a href="#/login" class="center-block"><img src="assets/images/upload-icon3.png" style="width:80%;"></a>
 						</div>
 					</div>
-			</div>
+			</div-->
 		</div>
 		
 	</div>
@@ -538,3 +561,74 @@
 
 </section>
 <!-- END: WHY CHOOSE US SECTION -->
+<div id="modal-success" class="modal modal-message modal-success fade" style="display: none;" aria-hidden="true">
+        <div class="modal-dialog right-email">
+            <div class="modal-content">
+                <div class="modal-header">
+                    
+					<div class="modal-title">Email Validation</div>
+                </div>
+                <div class="modal-body">
+					<i class="fa fa-check-circle check-icon"></i>
+					<p>This is <span style="color:green;"><b>Valid</b></span> Email</p></div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-success" data-dismiss="modal">OK</button>
+                </div>
+            </div> <!-- / .modal-content -->
+        </div> <!-- / .modal-dialog -->
+    </div>
+	<div id="modal-danger" class="modal modal-message modal-danger fade" style="display: none;" aria-hidden="true">
+        <div class="modal-dialog wrong-email">
+            <div class="modal-content">
+                <div class="modal-header">
+                    
+					<div class="modal-title">Email Validation</div>
+                </div>
+                
+
+                <div class="modal-body">
+					<i class="fa fa-times-circle close-icon"></i>
+					<p>This is <span style="color:red;"><b>Invalid</b></span> Email</p></div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">OK</button>
+                </div>
+            </div> <!-- / .modal-content -->
+        </div> <!-- / .modal-dialog -->
+    </div>
+	
+	
+	<!----   Phone Popup   -->
+<div id="phone-success" class="modal modal-message modal-success fade" style="display: none;" aria-hidden="true">
+        <div class="modal-dialog right-phone">
+            <div class="modal-content">
+                <div class="modal-header">
+                    
+					<div class="modal-title">Phone Number Validation</div>
+                </div>
+                <div class="modal-body">
+					<i class="fa fa-check-circle check-icon"></i>
+					<p>This is <span style="color:green;"><b>Valid</b></span> Phone Number</p></div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-success" data-dismiss="modal">OK</button>
+                </div>
+            </div> <!-- / .modal-content -->
+        </div> <!-- / .modal-dialog -->
+    </div>
+	<div id="phone-danger" class="modal modal-message modal-danger fade" style="display: none;" aria-hidden="true">
+        <div class="modal-dialog wrong-phone">
+            <div class="modal-content">
+                <div class="modal-header">
+                    
+					<div class="modal-title">Phone Number Validation</div>
+                </div>
+                
+
+                <div class="modal-body">
+					<i class="fa fa-times-circle close-icon"></i>
+					<p>This is <span style="color:red;"><b>Invalid</b></span> Phone Number</p></div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">OK</button>
+                </div>
+            </div> <!-- / .modal-content -->
+        </div> <!-- / .modal-dialog -->
+    </div>
