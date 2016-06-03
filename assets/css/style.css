@@ -978,8 +978,8 @@ h5 {
 .search-button {
 	background: #d4af37;
     border-radius: 0;
-    margin-top: 10px;
-    padding: 10px 30px;
+    margin-top: 14px;
+    padding: 9px 30px;
 	font-size: 15px;
 	letter-spacing: 1px;
 	color: #fff;
@@ -991,7 +991,7 @@ h5 {
 }
 .search-button:hover {
 	background: #d4af37;
-	color: #fff;
+	color: #fff; border-radius:7px;
 }
 .search-button:focus {color:#fff;}
 
