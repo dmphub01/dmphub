@@ -249,3 +249,19 @@
 
 .wrong-phone {margin-top:110px;}
 .right-phone {margin-top:110px;}
+
+.upload-file {
+    padding: 100px 0px;
+    background: #f7f7f7;
+    overflow: hidden;
+}
+
+.folder {padding:5px 0px; background-color:#fff; margin-right:20px; float:left; cursor:pointer;}
+.folder img {width:70%;}
+.folder p {text-align:center;}
+
+.mynewclass {background:rgba(84, 116, 243, 0.4); padding:5px 0px; margin-right:20px; float:left; border-radius:10px; cursor:pointer;}
+.mynewclass img {width:70%;}
+.mynewclass p{text-align:center;}
+
+.folders {margin-top:30px; margin-bottom:40px;}
