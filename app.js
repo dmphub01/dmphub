@@ -64,6 +64,12 @@
                 templateUrl: 'views/uploadfile.view.html',
                 controllerAs: 'vm'
             })
+			
+			.when('/uploadphone', {
+                controller: 'UploadphoneController',
+                templateUrl: 'views/phone.view.html',
+                controllerAs: 'vm'
+            })
 
             .otherwise({ redirectTo: '/' });
     }

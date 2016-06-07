@@ -26,21 +26,20 @@
 										<div class="input-group">
 											<!--input type="email"  class="form-control searchtxtbgcolor"  ng-model="email" name="email" required placeholder="rayestevez@gmail.com"-->
 											<select class="mail-dropdown" id="emailselect">
-												<option value="email1">rayestevezgmail.com</option>
-												<option value="email1">rayestevez@gmailcom</option>
-												<option value="email1">rayestevez@gmail.com</option>
-												<option value="email1">rayestevezgmailcom</option>
-												<option value="email1">Rayestevez@gmail.com</option>
+												<option value="email1">suribabu@betabulls.com</option>
+												<option value="email2">sulthanbasha@betabulls.com</option>
+												<option value="email3" selected>rayestevez@gmail.com</option>
+												<option value="email4">rayestevez@gmailcom</option>
 											</select>
 											<span class="input-group-addon"><i class="fa fa-at fa-fw"></i></span>
 										</div>
 									</div>
 									<div class="or-text">OR</div>
 									<div>
-									<a type="submit" href="#uploadfile" class="search-button btn transition-effect">Upload&nbsp;&nbsp;<i class="fa fa-upload"></i></a></div>
+									<a type="submit" href="#" class="search-button btn transition-effect">Upload&nbsp;&nbsp;<i class="fa fa-upload"></i></a></div>
 									<div class="clearfix"></div>
 									<div class="col-md-12 search-col-padding">
-							<input type="submit" id="btnsubmit" onclick="isEmail($('#emailselect option:selected').text())" class="search-button btn transition-effect" value="Verify"/>
+							<input type="submit" id="btnsubmit" onclick="mypostalevent3()" class="search-button btn transition-effect" value="Verify"/>
 									</div>
 									<div class="clearfix"></div>
 									<ul style="display:none">
@@ -57,18 +56,18 @@
 									<div class="col-md-6 search-col-padding">
 										<div class="input-group">
 											<select class="mail-dropdown" id="zipselect">
-												<option value="zipcode1">5000234, Vizag, AP</option>
-												<option value="zipcode2" selected>90209, Beverly Hills, CA</option>
-												<option value="zipcode3">07748, Middletown, NJ</option>
-												<option value="zipcode4">082374, San Francisco</option>
-												<option value="zipcode5">500001, Hyderabad, Telangana</option>
+												<option value="zipcode1" selected>523 Alden Ave Westfield, NJ,07090-3040</option>
+												<option value="zipcode2">133 BENSON PL WESTFIELD NJ 7090-2006</option>
+												<option value="zipcode3">211 N SCOTCH PLAINS AVE WESTFIELD NJ 7090-4400</option>
+												<option value="zipcode4">109 DICKSON DR WESTFIELD NJ 7090-3525</option>
+												<option value="zipcode5">560 FAIRMONT AVE WESTFIELD NJ 7090-1359</option>
 											</select>
 											<span class="input-group-addon"><i class="fa fa-map-marker fa-fw"></i></span>
 										</div>
 									</div>
 									<div class="or-text">OR</div>
 									<div>
-									<a type="submit" href="#uploadfile" class="search-button btn transition-effect">Upload&nbsp;&nbsp;<i class="fa fa-upload"></i></a></div>
+									<a type="submit" href="#" class="search-button btn transition-effect">Upload&nbsp;&nbsp;<i class="fa fa-upload"></i></a></div>
 									<div class="clearfix"></div>
 									<div class="col-md-12 search-col-padding">
 										<input type="submit" id="zipcode" onclick="mypostalevent()" class="search-button btn transition-effect" value="Verify"/>
@@ -86,11 +85,10 @@
 										<div class="input-group">
 											<!--input type="email"  class="form-control searchtxtbgcolor"  ng-model="email" name="email" required placeholder="rayestevez@gmail.com"-->
 											<select class="phone-dropdown" id="phoneselect">
-												<option value="phone">(123) 456 7899</option>
-												<option value="phone">123456789910</option>
-												<option value="phone">(123)-456-7899</option>
-												<option value="phone">12345678990</option>
-												<option value="phone">(123).456.7899</option>
+												<option value="number1">(908) 232-3941</option>
+												<option value="number2">(908) 232-0410</option>
+												<option value="number3">(207) 846-5110</option>
+												<option value="number4">(508) 539-1615</option>
 											</select>
 											<span class="input-group-addon"><i class="fa fa-at fa-fw"></i></span>
 										</div>
@@ -100,7 +98,7 @@
 									<a type="submit" href="#uploadfile" class="search-button btn transition-effect">Upload&nbsp;&nbsp;<i class="fa fa-upload"></i></a></div>
 									</div>
 									<div class="col-md-12 search-col-padding">
-							<input type="submit" onclick="isPhone($('#phoneselect option:selected').text())" class="search-button btn transition-effect" value="Verify"/>
+							<input type="submit" onclick="mypostalevent2()" id="phone-number" class="search-button btn transition-effect" value="Verify"/>
 									</div>
 									<div class="clearfix"></div>
 									
@@ -570,7 +568,7 @@
 
 </section>
 <!-- END: WHY CHOOSE US SECTION -->
-<div id="modal-success" class="modal modal-message modal-success fade" style="display: none;" aria-hidden="true">
+<div id="email-success" class="modal modal-message modal-success fade" style="display: none;" aria-hidden="true">
         <div class="modal-dialog right-email">
             <div class="modal-content">
                 <div class="modal-header">
@@ -586,7 +584,7 @@
             </div> <!-- / .modal-content -->
         </div> <!-- / .modal-dialog -->
     </div>
-	<div id="modal-danger" class="modal modal-message modal-danger fade" style="display: none;" aria-hidden="true">
+	<div id="email-danger" class="modal modal-message modal-danger fade" style="display: none;" aria-hidden="true">
         <div class="modal-dialog wrong-email">
             <div class="modal-content">
                 <div class="modal-header">
@@ -649,11 +647,11 @@
             <div class="modal-content">
                 <div class="modal-header">
                     
-					<div class="modal-title">Zipcode Validation</div>
+					<div class="modal-title">Address Validation</div>
                 </div>
                 <div class="modal-body">
-					<i class="fa fa-check-circle close-icon"></i>
-					<p>This is <span style="color:red;"><b>Invalid</b></span> Zipcode</p></div>
+					<i class="fa fa-times-circle close-icon"></i>
+					<p>This is <span style="color:red;"><b>Invalid</b></span> Address</p></div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-danger" data-dismiss="modal">OK</button>
                 </div>
@@ -666,11 +664,11 @@
             <div class="modal-content">
                 <div class="modal-header">
                     
-					<div class="modal-title">Zipcode Validation</div>
+					<div class="modal-title">Address Validation</div>
                 </div>
                 <div class="modal-body">
-					<i class="fa fa-times-circle check-icon"></i>
-					<p>This is <span style="color:green;"><b>Valid</b></span> Zipcode</p></div>
+					<i class="fa fa-check-circle check-icon"></i>
+					<p>This is <span style="color:green;"><b>Valid</b></span> Address</p></div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-success" data-dismiss="modal">OK</button>
                 </div>
