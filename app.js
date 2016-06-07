@@ -58,6 +58,12 @@
                 controllerAs: 'vm'
             })
 			
+			
+			.when('/uploadfile', {
+                controller: 'UploadfileController',
+                templateUrl: 'views/uploadfile.view.html',
+                controllerAs: 'vm'
+            })
 
             .otherwise({ redirectTo: '/' });
     }

@@ -991,7 +991,7 @@ h5 {
 }
 .search-button:hover {
 	background: #d4af37;
-	color: #fff; border-radius:7px;
+	color: #fff !important; border-radius:7px;
 }
 .search-button:focus {color:#fff;}
 
