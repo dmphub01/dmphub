@@ -70,6 +70,17 @@
                 templateUrl: 'views/phone.view.html',
                 controllerAs: 'vm'
             })
+			
+			.when('/uploademail', {
+                controller: 'UploademailController',
+                templateUrl: 'views/email.view.html',
+                controllerAs: 'vm'
+            })
+			.when('/uploadfileemail', {
+                controller: 'UploadfileemailController',
+                templateUrl: 'views/uploadfileemail.view.html',
+                controllerAs: 'vm'
+            })
 
             .otherwise({ redirectTo: '/' });
     }

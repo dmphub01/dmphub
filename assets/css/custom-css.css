@@ -655,3 +655,118 @@ color: #fff;
 #test-circle5{padding-right:20px;}
 
 /* End Report  */
+
+
+	
+/* Email Report  */
+
+.email-icon {float:left;}
+.email-icon span {width:11%; float:left; padding-right:7px;}
+
+.email-icon h4{color: #1e1f21;
+    margin-top: 7px;
+    text-transform: inherit;
+    font-weight: 600;
+    margin-bottom: 15px;
+    letter-spacing: 1px;}
+	
+.email-blocks {margin-top:70px;}
+
+.email-progress {
+background-color: #5cb85c;
+color: #fff; overflow:hidden;
+}
+.email-progress {
+background: #5cb85c;
+color: #fff;
+margin-bottom: 20px;
+-webkit-border-radius: 5px;
+-moz-border-radius: 5px;
+border-radius: 5px;
+-webkit-background-clip: padding-box;
+-moz-background-clip: padding;
+background-clip: padding-box;
+-webkit-border-radius: 3px;
+-moz-border-radius: 3px;
+border-radius: 3px;
+}
+.email-progress .email-icon-header {
+  overflow:hidden;
+    /* padding-bottom: 40px; */
+}
+.email-progress .email-progressbar {
+height: 2px;
+background: rgba(0,0,0,0.18);
+margin: 0;
+}
+.email-progress .email-progressbar span {
+background: #fff;
+}
+.email-progress .email-progressbar span {
+display: block;
+background: #fff;
+width: 0;
+height: 100%;
+-webkit-transition: all 1.5s cubic-bezier(0.230,1.000,0.320,1.000);
+-moz-transition: all 1.5s cubic-bezier(0.230,1.000,0.320,1.000);
+-o-transition: all 1.5s cubic-bezier(0.230,1.000,0.320,1.000);
+transition: all 1.5s cubic-bezier(0.230,1.000,0.320,1.000);
+}
+.email-progress .email-footer {
+padding:1px 8px;
+text-align: right;
+background: rgba(0,0,0,0.1);
+-webkit-border-radius: 0 0 3px 3px;
+-webkit-background-clip: padding-box;
+-moz-border-radius: 0 0 3px 3px;
+-moz-background-clip: padding;
+border-radius: 0 0 3px 3px;
+background-clip: padding-box;
+-webkit-border-radius: 0 0 3px 3px;
+-moz-border-radius: 0 0 3px 3px;
+border-radius: 0 0 3px 3px;
+}
+.email-progress.email-red {
+background-color: #f56954;
+color: #fff;
+}
+.email-progress {
+background-color: #5cb85c;
+color: #fff;
+}
+.email-progress.email-blue {
+background-color: #0073b7;
+color: #fff;
+}
+.email-progress.email-aqua {
+background-color: #00c0ef;
+color: #fff;
+}
+.email-progress.email-green {
+background-color: #00a65a;
+color: #fff;
+}
+.email-progress.email-cyan {
+background-color: #00b29e;
+color: #fff;
+}
+.email-progress.email-purple {
+background-color: #ba79cb;
+color: #fff;
+}
+.email-progress.email-pink {
+background-color: #ec3b83;
+color: #fff;
+}
+
+.email-risk {background:red;}
+.email-icon-header h5{margin-top:0px;margin-bottom:0px; line-height:20px !important;}
+
+#svg {
+  width: 500px;
+  height: 300px;
+}
+
+.email-progress p{margin-bottom:0px !important;}
+
+.download-btn {margin-left:30px; margin-right:5px; color:#fff;}
