@@ -199,7 +199,7 @@
           degreesStart : parseFloat(percentStart) / 100 * 360,
           degreesEnd : parseFloat(percentEnd) / 100 * 360,
           color : d.color,
-          strokeWidth : 40,
+          strokeWidth : 30,
           center: center, 
           radius: radius,
         }
@@ -243,13 +243,17 @@
         if(this.previousHighlightElement){
           this.normalElement(this.previousHighlightElement);
         }
+		
         this.previousHighlightElement = d;
       
         var c = d.legend.circle;
         c.draw.animate({ transform: 's1.3,'+c.x+','+c.y }, 200, mina.bounce);
       
-        this.animateArcByStroke(d.arc, d.arc.strokeWidth, d.arc.strokeWidth + 20, 500);
+        this.animateArcByStroke(d.arc, d.arc.strokeWidth, d.arc.strokeWidth + 10, 500);
+		
+		// setTimeout(this.animateArcByStroke(d.arc, d.arc.strokeWidth, d.arc.strokeWidth, 500),1000);
     };
+	
 
     /***********************************************************
      * Normal entry element legend circle and arc
