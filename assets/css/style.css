@@ -977,7 +977,7 @@ h5 {
 }
 .search-button {
 	background: #d4af37;
-    border-radius: 0;
+    border-radius: 7px;
     margin-top: 14px;
     padding: 9px 30px;
 	font-size: 15px;
@@ -3671,7 +3671,7 @@ h5 {
     color: #ffffff;
     font-size: 18px;
     margin-top: 20px;
-    padding: 10px 50px; border-radius:0px;
+    padding: 10px 50px; border-radius:7px;
 }
 .submit-review:hover {
 	background: #fff;
@@ -6521,7 +6521,7 @@ h5 {
 .work-step i {
     border-radius: 50%;
 	background: #1c2857;
-    color: #fff;
+    color: #d4af37;
     font-size: 34px;
     height: 80px;
     padding: 23px;
@@ -6888,8 +6888,8 @@ h5 {
 .main-footer .about-box a {
 	display: inline-block;
 	padding: 2px 15px;
-	color: #fff;
-	border: 2px solid #fff;
+	color: #d4af37;
+	border: 2px solid #d4af37; border-radius:7px;
 }
 .main-footer .links {
 	line-height: 2;
@@ -7697,10 +7697,10 @@ h5 {
 .flight-details2 input{ border:none;}
 
 
-.signin { background:#d4af37;padding:7px; color:#fff !important; margin-right:10px; margin-top:7px; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif !important;}
-.signup {background:#d4af37;padding:7px; color:#fff !important; margin-right:10px; margin-top:7px; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif !important;}
-.signin:hover {color:#fff !important; border-radius:10px;}
-.signup:hover {color:#fff !important; border-radius:10px;}
+.signin { background:#d4af37;padding:7px; color:#fff !important; margin-right:10px; margin-top:7px; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif !important; border-radius:7px;}
+.signup {background:#d4af37;padding:7px; color:#fff !important; margin-right:10px; margin-top:7px; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif !important; border-radius:7px;}
+.signin:hover {color:#fff !important; border-radius:7px;}
+.signup:hover {color:#fff !important; border-radius:7px;}
 .signin:focus, .signup:focus { color:#fff !important; background:#d4af37 !important;}
 
 .user-logged {margin-top:-8px; float:right; margin-left:10px;}
@@ -7725,9 +7725,9 @@ h5 {
 
 .forms h2 { font-family:'Helvetica Neue', Helvetica, Arial, sans-serif !important; color:#F7941D; }
 
-.signup-form { overflow:hidden; margin-top:20px; box-shadow:0px 0px 5px #333; padding:25px; margin-bottom:20px; background-color:#1c2857; color:#fff; border-radius:10px;}
+.signup-form { overflow:hidden; box-shadow:0px 0px 5px #333; padding:25px; margin-bottom:20px; background-color:#1c2857; color:#fff; border-radius:10px;}
 .signup-form h3 {margin-top:0px!important;margin-bottom:10px;}
-.signup-form a { color:#fff; font-size:14px; margin-left:50px;}
+.signup-form a { color:#fff; font-size:14px;}
 .signup-form a:hover {color:#fff !important; text-decoration:underline;}
 .signup-form a:focus {color:#fff !important;}
 
@@ -7748,11 +7748,11 @@ h5 {
 
 .forms hr {width:80%; height:1px; background-color:#fff; margin-bottom:15px; margin-top:10px !important; vertical-align:center;}
 
-#forms-button{ background-color:#fff !important; color:#0e529d; border:none; border-radius:2px; margin-top:10px;}
+#forms-button{ background-color:#d4af37 !important; color:#fff; border:none; border-radius:2px; margin-top:10px;padding:10px 15px; font-weight:normal;}
 
 #forms-button:hover {color:#fff !important;}
 
-.light-section-title { padding-top:70px !important; }
+.light-section-title { padding-top:40px !important; }
 
 #pricing-table { margin:23px auto;}
 
@@ -7771,8 +7771,9 @@ h5 {
 	text-shadow: 0 1px 0 rgba(0,0,0,.3);        
 	-moz-box-shadow: 0 1px 0 rgba(255, 255, 255, .5), 0 2px 0 rgba(0, 0, 0, .7);
 	-webkit-box-shadow: 0 1px 0 rgba(255, 255, 255, .5), 0 2px 0 rgba(0, 0, 0, .7);
-	box-shadow: 0 1px 0 rgba(255, 255, 255, .5), 0 2px 0 rgba(0, 0, 0, .7);}
-	
+	box-shadow: 0 1px 0 rgba(255, 255, 255, .5), 0 2px 0 rgba(0, 0, 0, .7);
+	border-radius:7px;
+	}
 	
 	/* payment pr */
 	
@@ -7945,7 +7946,7 @@ input[type="checkbox"]:checked ~ .reveal-if-active {
     z-index:3;
   }
   
-  .icon-ph i {color:#0061b8 !important;}
+  .icon-ph i {color:#1c2857 !important;}
   
   
 .custom-text {

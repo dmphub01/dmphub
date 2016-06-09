@@ -1,4 +1,9 @@
 
+@media (max-width: @screen-xs-min) {
+  .modal-xs { width: @modal-sm; }
+}
+
+
 /*  Custom CSS Code  */
 
 .flight-details .modal-dialog {margin-top:140px;}
@@ -65,7 +70,6 @@
 
 .choose-us-row { padding:25px 0px;}
 
-.light-section-title { padding-top:45px; }
 
 #pricing-table { margin:23px auto;}
 
@@ -238,9 +242,6 @@
     border-bottom: 3px solid #ffce55;
 }
 
-
-.wrong-email {margin-top:110px;}
-.right-email {margin-top:110px;}
 
 .btn-success:hover {color:#fff;}
 .btn-danger:hover {color:#fff;}
@@ -770,3 +771,18 @@ color: #fff;
 .email-progress p{margin-bottom:0px !important;}
 
 .download-btn {margin-left:30px; margin-right:5px; color:#fff;}
+
+.suri-table {width:70%; margin:10px auto; margin-left:70px;}
+.suri-table td {border:none !important;}
+
+.suri-email {width:500px !important;margin-top:110px;}
+
+.valid{color:green;}
+.invalid {color:red;}
+
+.recaptcha {margin:20px 0px;}
+
+.email-label {font-weight:700; text-align:right;}
+
+.phone-table {width:80%; margin:10px auto; margin-left:70px;}
+.phone-table td {border:none !important;}
