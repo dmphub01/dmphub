@@ -81,7 +81,25 @@
                 templateUrl: 'views/uploadfileemail.view.html',
                 controllerAs: 'vm'
             })
+			
+			.when('/forgotpassword', {
+                controller: 'ForgotController',
+                templateUrl: 'views/forgotpassword.view.html',
+                controllerAs: 'vm'
+            })
 
+			.when('/postalupload', {
+                controller: 'UploadfilepostalController',
+                templateUrl: 'views/postal.view.html',
+                controllerAs: 'vm'
+            })
+			
+			.when('/postalfile', {
+                controller: 'PostalfileuploadController',
+                templateUrl: 'views/uploadfilepostal.view.html',
+                controllerAs: 'vm'
+            })
+			
             .otherwise({ redirectTo: '/' });
     }
 

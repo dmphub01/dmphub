@@ -156,7 +156,7 @@
 .mail-dropdown {padding:10px; width:100%;}
 .phone-dropdown {padding:10px; width:100%;}
 
-.or-text {margin-left:20px; margin-right:30px; margin-top:24px; float:left; color:#fff; font-size:20px; font-weight:700;}
+.or-text {margin-left:20px; margin-right:30px; margin-top:24px; float:left; color:#fff; font-size:18px; }
 
 /*   Verify POPup   */
 
@@ -271,12 +271,10 @@
 /* Phone Validation Report CSS  */
 
 
-
-.main-bg {background: #e6e6e6 !important;}
 .main-sub{
-    background-color: #f1f1f1;
+    background-color: #fff;
     padding: 15px !important;
-    border-radius: 6px;
+    border-radius: 6px; margin-top:65px;
 }
 
 .mymain-footer {
@@ -472,12 +470,10 @@
     text-align: right;
 }
 .main-footer {
-    padding: 60px 0px;
+    padding: 40px 0px;
     background: #07253F;
 }
-.main-footer .links {
-    margin-top:18px;
-}
+
 .main-footer .links ul, .we-accept ul, .main-footer-nav ul {
     list-style-type: none;
     padding: 0px;
@@ -558,6 +554,17 @@ color: #fff;
 background-color: #0073b7;
 color: #fff;
 }
+
+.tile-progress.tile-mobile {
+background-color: #d4af37;
+color: #fff;
+}
+
+.tile-progress.tile-landline {
+background-color: #1c2857;
+color: #fff;
+}
+
 .tile-progress.tile-aqua {
 background-color: #00c0ef;
 color: #fff;
@@ -671,7 +678,7 @@ color: #fff;
     margin-bottom: 15px;
     letter-spacing: 1px;}
 	
-.email-blocks {margin-top:70px;}
+.email-blocks {margin-top:55px;}
 
 .email-progress {
 background-color: #5cb85c;
@@ -772,8 +779,11 @@ color: #fff;
 
 .download-btn {margin-left:30px; margin-right:5px; color:#fff;}
 
-.suri-table {width:70%; margin:10px auto; margin-left:70px;}
+.suri-table {width:60%; margin:10px auto;}
 .suri-table td {border:none !important;}
+
+
+.email-result {text-align:left;}
 
 .suri-email {width:500px !important;margin-top:110px;}
 
@@ -782,7 +792,21 @@ color: #fff;
 
 .recaptcha {margin:20px 0px;}
 
-.email-label {font-weight:700; text-align:right;}
+.email-label {font-weight:700; text-align:right; padding-left:75px !important;}
 
 .phone-table {width:80%; margin:10px auto; margin-left:70px;}
 .phone-table td {border:none !important;}
+
+.phone-label {font-weight:700; text-align:right;}
+.phone-result {text-align:left;}
+
+.phone-label-wrong {font-weight:700; text-align:right;}
+.phone-result-wrong {text-align:left;}
+
+.phone-table-wrong {width:60%; margin:10px auto; margin-left:70px;}
+.phone-table-wrong td {border:none !important;}
+
+.progress-bar-unknown { background-color:#0073b7;}
+
+.zipcode-table {width:65%; margin:10px auto;}
+.zipcode-table td {border:none !important;}

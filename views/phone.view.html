@@ -34,12 +34,12 @@ setTimeout(function(){
 						<div class="row">
 							<div class="col-md-3 col-sm-6 links">
 								<div class="email-header">
-									<h3>Records Verified: 21</h3>
+									<h3>Records Verified: 100</h3>
 								</div>
 							</div>
 							<div class="col-md-3 col-sm-6 links">
 								<div class="email-header">
-									<h3>Total Cost: $8.53</h3>
+									<h3>Total Cost: $20.53</h3>
 								</div>
 							</div>
 						</div>
@@ -56,45 +56,49 @@ setTimeout(function(){
 							<p style="color: #9b9b9b;">Status: <span style="color:#1c2857;">Completed</span><span style="color:#000;border-right:1px solid #000;padding:0 10px"></span></p>
 						</div>
 						<div style="float: left;margin-right:5px">
-							<p style="color: #9b9b9b;">Total Phone Numbers: <span style="color:#1c2857;">21</span><span style="color:#000;border-right:1px solid #000;padding:0 10px"></span></p>
+							<p style="color: #9b9b9b;">Total Phone Numbers: <span style="color:#1c2857;">100</span><span style="color:#000;border-right:1px solid #000;padding:0 10px"></span></p>
 						</div>
 						<div>
-							<p style="color: #9b9b9b;">Run Time: <span style="color:#1c2857;">0.2 min</span></p>
+							<p style="color: #9b9b9b;">Run Time: <span style="color:#1c2857;">0.5 min</span></p>
 						</div>
 					</div>
 				</div>
 				<div class="col-md-12">
 					<div class="progress">
-        <div class="progress-bar progress-bar-success progress-bar-striped active" style="width: 30%">
-            Valid (30%)
+        <div class="progress-bar progress-bar-success progress-bar-striped active" style="width: 85%">
+            Valid (85%)
         </div>
         <!--div class="progress-bar progress-bar-warning progress-bar-striped active" style="width: 0%">
             Mobile(0%)
         </div-->
-        <div class="progress-bar progress-bar-danger progress-bar-striped active" style="width: 70%">
-            Invalid(70%)
+        <div class="progress-bar progress-bar-danger progress-bar-striped active" style="width: 15%">
+            Invalid(15%)
         </div>
 		<!--div class="progress-bar progress-bar-primary progress-bar-striped active" style="width: 10%">
             Landline(10%)
         </div-->
     </div>
 				</div>
-				<div class="col-md-12 links" style="margin-top:50px;">
+				<div class="col-md-12 links">
 					<div class="row">
 						<div class="col-sm-3">
 							<div class="tile-progress tile-primary valid-check">
 								<div class="tile-header">
 									
 									<h3 class="col-md-6 col-lg-6 text-left">Valid</h3>
-									<p class="col-md-6 col-lg-6 text-right" style="font-weight:700;">3</p>
+									<p class="col-md-6 col-lg-6 text-right" style="font-weight:700;">85
+									<a href="assets/excel/phone-valid.xlsx"><span class="fa fa-download download-btn"></span></a>
+									</p>
 								</div>
 							</div>
 						</div>
 						<div class="col-sm-3">
-						<div class="tile-progress tile-blue mobile-check">
+						<div class="tile-progress tile-mobile mobile-check">
 							<div class="tile-header">
 								<h3 class="col-md-6 col-lg-6 text-left">Mobile</h3>
-								<p class="col-md-6 col-lg-6 text-right" style="font-weight:700;">11</p>
+								<p class="col-md-6 col-lg-6 text-right" style="font-weight:700;">60
+								
+								</p>
 							</div>
 						</div>
 					</div>
@@ -102,15 +106,17 @@ setTimeout(function(){
 							<div class="tile-progress tile-red invalid-check">
 								<div class="tile-header">
 									<h3 class="col-md-6 col-lg-6 text-left">Invalid</h3>
-									<p class="col-md-6 col-lg-6 text-right" style="font-weight:700;">18</p>
+									<p class="col-md-6 col-lg-6 text-right" style="font-weight:700;">15
+									<a href="assets/excel/phone-invalid.xlsx"><span class="fa fa-download download-btn"></span></a>
+									</p>
 								</div>
 							</div>
 						</div>
 					<div class="col-sm-3">
-						<div class="tile-progress tile-aqua landline-check">
+						<div class="tile-progress tile-landline landline-check">
 							<div class="tile-header">
 								<h3 class="col-md-8 col-lg-8 text-left">Land Line</h3>
-								<p class="col-md-4 col-lg-4 text-right" style="font-weight:700;">10</p>
+								<p class="col-md-4 col-lg-4 text-right" style="font-weight:700;">25</p>
 							</div>
 						</div>
 					</div>
@@ -134,7 +140,7 @@ setTimeout(function(){
 					</div>
 				</div>
 				<div class="clearfix visible-sm-block"></div>
-				<div class="col-md-12 col-sm-6 links">
+				<div class="col-md-12 col-sm-6">
 					<div class="col-md-3 col-sm-6">
 						<div id="test-circle2"></div>
 					</div>
@@ -174,7 +180,7 @@ $(document).ready(function() { // 6,32 5,38 2,34
 			foregroundColor: "#5cb85c",
             backgroundColor: "none",
             fillColor: '#eee',
-            percent: 30,
+            percent: 85,
             iconColor: '#5cb85c',
             icon: 'f058',
             iconSize: '40',
@@ -185,11 +191,11 @@ $(document).ready(function() { // 6,32 5,38 2,34
             animation: 0,
             animationStep: 6,
             foregroundBorderWidth: 15,
-			foregroundColor: "#0073b7",
+			foregroundColor: "#d4af37",
             backgroundColor: "none",
             fillColor: '#eee',
-            percent: 40,
-            iconColor: '#0073b7',
+            percent: 73,
+            iconColor: '#d4af37',
             icon: 'f10b',
             iconSize: '40',
             iconPosition: 'middle'
@@ -202,7 +208,7 @@ $(document).ready(function() { // 6,32 5,38 2,34
 			foregroundColor: "#f56954",
             backgroundColor: "none",
             fillColor: '#eee',
-            percent: 70,
+            percent: 15,
             iconColor: '#f56954',
             icon: 'f057',
             iconSize: '40',
@@ -213,11 +219,11 @@ $(document).ready(function() { // 6,32 5,38 2,34
             animation: 0,
             animationStep: 6,
             foregroundBorderWidth: 15,
-			foregroundColor: "#00c0ef",
+			foregroundColor: "#1c2857",
             backgroundColor: "none",
             fillColor: '#eee',
-            percent: 60,
-            iconColor: '#00c0ef',
+            percent: 27,
+            iconColor: '#1c2857',
             icon: 'f098',
             iconSize: '40',
             iconPosition: 'middle'

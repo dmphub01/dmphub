@@ -1,11 +1,11 @@
-<div class="row forms" style="margin-top:70px; padding-left:60px !important; ">
+<div class="row forms" style="margin-top:54px; padding-left:60px !important; ">
 	
-<div class="col-md-5 col-md-offset-3 col-sm-6 col-sm-offset-3 col-xs-12 signup-form">
+<div class="col-md-5 col-md-offset-3 col-sm-6 col-sm-offset-3 col-xs-12 signup-form" style="margin-top:25px; padding:10px 25px !important;">
     <h3 class="text-center">Log in to your App</h3>
-	<hr style="width:60%; margin-bottom:30px; margin:10px auto;">
-	<div class="col-md-12">
-    <form name="form" ng-submit="vm.login()" role="form">
-        <div class="form-group" ng-class="{ 'has-error': form.username.$dirty && form.username.$error.required }">
+	<!--hr style="width:60%; margin-bottom:30px; margin:10px auto;"-->
+	<div class="col-md-12" style="padding:0px !important;">
+    <form name="form" ng-submit="vm.login()" role="form" style="margin-top:20px;">
+        <div class="form-group" ng-class="{ 'has-error': form.username.$dirty && form.username.$error.required }" style="margin-bottom:25px;">
 				
 				<div class='input-container'>
         <div class="icon-ph"><i class="fa fa-envelope"></i></div>
@@ -23,29 +23,25 @@
         </div>
 
   <div>
-	<div class="col-md-12 col-lg-12 col-sm-12 col-xs-12">
+	<div class="col-md-4 col-lg-4 col-sm-6 col-xs-12">
     <label style="color:#fff !important; font-size:14px;"><input type="checkbox" style="margin-right:10px;"/>Remember Me</label>
 	<span style="float:right;margin-top:-7px;">
-    
   </span>
+  </div>
+  <div class="col-md-8 col-lg-8 col-sm-6 col-xs-12">
+	<div class="form-actions">
+            <button type="submit" id="forms-button" class="btn btn-primary" style="margin-left:20px;">Log In</button>
+            <img ng-if="vm.dataLoading" src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA==" />
+			<a href="#/forgotpassword" class="btn btn-link" style="float:right; padding:0px !important;">Lost Password&nbsp;&nbsp;<i class="fa fa-question-circle"></i></a>
+        </div>
+	
   </div>
   </div>
   
 	
-        <div class="form-actions">
-			<div class="col-md-12 col-lg-12 col-sm-12 col-xs-12">
-            <button type="submit" id="forms-button" ng-disabled="form.$invalid || vm.dataLoading" class="btn btn-primary center-block">Log In</button>
-            <img ng-if="vm.dataLoading" src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA==" />
-			</div>
-        </div>
+        
 		<div class="col-md-12 col-lg-12 col-sm-12 col-xs-12">
-		<div class="col-md-6 col-lg-6 col-sm-12 col-xs-12">
-		
-		<a href="#/register" class="btn btn-link">Lost Password&nbsp;&nbsp;<i class="fa fa-question-circle"></i></a>
-		</div>
-		<div class="col-md-6 col-lg-6 col-sm-12 col-xs-12">
-            <a href="#/register" class="btn btn-link">Register New Account&nbsp;&rarr;</a>
-		</div>
+            <a href="#/register" class="btn btn-link center-block">Register New Account&nbsp;&rarr;</a>
 		</div>
     </form></div>
 </div>

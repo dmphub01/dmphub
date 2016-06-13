@@ -40,11 +40,11 @@
 	background: #1c2857;
 	pointer-events: none;
 	
-	-webkit-transform: scale(1.5);
-	-moz-transform: scale(1.5);
-	-o-transform: scale(1.5);
-	-ms-transform: scale(1.5);
-	transform: scale(1.5);
+	-webkit-transform: scale(1.1);
+	-moz-transform: scale(1.1);
+	-o-transform: scale(1.1);
+	-ms-transform: scale(1.1);
+	transform: scale(1.1);
 	
 	-webkit-transition: all 0.4s ease-in-out 0.2s;
 	-moz-transition: all 0.4s ease-in-out 0.2s;
@@ -70,17 +70,16 @@
 	padding: 10px 5px 0;
 	margin: 0 10px;
 	font-size: 15px;
-	border-top: 1px solid rgba(255,255,255,0.5);
 }
 
 .ch-info p a {
 	display: block;
 	color: #fff !important;
 	font-style: normal;
-	font-weight: 700;
+
 	
 	font-size: 15px;
-	letter-spacing: 1px; margin-top:5px; text-decoration:underline;
+	letter-spacing: 1px; margin-top:15px; text-decoration:underline;
 }
 
 .ch-info p a:hover {
