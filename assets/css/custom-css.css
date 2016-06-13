@@ -746,6 +746,18 @@ color: #fff;
 background-color: #0073b7;
 color: #fff;
 }
+
+.email-progress.email-gold {
+	background-color:#d4af37;
+	color:#fff;
+	
+}
+
+.email-progress.email-dark-blue {
+	background-color:#1c2857;
+	color:#fff;
+	
+}
 .email-progress.email-aqua {
 background-color: #00c0ef;
 color: #fff;
