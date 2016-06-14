@@ -1,3 +1,4 @@
+
 <div class="row full-width-search" style="padding:145px 0px !important;">
 	<div class="offer-slider col-md-12 col-lg-12 col-sm-12 col-xs-12" id="offer-slider-toggle" style="margin-top:0px;">
 					<div class="item2">
@@ -22,6 +23,7 @@
 		<div role="tabpanel"  id="email-address" style="padding:20px;">
 								<div ng-controller="emailctrl">
 									<div class="col-md-12 product-search-title">Email Verification</div>
+									<div class="col-md-12 col-sm-12 col-lg-12 col-xs-12">
 									<div class="col-md-6 col-sm-6 search-col-padding">
 										<div class="input-group">
 											<!--input type="email"  class="form-control searchtxtbgcolor"  ng-model="email" name="email" required placeholder="rayestevez@gmail.com"-->
@@ -39,13 +41,21 @@
 											</select>
 											<span class="input-group-addon"><i class="fa fa-envelope"></i></span>
 										</div>
-									</div>
-									<div class="or-text">OR</div>
-									<div>
-									<a type="submit" href="#uploadfileemail" class="search-button btn transition-effect">Upload&nbsp;&nbsp;<i class="fa fa-upload"></i></a></div>
-									<div class="clearfix"></div>
-									<div class="col-md-12 search-col-padding">
+										<div class="col-md-12 search-col-padding" style="padding:0px !important;">
 							<input type="submit" id="btnsubmit" onclick="mypostalevent3()" class="search-button btn transition-effect" value="Verify"/>
+									</div>
+									</div>
+									<div class="col-md-6 col-sm-6">
+									<div class="or-text">OR</div>
+					<div class="col-md-6 col-lg-6 col-sm-12 col-xs-12">
+					<input type="file" name="file-1[]" id="file-1" onchange="txtchange()" class="inputfile inputfile-1" data-multiple-caption="{count} files selected" multiple />
+					<label for="file-1" style="float:left;">Choose a file&hellip;</label>
+					<span class="text-center" id="changeFilene"></span>
+					</div>
+					<div class="col-md-4 col-lg-4 col-sm-12 col-xs-12">
+					<button type="submit" onclick="location.href='#uploademail';" class="search-button btn upload-btn center-block" disabled="disabled" id="disableButton">Upload&nbsp;&nbsp;<i class="fa fa-upload"></i></button>
+					</div>
+									</div>
 									</div>
 									<div class="clearfix"></div>
 									<ul style="display:none">
@@ -59,7 +69,8 @@
 		<div role="tabpanel" class="tab-pane" id="postal-address" style="padding:20px;">
 								
 									<div class="col-md-12 product-search-title">Postal Address Verification</div>
-									<div class="col-md-8 search-col-padding">
+									<div class="col-md-12 col-lg-12 col-sm-12 col-xs-12">
+									<div class="col-md-6 col-xs-12 search-col-padding">
 										<div class="input-group">
 											<select class="mail-dropdown" id="zipselect">
 												<option value="zipcode1" selected>523 ALDEN AVE WESTFIELD NJ 07090-3040</option>
@@ -70,14 +81,23 @@
 											</select>
 											<span class="input-group-addon"><i class="fa fa-map-marker fa-fw"></i></span>
 										</div>
-									</div>
-									<div class="or-text">OR</div>
-									<div>
-									<a type="submit" href="#postalfile" class="search-button btn transition-effect">Upload&nbsp;&nbsp;<i class="fa fa-upload"></i></a></div>
-									<div class="clearfix"></div>
-									<div class="col-md-12 search-col-padding">
+										<div class="col-md-12 search-col-padding" style="padding:0px !important;">
 										<input type="submit" id="zipcode" onclick="mypostalevent()" class="search-button btn transition-effect" value="Verify"/>
 									</div>
+									</div>
+									<div class="col-md-6 col-sm-6">
+									<div class="or-text">OR</div>
+					<div class="col-md-6 col-lg-6 col-sm-12 col-xs-12">
+					<input type="file" name="file-1[]" id="file-1" onchange="txtchange()" class="inputfile inputfile-1" data-multiple-caption="{count} files selected" multiple />
+					<label for="file-1" style="float:left;">Choose a file&hellip;</label>
+					<span class="text-center" id="changeFilene"></span>
+					</div>
+					<div class="col-md-4 col-lg-4 col-sm-12 col-xs-12">
+					<button type="submit" onclick="location.href='#postalupload';" class="search-button btn upload-btn center-block" disabled="disabled" id="disableButton">Upload&nbsp;&nbsp;<i class="fa fa-upload"></i></button>
+					</div>
+									</div>
+									</div>
+									
 									<div class="clearfix"></div>
 								
 </div>
@@ -87,6 +107,7 @@
 		<div role="tabpanel" class="tab-pane" id="phone-number" style="padding:20px;">
 									<div ng-controller="phnecntrl">
 									<div class="col-md-12 product-search-title">Phone Verification</div>
+									<div class="col-md=12 col-xs-12 col-lg-12 col-sm-12">
 									<div class="col-md-6 col-sm-6 search-col-padding">
 										<div class="input-group">
 											<!--input type="email"  class="form-control searchtxtbgcolor"  ng-model="email" name="email" required placeholder="rayestevez@gmail.com"-->
@@ -98,18 +119,25 @@
 											</select>
 											<span class="input-group-addon"><i class="fa fa-mobile fa-fw"></i></span>
 										</div>
-									</div>
-									<div class="or-text">OR</div>
-									<div>
-									<a type="submit" href="#uploadfile" class="search-button btn transition-effect">Upload&nbsp;&nbsp;<i class="fa fa-upload"></i></a></div>
-									</div>
-									<div class="col-md-12 search-col-padding">
+										<div class="col-md-12 search-col-padding" style="padding:0px !important;">
 							<input type="submit" onclick="mypostalevent2()" id="phone-number" class="search-button btn transition-effect" value="Verify"/>
 									</div>
+									</div>
+									<div class="col-md-6 col-sm-6">
+									<div class="or-text">OR</div>
+					<div class="col-md-6 col-lg-6 col-sm-12 col-xs-12">
+					<input type="file" name="file-1[]" id="file-1" onchange="txtchange()" class="inputfile inputfile-1" data-multiple-caption="{count} files selected" multiple />
+					<label for="file-1" style="float:left;">Choose a file&hellip;</label>
+					<span class="text-center" id="changeFilene"></span>
+					</div>
+					<div class="col-md-4 col-lg-4 col-sm-12 col-xs-12">
+					<button type="submit" onclick="location.href='#uploadphone';" class="search-button btn upload-btn center-block" disabled="disabled" id="disableButton">Upload&nbsp;&nbsp;<i class="fa fa-upload"></i></button>
+					</div>
+									</div>
+									</div>
+			
 									<div class="clearfix"></div>
 									
-									
-							
 								</div>
 							</div>
 	</script>
@@ -574,7 +602,7 @@
 
 </section>
 <!-- END: WHY CHOOSE US SECTION -->
-<div id="email-suribabu" class="modal modal-message modal-success fade" tabindex="-1" role="dialog" style="display: none;" aria-hidden="true">
+<div id="email-suribabu" class="modal modal-message modal-custom fade" tabindex="-1" role="dialog" style="display: none;" aria-hidden="true">
         <div class="modal-dialog suri-email">
             <div class="modal-content">
                 <div class="modal-header">
@@ -613,7 +641,7 @@
 					</table>
 				</div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-success" data-dismiss="modal">OK</button>
+                    <button type="button" class="btn btn-custom" data-dismiss="modal">OK</button>
                 </div>
             </div> <!-- / .modal-content -->
         </div> <!-- / .modal-dialog -->
@@ -664,7 +692,7 @@
         </div> <!-- / .modal-dialog -->
     </div>
 	
-	<div id="email3" class="modal modal-message modal-success fade" tabindex="-1" role="dialog" style="display: none;" aria-hidden="true">
+	<div id="email3" class="modal modal-message modal-custom fade" tabindex="-1" role="dialog" style="display: none;" aria-hidden="true">
         <div class="modal-dialog suri-email">
             <div class="modal-content">
                 <div class="modal-header">
@@ -703,7 +731,7 @@
 					</table>
 				</div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-success" data-dismiss="modal">OK</button>
+                    <button type="button" class="btn btn-custom" data-dismiss="modal">OK</button>
                 </div>
             </div> <!-- / .modal-content -->
         </div> <!-- / .modal-dialog -->
@@ -742,7 +770,7 @@
 							<tr>
 								<td class="email-label">Domain </td>
 								<td style="padding:10px; font-weight:700;">:</td>
-								<td class="email-result">betabullscom</td>
+								<td class="email-result">gmailcom</td>
 							</tr>
 						</tbody>
 					</table>
@@ -754,7 +782,7 @@
         </div> <!-- / .modal-dialog -->
     </div>
 	
-	<div id="email5" class="modal modal-message modal-success fade" tabindex="-1" role="dialog" style="display: none;" aria-hidden="true">
+	<div id="email5" class="modal modal-message modal-custom fade" tabindex="-1" role="dialog" style="display: none;" aria-hidden="true">
         <div class="modal-dialog suri-email">
             <div class="modal-content">
                 <div class="modal-header">
@@ -793,7 +821,7 @@
 					</table>
 				</div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-success" data-dismiss="modal">OK</button>
+                    <button type="button" class="btn btn-custom" data-dismiss="modal">OK</button>
                 </div>
             </div> <!-- / .modal-content -->
         </div> <!-- / .modal-dialog -->
@@ -889,7 +917,7 @@
         </div> <!-- / .modal-dialog -->
     </div>
 	
-	<div id="email8" class="modal modal-message modal-success fade" tabindex="-1" role="dialog" style="display: none;" aria-hidden="true">
+	<div id="email8" class="modal modal-message modal-custom fade" tabindex="-1" role="dialog" style="display: none;" aria-hidden="true">
         <div class="modal-dialog suri-email">
             <div class="modal-content">
                 <div class="modal-header">
@@ -928,13 +956,13 @@
 					</table>
 				</div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-success" data-dismiss="modal">OK</button>
+                    <button type="button" class="btn btn-custom" data-dismiss="modal">OK</button>
                 </div>
             </div> <!-- / .modal-content -->
         </div> <!-- / .modal-dialog -->
     </div>
 	
-	<div id="email9" class="modal modal-message modal-success fade" tabindex="-1" role="dialog" style="display: none;" aria-hidden="true">
+	<div id="email9" class="modal modal-message modal-custom fade" tabindex="-1" role="dialog" style="display: none;" aria-hidden="true">
         <div class="modal-dialog suri-email">
             <div class="modal-content">
                 <div class="modal-header">
@@ -973,7 +1001,7 @@
 					</table>
 				</div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-success" data-dismiss="modal">OK</button>
+                    <button type="button" class="btn btn-custom" data-dismiss="modal">OK</button>
                 </div>
             </div> <!-- / .modal-content -->
         </div> <!-- / .modal-dialog -->
@@ -1025,7 +1053,7 @@
     </div>
 	
 	<!----   Phone Popup   -->
-<div id="number1" class="modal modal-message modal-success fade" tabindex="-1" role="dialog" style="display: none;" aria-hidden="true">
+<div id="number1" class="modal modal-message modal-custom fade" tabindex="-1" role="dialog" style="display: none;" aria-hidden="true">
         <div class="modal-dialog suri-email">
             <div class="modal-content">
                 <div class="modal-header">
@@ -1043,7 +1071,7 @@
 							<tr>
 								<td class="phone-label">Number </td>
 								<td style="padding:5px 10px; font-weight:700;">:</td>
-								<td class="phone-result">19082323941</td>
+								<td class="phone-result">9082323941</td>
 							</tr>
 							<tr>
 								<td class="phone-label">Country Prefix </td>
@@ -1069,13 +1097,13 @@
 					</table>
 				</div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-success" data-dismiss="modal">OK</button>
+                    <button type="button" class="btn btn-custom" data-dismiss="modal">OK</button>
                 </div>
             </div> <!-- / .modal-content -->
         </div> <!-- / .modal-dialog -->
     </div>
 	
-	<div id="number2" class="modal modal-message modal-success fade" tabindex="-1" role="dialog" style="display: none;" aria-hidden="true">
+	<div id="number2" class="modal modal-message modal-custom fade" tabindex="-1" role="dialog" style="display: none;" aria-hidden="true">
         <div class="modal-dialog suri-email">
             <div class="modal-content">
                 <div class="modal-header">
@@ -1093,7 +1121,7 @@
 							<tr>
 								<td class="phone-label">Number </td>
 								<td style="padding:5px 10px; font-weight:700;">:</td>
-								<td class="phone-result">19082323941</td>
+								<td class="phone-result">9082323941</td>
 							</tr>
 							<tr>
 								<td class="phone-label">Country Prefix </td>
@@ -1119,13 +1147,13 @@
 					</table>
 				</div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-success" data-dismiss="modal">OK</button>
+                    <button type="button" class="btn btn-custom" data-dismiss="modal">OK</button>
                 </div>
             </div> <!-- / .modal-content -->
         </div> <!-- / .modal-dialog -->
     </div>
 	
-	<div id="number3" class="modal modal-message modal-success fade" tabindex="-1" role="dialog" style="display: none;" aria-hidden="true">
+	<div id="number3" class="modal modal-message modal-custom fade" tabindex="-1" role="dialog" style="display: none;" aria-hidden="true">
         <div class="modal-dialog suri-email">
             <div class="modal-content">
                 <div class="modal-header">
@@ -1143,7 +1171,7 @@
 							<tr>
 								<td class="phone-label">Number </td>
 								<td style="padding:5px 10px; font-weight:700;">:</td>
-								<td class="phone-result">12078465110</td>
+								<td class="phone-result">2078465110</td>
 							</tr>
 							<tr>
 								<td class="phone-label">Country Prefix </td>
@@ -1169,7 +1197,7 @@
 					</table>
 				</div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-success" data-dismiss="modal">OK</button>
+                    <button type="button" class="btn btn-custom" data-dismiss="modal">OK</button>
                 </div>
             </div> <!-- / .modal-content -->
         </div> <!-- / .modal-dialog -->
@@ -1227,7 +1255,7 @@
 	
 	<!---  Zip Code Popups  --->
 	
-	<div id="zipcode1" class="modal modal-message modal-success fade" tabindex="-1" role="dialog" style="display: none;" aria-hidden="true">
+	<div id="zipcode1" class="modal modal-message modal-custom fade" tabindex="-1" role="dialog" style="display: none;" aria-hidden="true">
         <div class="modal-dialog suri-email">
             <div class="modal-content">
                 <div class="modal-header">
@@ -1239,44 +1267,44 @@
 						<tbody>
 							<tr>
 								<td class="phone-label">Result </td>
-								<td style="padding:5px 10px; font-weight:700;">:</td>
+								<td style="padding:7px 10px; font-weight:700;">:</td>
 								<td class="phone-result">Valid</td>
 							</tr>
 							<tr>
 								<td class="phone-label">House Number </td>
-								<td style="padding:5px 10px; font-weight:700;">:</td>
+								<td style="padding:7px 10px; font-weight:700;">:</td>
 								<td class="phone-result">523</td>
 							</tr>
 							<tr>
 								<td class="phone-label">Street </td>
-								<td style="padding:5px 10px; font-weight:700;">:</td>
+								<td style="padding:7px 10px; font-weight:700;">:</td>
 								<td class="phone-result">ALDEN AVE </td>
 							</tr>
 							<tr>
 								<td class="phone-label">Locality </td>
-								<td style="padding:5px 10px; font-weight:700;">:</td>
+								<td style="padding:7px 10px; font-weight:700;">:</td>
 								<td class="phone-result">WESTFIELD </td>
 							</tr>
 							<tr>
 								<td class="phone-label">Province </td>
-								<td style="padding:5px 10px; font-weight:700;">:</td>
+								<td style="padding:7px 10px; font-weight:700;">:</td>
 								<td class="phone-result">NJ </td>
 							</tr> 
 							<tr>
 								<td class="phone-label">Postal Code </td>
-								<td style="padding:5px 10px; font-weight:700;">:</td>
+								<td style="padding:7px 10px; font-weight:700;">:</td>
 								<td class="phone-result">07090-3040 </td>
 							</tr>
 							<tr>
 								<td class="phone-label">Country </td>
-								<td style="padding:5px 10px; font-weight:700;">:</td>
+								<td style="padding:7px 10px; font-weight:700;">:</td>
 								<td class="phone-result">UNITED STATES </td>
 							</tr>
 						</tbody>
 					</table>
 				</div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-success" data-dismiss="modal">OK</button>
+                    <button type="button" class="btn btn-custom" data-dismiss="modal">OK</button>
                 </div>
             </div> <!-- / .modal-content -->
         </div> <!-- / .modal-dialog -->
@@ -1294,38 +1322,38 @@
 						<tbody>
 							<tr>
 								<td class="phone-label">Result </td>
-								<td style="padding:5px 10px; font-weight:700;">:</td>
+								<td style="padding:7px 10px; font-weight:700;">:</td>
 								<td class="phone-result">Invalid Zipcode</td>
 							</tr>
 							<tr>
 								<td class="phone-label">House Number </td>
-								<td style="padding:5px 10px; font-weight:700;">:</td>
-								<td class="phone-result"></td>
+								<td style="padding:7px 10px; font-weight:700;">:</td>
+								<td class="phone-result">133</td>
 							</tr>
 							<tr>
 								<td class="phone-label">Street </td>
-								<td style="padding:5px 10px; font-weight:700;">:</td>
-								<td class="phone-result"></td>
+								<td style="padding:7px 10px; font-weight:700;">:</td>
+								<td class="phone-result">BENSON PL</td>
 							</tr>
 							<tr>
 								<td class="phone-label">Locality </td>
-								<td style="padding:5px 10px; font-weight:700;">:</td>
-								<td class="phone-result"></td>
+								<td style="padding:7px 10px; font-weight:700;">:</td>
+								<td class="phone-result">WESTFIELD</td>
 							</tr>
 							<tr>
 								<td class="phone-label">Province </td>
-								<td style="padding:5px 10px; font-weight:700;">:</td>
-								<td class="phone-result"></td>
+								<td style="padding:7px 10px; font-weight:700;">:</td>
+								<td class="phone-result">NJ</td>
 							</tr> 
 							<tr>
 								<td class="phone-label">Postal Code </td>
-								<td style="padding:5px 10px; font-weight:700;">:</td>
-								<td class="phone-result"></td>
+								<td style="padding:7px 10px; font-weight:700;">:</td>
+								<td class="phone-result">Invalid</td>
 							</tr>
 							<tr>
 								<td class="phone-label">Country </td>
-								<td style="padding:5px 10px; font-weight:700;">:</td>
-								<td class="phone-result"></td>
+								<td style="padding:7px 10px; font-weight:700;">:</td>
+								<td class="phone-result">Unknown</td>
 							</tr>
 						</tbody>
 					</table>
@@ -1349,38 +1377,38 @@
 						<tbody>
 							<tr>
 								<td class="phone-label">Result </td>
-								<td style="padding:5px 10px; font-weight:700;">:</td>
+								<td style="padding:7px 10px; font-weight:700;">:</td>
 								<td class="phone-result">Invalid Zipcode</td>
 							</tr>
 							<tr>
 								<td class="phone-label">House Number </td>
-								<td style="padding:5px 10px; font-weight:700;">:</td>
-								<td class="phone-result"></td>
+								<td style="padding:7px 10px; font-weight:700;">:</td>
+								<td class="phone-result">211</td>
 							</tr>
 							<tr>
 								<td class="phone-label">Street </td>
-								<td style="padding:5px 10px; font-weight:700;">:</td>
-								<td class="phone-result"></td>
+								<td style="padding:7px 10px; font-weight:700;">:</td>
+								<td class="phone-result">N SCOTCH PLAINS AVE</td>
 							</tr>
 							<tr>
 								<td class="phone-label">Locality </td>
-								<td style="padding:5px 10px; font-weight:700;">:</td>
-								<td class="phone-result"></td>
+								<td style="padding:7px 10px; font-weight:700;">:</td>
+								<td class="phone-result">WESTFIELD</td>
 							</tr>
 							<tr>
 								<td class="phone-label">Province </td>
-								<td style="padding:5px 10px; font-weight:700;">:</td>
-								<td class="phone-result"></td>
+								<td style="padding:7px 10px; font-weight:700;">:</td>
+								<td class="phone-result">NJ</td>
 							</tr> 
 							<tr>
 								<td class="phone-label">Postal Code </td>
-								<td style="padding:5px 10px; font-weight:700;">:</td>
-								<td class="phone-result"></td>
+								<td style="padding:7px 10px; font-weight:700;">:</td>
+								<td class="phone-result">Invalid</td>
 							</tr>
 							<tr>
 								<td class="phone-label">Country </td>
-								<td style="padding:5px 10px; font-weight:700;">:</td>
-								<td class="phone-result"></td>
+								<td style="padding:7px 10px; font-weight:700;">:</td>
+								<td class="phone-result">Unknown</td>
 							</tr>
 						</tbody>
 					</table>
@@ -1392,7 +1420,7 @@
         </div> <!-- / .modal-dialog -->
     </div>
 	
-	<div id="zipcode4" class="modal modal-message modal-success fade" tabindex="-1" role="dialog" style="display: none;" aria-hidden="true">
+	<div id="zipcode4" class="modal modal-message modal-custom fade" tabindex="-1" role="dialog" style="display: none;" aria-hidden="true">
         <div class="modal-dialog suri-email">
             <div class="modal-content">
                 <div class="modal-header">
@@ -1404,50 +1432,50 @@
 						<tbody>
 							<tr>
 								<td class="phone-label">Result </td>
-								<td style="padding:5px 10px; font-weight:700;">:</td>
+								<td style="padding:7px 10px; font-weight:700;">:</td>
 								<td class="phone-result">Valid</td>
 							</tr>
 							<tr>
 								<td class="phone-label">House Number </td>
-								<td style="padding:5px 10px; font-weight:700;">:</td>
+								<td style="padding:7px 10px; font-weight:700;">:</td>
 								<td class="phone-result">109 </td>
 							</tr>
 							<tr>
 								<td class="phone-label">Street </td>
-								<td style="padding:5px 10px; font-weight:700;">:</td>
+								<td style="padding:7px 10px; font-weight:700;">:</td>
 								<td class="phone-result">DICKSON DR </td>
 							</tr>
 							<tr>
 								<td class="phone-label">Locality </td>
-								<td style="padding:5px 10px; font-weight:700;">:</td>
+								<td style="padding:7px 10px; font-weight:700;">:</td>
 								<td class="phone-result">WESTFIELD </td>
 							</tr>
 							<tr>
 								<td class="phone-label">Province </td>
-								<td style="padding:5px 10px; font-weight:700;">:</td>
+								<td style="padding:7px 10px; font-weight:700;">:</td>
 								<td class="phone-result">NJ </td>
 							</tr> 
 							<tr>
 								<td class="phone-label">Postal Code </td>
-								<td style="padding:5px 10px; font-weight:700;">:</td>
+								<td style="padding:7px 10px; font-weight:700;">:</td>
 								<td class="phone-result">07090-3525 </td>
 							</tr>
 							<tr>
 								<td class="phone-label">Country </td>
-								<td style="padding:5px 10px; font-weight:700;">:</td>
+								<td style="padding:7px 10px; font-weight:700;">:</td>
 								<td class="phone-result">UNITED STATES </td>
 							</tr>
 						</tbody>
 					</table>
 				</div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-success" data-dismiss="modal">OK</button>
+                    <button type="button" class="btn btn-custom" data-dismiss="modal">OK</button>
                 </div>
             </div> <!-- / .modal-content -->
         </div> <!-- / .modal-dialog -->
     </div>
 	
-	<div id="zipcode5" class="modal modal-message modal-success fade" tabindex="-1" role="dialog" style="display: none;" aria-hidden="true">
+	<div id="zipcode5" class="modal modal-message modal-custom fade" tabindex="-1" role="dialog" style="display: none;" aria-hidden="true">
         <div class="modal-dialog suri-email">
             <div class="modal-content">
                 <div class="modal-header">
@@ -1459,48 +1487,50 @@
 						<tbody>
 							<tr>
 								<td class="phone-label">Result </td>
-								<td style="padding:5px 10px; font-weight:700;">:</td>
+								<td style="padding:7px 10px; font-weight:700;">:</td>
 								<td class="phone-result">Valid</td>
 							</tr>
 							<tr>
 								<td class="phone-label">House Number </td>
-								<td style="padding:5px 10px; font-weight:700;">:</td>
+								<td style="padding:7px 10px; font-weight:700;">:</td>
 								<td class="phone-result">560 </td>
 							</tr>
 							<tr>
 								<td class="phone-label">Street </td>
-								<td style="padding:5px 10px; font-weight:700;">:</td>
+								<td style="padding:7px 10px; font-weight:700;">:</td>
 								<td class="phone-result">FAIRMONT AVE </td>
 							</tr>
 							<tr>
 								<td class="phone-label">Locality </td>
-								<td style="padding:5px 10px; font-weight:700;">:</td>
+								<td style="padding:7px 10px; font-weight:700;">:</td>
 								<td class="phone-result">WESTFIELD </td>
 							</tr>
 							<tr>
 								<td class="phone-label">Province </td>
-								<td style="padding:5px 10px; font-weight:700;">:</td>
+								<td style="padding:7px 10px; font-weight:700;">:</td>
 								<td class="phone-result">NJ </td>
 							</tr> 
 							<tr>
 								<td class="phone-label">Postal Code </td>
-								<td style="padding:5px 10px; font-weight:700;">:</td>
+								<td style="padding:7px 10px; font-weight:700;">:</td>
 								<td class="phone-result">07090-1359 </td>
 							</tr>
 							<tr>
 								<td class="phone-label">Country </td>
-								<td style="padding:5px 10px; font-weight:700;">:</td>
+								<td style="padding:7px 10px; font-weight:700;">:</td>
 								<td class="phone-result">UNITED STATES </td>
 							</tr>
 						</tbody>
 					</table>
 				</div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-success" data-dismiss="modal">OK</button>
+                    <button type="button" class="btn btn-custom" data-dismiss="modal">OK</button>
                 </div>
             </div> <!-- / .modal-content -->
         </div> <!-- / .modal-dialog -->
     </div>
-	
+		<script src="assets/js/custom-file-input.js"></script>
+		<script>(function(e,t,n){var r=e.querySelectorAll("html")[0];r.className=r.className.replace(/(^|\s)no-js(\s|$)/,"$1js$2")})(document,window,0);</script>
 	<!--  End Zip Popups  --->
 	<!-- Modal -->
+	

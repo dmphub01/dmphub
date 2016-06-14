@@ -174,6 +174,7 @@
 	<script src="scripts/js/paymentpr.js"></script>
 	<!-- <script src="scripts/js/profile.js"></script> -->
 	<script src="assets/js/jquery.easing.1.3.js"></script>
+	<script src="assets/js/custom-file-input.js"></script>
 
 	<!---  Phone & Email Validation  -->
 		<!--script>
@@ -289,15 +290,7 @@ function mypostalevent() {
 </script>
 
 <!--- File Manager -->
-<script>
 
-function myfunction(){
-$('#folder').attr("class", "col-md-1 col-lg-1 col-sm-2 col-xs-6 mynewclass");
-$("#disableButton").removeAttr('disabled');
-}
-
-    
-</script>
 	
 
 <script src="assets/js/svg-donut-chart-framework.js"></script>
@@ -312,7 +305,7 @@ var programmingSkills = [
     {
         value: 61,
         label: 'Valid Addresses(61%)',
-        color: '#5cb85c'
+        color: '#1c2857'
     },
     {
         value: 17,
@@ -327,7 +320,7 @@ var programmingSkills = [
     {
         value: 0,
         label: 'Disposal Addresses(0%)',
-        color: '#1c2857'
+        color: '#e1d11f'
     },
     {
         value: 0,
@@ -337,7 +330,24 @@ var programmingSkills = [
 ];
 </script> 
 <script>
+function txtchange(){
+var last_element='';
 
+if($('.inputfile').val()!='')
+{
+
+var t = $('.inputfile').val();
+var i=t.split('\\');
+ last_element = i[i.length - 1];
+ $("#disableButton").removeAttr('disabled');
+}
+else{
+last_element='Choose a file...'
+ $("#disableButton").attr('disabled',true);
+}
+	$('#changeFilene').html(last_element);
+	
+	}
     $(function() {
 
         var donutData = genData();
@@ -644,5 +654,20 @@ var programmingSkills = [
         return dataset;
     }
     </script>
+	
+	
+	<script>
+
+	
+	
+	
+/*
+	By Osvaldas Valutis, www.osvaldas.info
+	Available for use under the MIT License
+*/
+
+
+	</script>
+
 </body>
 </html>

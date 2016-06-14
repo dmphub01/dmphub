@@ -7705,8 +7705,8 @@ background:#d4af37 !important; color:#1c2857 !important;
 .flight-details2 input{ border:none;}
 
 
-.signin { background:#d4af37;padding:7px; color:#fff !important; margin-right:10px; margin-top:7px; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif !important; border-radius:7px;}
-.signup {background:#d4af37;padding:7px; color:#fff !important; margin-right:10px; margin-top:7px; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif !important; border-radius:7px;}
+.signin { background:#d4af37;padding:7px 12px !important; color:#fff !important; margin-right:10px; margin-top:10px; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif !important; border-radius:7px;}
+.signup {background:#d4af37;padding:7px 12px !important; color:#fff !important; margin-right:10px; margin-top:10px; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif !important; border-radius:7px;}
 .signin:hover {color:#fff !important; border-radius:7px;background:#b18b0f !important;}
 .signup:hover {color:#fff !important; border-radius:7px;background:#b18b0f !important;}
 .signin:focus, .signup:focus { color:#fff !important; background:#b18b0f !important;}
@@ -7758,7 +7758,7 @@ background:#d4af37 !important; color:#1c2857 !important;
 
 #forms-button{ background-color:#d4af37 !important; color:#fff; border:none; border-radius:7px; margin-top:10px;padding:9px 25px; font-weight:normal;}
 
-#forms-button:hover {color:#fff !important;}
+#forms-button:hover {color:#fff !important; background-color:#b18b0f !important;}
 
 .light-section-title { padding-top:40px !important; }
 
