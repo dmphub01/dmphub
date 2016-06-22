@@ -1,35 +1,235 @@
-	<div class="row upload-file">
+
+		
+		
+	<div class="upload-file">
+	<div class="row">
 		<div class="container">
-			<h3 class="text-center">Select a file to Upload</h3>
-			<hr style="width:100%; height:2px; background-color:#1c2857;">
-			<div class="col-md-12 col-sm-12 col-lg-12 col-xs-12 folders">
-				<div class="col-md-1 col-lg-1 col-sm-2 col-xs-6 folder">
-					<img src="assets/images/folder.png" class="center-block">
-					<p>Images</p>
-				</div>
-				<div class="col-md-1 col-lg-1 col-sm-2 col-xs-6 folder" >
-					<img src="assets/images/folder.png" class="center-block">
-					<p>Files</p>
-				</div>
-				<div class="col-md-1 col-lg-1 col-sm-2 col-xs-6 folder">
-					<img src="assets/images/folder.png" class="center-block">
-					<p>Documents</p>
-				</div>
-				<div class="col-md-1 col-lg-1 col-sm-2 col-xs-6 folder">
-					<img src="assets/images/folder.png" class="center-block">
-					<p>Applications</p>
-				</div>
-				<div class="col-md-1 col-lg-1 col-sm-2 col-xs-6 folder">
-					<img src="assets/images/folder.png" class="center-block">
-					<p>Downloads</p>
-				</div>
-				<div class="col-md-1 col-lg-1 col-sm-2 col-xs-6 folder" id="folder">
-					<img src="assets/images/Excel.ico" class="center-block" onclick="myfunction()">
-					<p>Phone.xlsx</p>
-				</div>
-			</div>
-			<a type="submit" href="#uploadphone" class="search-button btn transition-effect"  style="float:right; margin-right:20px;">Upload&nbsp;&nbsp;<i class="fa fa-upload"></i></a>
-			
-			</div>
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 bhoechie-tab-container">
+            <div class="col-lg-2 col-md-2 col-sm-4 col-xs-4 bhoechie-tab-menu">
+              <div class="list-group">
+                <a href="" class="list-group-item active text-center">
+                  <img src="assets/images/desktop-pc.png" class="img-responsive center-block" />From Local
+                </a>
+                <a href="" class="list-group-item text-center">
+                  <img src="assets/images/drive.png" class="img-responsive center-block" />From Other Resources
+                </a>
+				
+              </div>
+            </div>
+            <div class="col-lg-10 col-md-10 col-sm-8 col-xs-8 bhoechie-tab">
+                <!-- flight section -->
+                <div class="bhoechie-tab-content active">
+                      <form id="upload" method="post" enctype="multipart/form-data">
+						<div id="drop">
+							<h4>Drag & Drop or Select a File</h4>
+
+							<a>Browse</a>
+							
+							<input type="file" name="upl" multiple /></br>
+							
+							<div class="control-group">
+							<h5 class="text-center">Select Verification type</h5>
+								<label class="control control--radio">Email
+									<input type="radio" name="radio"/>
+									<div class="control__indicator"></div>
+								</label>
+								<label class="control control--radio">Postal Address
+									<input type="radio" name="radio"/>
+									<div class="control__indicator"></div>
+								</label>
+								<label class="control control--radio">Phone
+									<input type="radio" name="radio"/>
+									<div class="control__indicator"></div>
+								</label>
+							</div>
+						</div>
+	
+			<ul>
+				<!-- The file uploads will be shown here -->
+			</ul>
+
+		</form>
+		<button type="submit" class="btn search-button center-block" onclick="location.href='#uploademail';">Verify</button>
+                    </center>
+                </div>
+                <!-- train section -->
+                <div class="bhoechie-tab-content">
+				<form id="upload">
+                    <center>
+					<div id="drop">
+                      <h4 class="text-center" style="color:#1c2857; margin-top:40px;">Upload a File</h4>
+					<button class="btn search-button">Choose a file</button>
+
+							<div id="file-info"><pre></pre></div>
+					<input id="gdrive_file" type="text" />
+					<div class="control-group">
+							<h5 class="text-center">Select Verification type</h5>
+								<label class="control control--radio">Email
+									<input type="radio" name="radio"/>
+									<div class="control__indicator"></div>
+								</label>
+								<label class="control control--radio">Postal Address
+									<input type="radio" name="radio"/>
+									<div class="control__indicator"></div>
+								</label>
+								<label class="control control--radio">Phone
+									<input type="radio" name="radio"/>
+									<div class="control__indicator"></div>
+								</label>
+							</div>
+					</div>
+					
+	<!--div class="container" ng-controller="ExampleCtrl" ng-init="initialize()">
+      <div class="row">
+        <div class="col-sm-8 col-sm-offset-2">
+          <div class="text-center">
+            <img src="images/logo-drive.png" class="logo" alt="Drive logo" />
+            <div class="heading-headline">
+              Angular Google Picker {{ selectedLocale.name }}
+            </div>
+
+            <p>
+              The plugin also support locales, which allow you to open the Picker using the language of your choice :
+              <a href="#" data-toggle="modal" data-target="#language">Select a language</a>
+            </p>
+
+            <div>
+              <a href="javascript:;" lk-google-picker on-picked="onPicked(docs)" on-loaded="onLoaded()" on-cancel="onCancel()" class="btn btn-2 btn-2c btn-blue">
+                <i class="fa fa-inbox"></i>
+                <span>Pick files</span>
+              </a>
+
+              <a href="https://github.com/softmonkeyjapan/angular-google-picker" class="btn btn-2 btn-2c btn-blue">
+                <i class="fa fa-github"></i>
+                <span>Fork me</span>
+              </a>
+            </div>
+          </div>
+
+          <div class="row dashed-border" ng-switch="files.length > 0">
+            <div class="text-center" ng-switch-when="false">
+              <div class="none">No files selected yet</div>
+            </div>
+
+            <div ng-switch-when="true">
+              <div class="col-sm-4 item item-test" ng-repeat="file in files">
+                <a href="{{ file.url }}" target="_blank">
+                  <div class="icon">
+                    <div class="document">
+                      <span class="ng-binding">
+                        {{ file.name | getExtension }}
+                      </span>
+                    </div>
+                  </div>
+                  <span>{{ file.name | limitTo:20 }}</span><span ng-if="file.name.length >=20">...</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div-->
+					
+					
+					
+                    </center>
+				</form>
+				<a type="submit" class="btn search-button" href="#uploademail" style="float:right;">Verify</a>
+                </div>
+    
+                <!-- hotel search -->
+                <div class="bhoechie-tab-content">
+                    <center>
+                      <h4 class="text-center" style="color:#1c2857; margin-top:130px;">Upload a file from Dropbox</h4>
+					  <input type="dropbox-chooser" class="btn search-button" name="selected-file" id="db-chooser"/>
+                    </center>
+                </div>
+                <div class="bhoechie-tab-content">
+                    <center>
+					
+                      <h4 class="text-center" style="color:#1c2857; margin-top:130px;">Upload a file from Box</h4>
+					  <button type="submit" class="btn search-button">Import file from Box</button>
+                    </center>
+                </div>
+            </div>
+        </div>
 		</div>
-	</div>
+		</div></div>
+
+		<script>
+	
+    $("div.bhoechie-tab-menu>div.list-group>a").click(function(e) {
+        e.preventDefault();
+        $(this).siblings('a.active').removeClass("active");
+        $(this).addClass("active");
+        var index = $(this).index();
+        $("div.bhoechie-tab>div.bhoechie-tab-content").removeClass("active");
+        $("div.bhoechie-tab>div.bhoechie-tab-content").eq(index).addClass("active");
+    });
+</script>
+<script src="assets/js/jquery.ui.widget.js"></script>
+		<script src="assets/js/jquery.iframe-transport.js"></script>
+		<script src="assets/js/jquery.fileupload.js"></script>
+		<script src="assets/js/jquery.knob.js"></script>
+		<!-- Our main JS file -->
+		<script src="assets/js/script.js"></script>
+
+		<script src="assets/js/jquery-gdrive.js"></script>
+		<script>
+		$(document).ready(function() {
+				$().gdrive('init', {
+					'devkey': 'AIzaSyC1ch5YUXLvVw6_zCnbIfPT782XQ3XXNw4',
+					'appid': '686156106194-0b3vsie8hommbv8g01n7jhij7nkt7kl9.apps.googleusercontent.com'
+				});
+				
+				$('#gdrive_file').gdrive('set', {
+					'trigger': 'gdrive_file_selector', 
+					'header': 'Select a file', 
+					'filter': ''
+				});
+			});
+		</script>
+		<script src="https://apis.google.com/js/platform.js?onload=onLoadCallback" async defer></script>
+		<script type="text/javascript" src="https://www.dropbox.com/static/api/1/dropins.js" id="dropboxjs" data-app-key="btbx55h8xrag6pb"></script>
+		<script type="text/javascript">
+    // add an event listener to a Chooser button
+    document.getElementById("db-chooser").addEventListener("DbxChooserSuccess",
+        function(e) {
+            alert("Here's the chosen file: " + e.files[0].link)
+			window.location.href = 'e.files[0].link';
+        }, false);
+</script>
+
+<script>
+/*
+ *    Welcome to the Kloudless JS File Explorer!
+ *
+ *    To view the explorer in action click 'Result'!
+ */
+
+// File Explorer with jQuery
+// For a version without jQuery, and with all options and event handlers, see here: http://jsfiddle.net/pseudonumos/ax4wuxkp/
+
+var explorer = window.Kloudless.explorer({
+    app_id: 'iCZ_ICMy43H0NSoz0QbLvmyjzCHf2frAOPaBfWVgh9_vrFIM',
+    multiselect: true,
+    computer: true,
+});
+
+explorer.on('success', function(files) {
+
+console.log(files)
+    $("#file-info > pre").replaceWith('<pre>' +files[0].name  + '</pre>');
+});
+
+explorer.choosify($('#chooser'));
+
+var files = [{
+    url: "http://localhost/assets/images/dmp_edited_origin.png",
+    name: "dmp_edited_origin.png"
+}];
+
+
+</script>
+	  
+<script>

@@ -1,2 +1,193 @@
-<div class="page page-dashboard"> <div class="pageheader"> <h2>{{page.title}} <span>// {{page.subtitle}}</span></h2> <div class="page-bar"> <ul class="page-breadcrumb"> <li> <a ui-sref="app.dashboard"><i class="fa fa-home"></i> {{main.title}}</a> </li> <li> <a ui-sref="app.dashboard">{{page.title}}</a> </li> </ul> <!--div ng-controller="DaterangepickerCtrl" class="page-toolbar"> <a href="javascript:;" class="btn btn-lightred no-border" daterangepicker="rangeOptions" date-begin="startDate" date-end="endDate"> <i class="fa fa-calendar"></i>&nbsp;&nbsp;<span>{{startDate}} - {{endDate}}</span>&nbsp;&nbsp;<i class="fa fa-angle-down"></i> </a> </div--> </div> </div> <!-- cards row --> <div class="row"> <!-- col --> <div class="card-container col-lg-6 col-sm-6 col-sm-12"> <div> <div class="front bg-greensea" style="padding:15px 10px;"> <!-- row --> <div class="row"> <!-- col --> <div class="col-xs-3"> <i class="fa fa-database fa-4x" style="margin-left:20px;"></i> </div> <!-- /col --> <!-- col --> <div class="col-xs-9"> <p class="text-elg text-strong mb-0">3659</p> <span>Verifications</span><p>Number of verification credits remaining</p> </div> <!-- /col --> </div> <!-- /row --> </div> </div> </div> <!-- /col --> <!-- col --> <div class="card-container col-lg-6 col-sm-6 col-sm-12"> <div> <div class="front bg-lightred" style="padding:15px 10px;"> <!-- row --> <div class="row"> <!-- col --> <div class="col-xs-3"> <i class="fa fa-tachometer fa-4x" style="margin-left:20px;"></i> </div> <!-- /col --> <!-- col --> <div class="col-xs-9"> <p class="text-elg text-strong mb-0">19364</p> <span>Your Sensex</span><p>0.015 below the global average</p> </div> <!-- /col --> </div> <!-- /row --> </div>  </div> </div> <!-- /col --> <!-- col --> <!--div class="card-container col-lg-3 col-sm-6 col-sm-12"> <div class="card"> <div class="front bg-blue"> <!-- row --> <!--div class="row"> <!-- col --> <!--div class="col-xs-4"> <i class="fa fa-usd fa-4x"></i> </div> <!-- /col --> <!-- col --> <!--div class="col-xs-8"> <p class="text-elg text-strong mb-0">165 984</p> <span>Sales</span> </div> <!-- /col --> <!--/div> <!-- /row --> <!--/div> <div class="back bg-blue"> <!-- row --> <!--div class="row"> <!-- col --> <!--div class="col-xs-4"> <a href="javascript:;"><i class="fa fa-cog fa-2x"></i> Settings</a> </div> <!-- /col --> <!-- col --> <!--div class="col-xs-4"> <a href="javascript:;"><i class="fa fa-chain-broken fa-2x"></i> Content</a> </div> <!-- /col --> <!-- col --> <!--div class="col-xs-4"> <a href="javascript:;"><i class="fa fa-ellipsis-h fa-2x"></i> More</a> </div> <!-- /col --> <!--/div> <!-- /row --> <!--/div> <!--/div> </div> <!-- /col --> <!-- col --> <!--div class="card-container col-lg-3 col-sm-6 col-sm-12"> <div class="card"> <div class="front bg-slategray"> <!-- row --> <!--div class="row"> <!-- col --> <!--div class="col-xs-4"> <i class="fa fa-eye fa-4x"></i> </div> <!-- /col --> <!-- col --> <!--div class="col-xs-8"> <p class="text-elg text-strong mb-0">29 651</p> <span>Visits</span> </div> <!-- /col --> <!--/div> <!-- /row --> <!--/div> <div class="back bg-slategray"> <!-- row --> <!--div class="row"> <!-- col --> <!--div class="col-xs-4"> <a href="javascript:;"><i class="fa fa-cog fa-2x"></i> Settings</a> </div> <!-- /col --> <!-- col --> <!--div class="col-xs-4"> <a href="javascript:;"><i class="fa fa-chain-broken fa-2x"></i> Content</a> </div> <!-- /col --> <!-- col --> <!--div class="col-xs-4"> <a href="javascript:;"><i class="fa fa-ellipsis-h fa-2x"></i> More</a> </div> <!-- /col --> <!--/div> <!-- /row --> <!--/div> </div> </div--> <!-- /col --> </div> <!-- /row --> <!-- row --> <div class="row" style="padding-top:20px;"> <!-- col --> <div class="col-md-8"> <!-- tile --><div><span class="fa fa-bar-chart" style="font-size:15px !important; "></span><span style="font-size:15px !important; ">Verification Activity</span></div> <section class="tile" fullscreen="isFullscreen01"> <!-- tile header --> <div class="tile-header bg-greensea dvd dvd-btm"> <h1 class="custom-font" style="color:#fff !Important;"><strong>Statistics </strong>Graph</h1> <ul class="controls"> <li ng-controller="DaterangepickerCtrl"> <a href="javascript:;" daterangepicker="rangeOptions" date-begin="startDate" date-end="endDate"> <span>{{startDate}} - {{endDate}}</span>&nbsp;&nbsp;<i class="fa fa-angle-down"></i> </a> </li> <li class="dropdown" uib-dropdown on-toggle="toggled(open)"> <a href uib-dropdown-toggle class="dropdown-toggle settings"><i class="fa fa-cog"></i></a> <ul class="dropdown-menu pull-right with-arrow animated littleFadeInUp"> <li> <a href tile-control-toggle> <span class="minimize"><fa name="angle-down"></fa>&nbsp;&nbsp;&nbsp;Minimize</span> <span class="expand"><fa name="angle-up"></fa>&nbsp;&nbsp;&nbsp;Expand</span> </a> </li> <li> <a href tile-control-refresh ng-click="ajaxFaker()"> <fa name="refresh"></fa> Refresh </a> </li> <li> <a href tile-control-fullscreen ng-click="isFullscreen01 = !isFullscreen01"> <fa name="expand"></fa> Fullscreen </a> </li> </ul> </li> <li class="remove"><a href tile-control-close><i class="fa fa-times"></i></a></li> </ul> </div> <!-- /tile header --> <!-- tile widget --> <div class="tile-widget bg-greensea" ng-controller="StatisticsChartCtrl"> <flot dataset="dataset" options="options" height="250px"></flot> </div> <!-- /tile widget --> <!-- tile body --> <div class="tile-body" ng-controller="ActualStatisticsCtrl"> <!-- row --> 
- <!-- /row --> </div> <!-- /tile body --> </section> <!-- /tile --> </div> <!-- /col --> <!-- col --> <div class="col-md-4"> <!-- tile --> <section class="tile" fullscreen="isFullscreen02" ng-controller="BrowseUsageCtrl"> <!-- tile header --> <div class="tile-header dvd dvd-btm"> <h1 class="custom-font" style="color:#000 !important;"><strong>Breakdown </strong></h1> <ul class="controls"> <li class="dropdown" uib-dropdown on-toggle="toggled(open)"> <a href uib-dropdown-toggle class="dropdown-toggle settings"><i class="fa fa-cog"></i></a> <ul class="dropdown-menu pull-right with-arrow animated littleFadeInUp"> <li> <a href tile-control-toggle> <span class="minimize"><fa name="angle-down"></fa>&nbsp;&nbsp;&nbsp;Minimize</span> <span class="expand"><fa name="angle-up"></fa>&nbsp;&nbsp;&nbsp;Expand</span> </a> </li> <li> <a href tile-control-refresh ng-click="ajaxFaker()"> <fa name="refresh"></fa> Refresh </a> </li> <li> <a href tile-control-fullscreen ng-click="isFullscreen02 = !isFullscreen02"> <fa name="expand"></fa> Fullscreen </a> </li> </ul> </li> <li class="remove"><a href tile-control-close><i class="fa fa-times"></i></a></li> </ul> </div> <!-- /tile header --> <!-- tile widget --> <div class="tile-widget"> <div morris-donut-chart donut-data="donutData" style="height: 250px"></div> </div> <!-- /tile widget --> <!-- tile body --> <div class="tile-body p-0"> <uib-accordion close-others="oneAtATime"> <uib-accordion-group is-open="status.tab1.open" class="panel-transparent"> <uib-accordion-heading> <span style="color:#000 !important;" ng-class="{'text-default lt': !status.tab1.open}"><i class="fa text-sm mr-5" ng-class="{'fa-minus': status.tab1.open, 'fa-plus': !status.tab1.open}"></i> This Month</span><span class="badge pull-right bg-lightred">3</span> </uib-accordion-heading> <table class="table table-no-border m-0"> <tbody> <tr> <td>1 <td>Email<td>6985 <td><i class="fa fa-caret-up text-success"></i>  <tr> <td>2 <td>Phone<td>2697 <td><i class="fa fa-caret-up text-success"></i>  <tr> <td>3 <td>Postal<td>3597 <td><i class="fa fa-caret-down text-danger"></i>  <tr> <td>4 <td>Name Verify<td>2145 <td><i class="fa fa-caret-up text-success"></i>  <tr> <td>5 <td>De-Duplication<td>1854 <td><i class="fa fa-caret-down text-danger"></i>  <tr> <td>6 <td>NCOA<td>654 <td><i class="fa fa-caret-up text-success"></i>   </table> </uib-accordion-group> <uib-accordion-group is-open="status.tab2.open" class="panel-transparent"> <uib-accordion-heading> <span ng-class="{'text-default lt': !status.tab2.open}"><i class="fa text-sm mr-5" ng-class="{'fa-minus': status.tab2.open, 'fa-plus': !status.tab2.open}"></i> Last Month</span> </uib-accordion-heading> <table class="table table-no-border m-0"> <tbody> <tr> <td>1 <td>Email<td>6985 <td><i class="fa fa-caret-up text-success"></i>  <tr> <td>2 <td>Phone<td>2697 <td><i class="fa fa-caret-up text-success"></i>  <tr> <td>3 <td>Postal<td>3597 <td><i class="fa fa-caret-down text-danger"></i>  <tr> <td>4 <td>Name Verify<td>2145 <td><i class="fa fa-caret-up text-success"></i>  <tr> <td>5 <td>De-Duplication<td>1854 <td><i class="fa fa-caret-down text-danger"></i>  <tr> <td>6 <td>NCOA<td>654 <td><i class="fa fa-caret-up text-success"></i>   </table> </uib-accordion-group> <uib-accordion-group is-open="status.tab3.open" class="panel-transparent"> <uib-accordion-heading> <span ng-class="{'text-default lt': !status.tab3.open}"><i class="fa text-sm mr-5" ng-class="{'fa-minus': status.tab3.open, 'fa-plus': !status.tab3.open}"></i> This Year</span> </uib-accordion-heading> <table class="table table-no-border m-0"> <tbody> <tr> <td>1 <td>Email<td>6985 <td><i class="fa fa-caret-up text-success"></i>  <tr> <td>2 <td>Phone<td>2697 <td><i class="fa fa-caret-up text-success"></i>  <tr> <td>3 <td>Postal<td>3597 <td><i class="fa fa-caret-down text-danger"></i>  <tr> <td>4 <td>Name Verify<td>2145 <td><i class="fa fa-caret-up text-success"></i>  <tr> <td>5 <td>De-Duplication<td>1854 <td><i class="fa fa-caret-down text-danger"></i>  <tr> <td>6 <td>NCOA<td>654 <td><i class="fa fa-caret-up text-success"></i>   </table> </uib-accordion-group> </uib-accordion> </div> <!-- /tile body --> </section> <!-- /tile --> </div> <!-- /col --> </div> <!-- /row --> <!-- row --> </div>
+<style>
+.flot-x-axis, .flot-x1-axis, .xAxis, .x1Axis {left:25px !important; right:10px !important;}
+
+.applyBtn, .cancelBtn {background: #d4af37;
+    border-radius: 7px;
+    margin-top: 5px;
+	margin-bottom: 5px;
+    padding: 5px 18px; border:none !important;
+	font-size: 12px;
+	letter-spacing: 1px;
+	color: #fff !important;
+	transition: all 0.3s ease;
+	-ms-transition: all 0.3s ease;
+	-moz-transition: all 0.3s ease;
+	-webkit-transition: all 0.3s ease;
+	-o-transition: all 0.3s ease;}
+
+	.applyBtn:hover, .cancelBtn:hover {background: #d4af37 !important;
+	color: #fff !important;}
+	
+</style>
+<div class="page page-dashboard"> <div class="pageheader"> <div class="page-bar"> <ul class="page-breadcrumb"> <li> <a ui-sref="app.dashboard"><i class="fa fa-home"></i> {{main.title}}</a> </li> <li> <a ui-sref="app.dashboard">{{page.title}}</a> </li> </ul> <!--div ng-controller="DaterangepickerCtrl" class="page-toolbar"> <a href="javascript:;" class="btn btn-lightred no-border" daterangepicker="rangeOptions" date-begin="startDate" date-end="endDate"> <i class="fa fa-calendar"></i>&nbsp;&nbsp;<span>{{startDate}} - {{endDate}}</span>&nbsp;&nbsp;<i class="fa fa-angle-down"></i> </a> </div--> </div> </div> <!-- cards row --> <div class="row"> <!-- col --><h4 class="color" style="margin-bottom:20px;">Historical Metrics (Total projects)</h4> <div class="card-container col-lg-3 col-md-3 col-sm-6 col-xs-12" style="padding-left:0px; padding-right:22px !important;"> <div> <div class="front bg-greensea"> <!-- row --> <div class="row">  <!-- col --> <div class="col-xs-12 verification-content" style="padding:10px"><span>Email Verification</span><hr style="margin-top:3px !Important;" /> <p class="text-verification mb-0">6347</p> </div> <!-- /col --> </div> <!-- /row --> </div> </div> </div> <!-- /col --> <!-- col --> 
+
+<div class="card-container col-lg-3 col-md-3 col-sm-6 col-xs-12" style="padding-left:0px; padding-right:22px !important;"> <div> <div class="front bg-greensea"> <!-- row --> <div class="row">  <!-- col --> <div class="col-xs-12 postal-verify-content" style="padding:10px"><span>Postal Verification</span><hr style="margin-top:3px !Important;" />  <p class="text-verification mb-0">5983</p> </div> <!-- /col --> </div> <!-- /row --> </div> </div> </div>
+
+<div class="card-container col-lg-3 col-md-3 col-sm-6 col-xs-12" style="padding-left:0px; padding-right:22px !important;"> <div> <div class="front bg-greensea"> <!-- row --> <div class="row">  <!-- col --> <div class="col-xs-12 phone-verify-content" style="padding:10px"><span>Phone Verification</span><hr style="margin-top:3px !Important;" />  <p class="text-verification mb-0">9763</p> </div> <!-- /col --> </div> <!-- /row --> </div> </div> </div>
+
+
+<div class="card-container col-lg-3 col-md-3 col-sm-6 col-xs-12" style=" padding-right:0px !important;padding-left:0px;"> <div> <div class="front bg-greensea"> <!-- row --> <div class="row">  <!-- col --> <div class="col-xs-12 name-verify-content" style="padding:10px"> <span>Name Verification</span><hr style="margin-top:3px !Important;" />  <p class="text-verification mb-0">8621</p></div> <!-- /col --> </div> <!-- /row --> </div> </div> </div>
+
+<div class="card-container col-lg-3 col-md-3 col-sm-6 col-xs-12" style="padding-left:0px; padding-right:22px !important;"> <div> <div class="front bg-greensea"> <!-- row --> <div class="row">  <!-- col --> <div class="col-xs-12 duplication-verify-content" style="padding:10px"> <span>De-Duplication Verification</span><hr style="margin-top:3px !Important;" />  <p class="text-verification mb-0">3768</p></div> <!-- /col --> </div> <!-- /row --> </div> </div> </div>
+
+
+<div class="card-container col-lg-3 col-md-3 col-sm-6 col-xs-12" style="padding-left:0px; padding-right:22px !important;"> <div> <div class="front bg-greensea"> <!-- row --> <div class="row">  <!-- col --> <div class="col-xs-12 supression-verify-content" style="padding:10px"><span>Supression Verification</span><hr style="margin-top:3px !Important;" />  <p class="text-verification mb-0">5634</p></div> <!-- /col --> </div> <!-- /row --> </div> </div> </div>
+
+<div class="card-container col-lg-3 col-md-3 col-sm-6 col-xs-12" style="padding-left:0px; padding-right:22px !important;"> <div> <div class="front bg-greensea"> <!-- row --> <div class="row">  <!-- col --> <div class="col-xs-12 NCOA-verify-content" style="padding:10px"> <span>NCOA Verification</span><hr style="margin-top:3px !Important;" />  <p class="text-verification mb-0">2478</p></div> <!-- /col --> </div> <!-- /row --> </div> </div> </div>
+
+
+<div class="card-container col-lg-3 col-md-3 col-sm-6 col-xs-12" style=" padding-right:0px !important;padding-left:0px;"> <div> <div class="front bg-greensea"> <!-- row --> <div class="row">  <!-- col --> <div class="col-xs-12 total-verify-content" style="padding:10px"> <span>Total Verifications</span><hr style="margin-top:3px !Important;" />  <p class="text-verification mb-0">42594</p></div> <!-- /col --> </div> <!-- /row --> </div> </div> </div>
+
+
+
+
+
+
+ <!-- /col --> <!-- col --> <!--div class="card-container col-lg-3 col-sm-6 col-sm-12"> <div class="card"> <div class="front bg-blue"> <!-- row --> <!--div class="row"> <!-- col --> <!--div class="col-xs-4"> <i class="fa fa-usd fa-4x"></i> </div> <!-- /col --> <!-- col --> <!--div class="col-xs-8"> <p class="text-elg text-strong mb-0">165 984</p> <span>Sales</span> </div> <!-- /col --> <!--/div> <!-- /row --> <!--/div> <div class="back bg-blue"> <!-- row --> <!--div class="row"> <!-- col --> <!--div class="col-xs-4"> <a href="javascript:;"><i class="fa fa-cog fa-2x"></i> Settings</a> </div> <!-- /col --> <!-- col --> <!--div class="col-xs-4"> <a href="javascript:;"><i class="fa fa-chain-broken fa-2x"></i> Content</a> </div> <!-- /col --> <!-- col --> <!--div class="col-xs-4"> <a href="javascript:;"><i class="fa fa-ellipsis-h fa-2x"></i> More</a> </div> <!-- /col --> <!--/div> <!-- /row --> <!--/div> <!--/div> </div> <!-- /col --> <!-- col --> <!--div class="card-container col-lg-3 col-sm-6 col-sm-12"> <div class="card"> <div class="front bg-slategray"> <!-- row --> <!--div class="row"> <!-- col --> <!--div class="col-xs-4"> <i class="fa fa-eye fa-4x"></i> </div> <!-- /col --> <!-- col --> <!--div class="col-xs-8"> <p class="text-elg text-strong mb-0">29 651</p> <span>Visits</span> </div> <!-- /col --> <!--/div> <!-- /row --> <!--/div> <div class="back bg-slategray"> <!-- row --> <!--div class="row"> <!-- col --> <!--div class="col-xs-4"> <a href="javascript:;"><i class="fa fa-cog fa-2x"></i> Settings</a> </div> <!-- /col --> <!-- col --> <!--div class="col-xs-4"> <a href="javascript:;"><i class="fa fa-chain-broken fa-2x"></i> Content</a> </div> <!-- /col --> <!-- col --> <!--div class="col-xs-4"> <a href="javascript:;"><i class="fa fa-ellipsis-h fa-2x"></i> More</a> </div> <!-- /col --> <!--/div> <!-- /row --> <!--/div> </div> </div--> <!-- /col --> </div> <!-- /row --> <!-- row --> <div class="row"> <!-- col --> <div class="col-md-8" style="padding-left:0px;"> <!-- tile --><section class="tile" fullscreen="isFullscreen01"> <!-- tile header --> <div class="tile-header chart-bg dvd dvd-btm"> <h4 class="custom-font" style="color:#fff !Important; font-size:18px;"><span class="fa fa-bar-chart" style="margin-right:10px;"></span><span>Recent Projects (Last Month)</span></h4> <ul class="controls"> <!--li ng-controller="DaterangepickerCtrl"> <a href="javascript:;" daterangepicker="rangeOptions" date-begin="startDate" date-end="endDate"> <span>{{startDate}} - {{endDate}}</span>&nbsp;&nbsp;<i class="fa fa-angle-down"></i> </a> </li--> <li class="dropdown" uib-dropdown on-toggle="toggled(open)"> <a href uib-dropdown-toggle class="dropdown-toggle settings"><i class="fa fa-cog"></i></a> <ul class="dropdown-menu pull-right with-arrow animated littleFadeInUp"> <li> <a href tile-control-toggle> <span class="minimize"><fa name="angle-down"></fa>&nbsp;&nbsp;&nbsp;Minimize</span> <span class="expand"><fa name="angle-up"></fa>&nbsp;&nbsp;&nbsp;Expand</span> </a> </li> <li> <a href tile-control-refresh ng-click="ajaxFaker()"> <fa name="refresh"></fa> Refresh </a> </li> <li> <a href tile-control-fullscreen ng-click="isFullscreen01 = !isFullscreen01"> <fa name="expand"></fa> Fullscreen </a> </li> </ul> </li> <li class="remove"><a href tile-control-close><i class="fa fa-times"></i></a></li> </ul> </div> <!-- /tile header --> <!-- tile widget --> <div class="tile-widget chart-bg" ng-controller="StatisticsChartCtrl"> <flot dataset="dataset" options="options" height="250px"></flot> </div> <!-- /tile widget --> <!-- tile body --> <div class="tile-body" ng-controller="ActualStatisticsCtrl"> <!-- row --> 
+ <!-- /row --> </div> <!-- /tile body --> </section>
+
+<!--div class="col-md-12 col-lg-12 col-sm-12 col-xs-12"> <div class="col-md-5 col-lg-5 col-sm-6 col-xs-12" style="margin-right:80px;"><section class="tile" style="height:340px;" fullscreen="isFullscreen01">  <div class="tile-header chart-bg dvd dvd-btm"> <h4 class="custom-font" style="color:#fff !Important;"><span class="fa fa-envelope" style="margin-right:10px;"></span><span>Email Verification</span></h4> <ul class="controls"><li class="remove"><a href tile-control-close><i class="fa fa-times"></i></a></li> </ul> </div> 
+<div class="tile-body"> 
+<div class="flip"> 
+        <div class="card"> 
+            <div class="face front">
+				<div class="table-responsive">
+					<table class="dashboard-email">
+						<tbody>
+							<tr>
+								<td class="text-left">Valid Emails</td>
+								<td class="text-center">:</td>
+								<td class="text-right">150</td>
+							</tr>
+							<tr>
+								<td class="text-left">Invalid Emails</td>
+								<td class="text-center">:</td>
+								<td class="text-right">54</td>
+							</tr>
+							<tr>
+								<td class="text-left">Unknown Emails</td>
+								<td class="text-center">:</td>
+								<td class="text-right">27</td>
+							</tr>
+							<tr>
+								<td class="text-left">Disposal Emails</td>
+								<td class="text-center">:</td>
+								<td class="text-right">5</td>
+							</tr>
+							<tr>
+								<td class="text-left">Hign Risk Emails</td>
+								<td class="text-center">:</td>
+								<td class="text-right">0</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+            </div> 
+            <div class="face back"> 
+				<p class="text-left">Valid Emails</p>
+				<div class="skillbar clearfix " data-percent="65%">
+					<div class="skillbar-bar" style="background: #1c2857;"></div>
+					<div class="skill-bar-percent">65%</div>
+				</div>
+
+				<p class="text-left">Invalid Emails</p>
+				<div class="skillbar clearfix " data-percent="19%">
+					<div class="skillbar-bar" style="background: #f56954;"></div>
+					<div class="skill-bar-percent">19%</div>
+				</div>
+
+				<p class="text-left">Unknown Emails</p>
+				<div class="skillbar clearfix " data-percent="7%">
+
+					<div class="skillbar-bar" style="background: #d4af37;"></div>
+					<div class="skill-bar-percent">7%</div>
+				</div>
+				<p class="text-left">Disposal Emails</p>
+				<div class="skillbar clearfix " data-percent="9%">
+
+					<div class="skillbar-bar" style="background: #e1d11f;"></div>
+					<div class="skill-bar-percent">9%</div>
+				</div>
+				<p class="text-left">High Risk Emails</p>
+				<div class="skillbar clearfix " data-percent="0%">
+
+					<div class="skillbar-bar" style="background: red;"></div>
+					<div class="skill-bar-percent">0%</div>
+				</div>
+			</div> 
+		</div> 
+	</div>  </section> </div>
+	
+	<div class="col-md-5 col-lg-5 col-sm-6 col-xs-12"><section class="tile" style="height:340px;" fullscreen="isFullscreen01"><div class="tile-header chart-bg dvd dvd-btm"> <h4 class="custom-font" style="color:#fff !Important;"><span class="fa fa-envelope" style="margin-right:10px;"></span><span>Postal Verification</span></h4> <ul class="controls"><li class="remove"><a href tile-control-close><i class="fa fa-times"></i></a></li> </ul> </div> 
+<div class="tile-body"> 
+<div class="flip"> 
+        <div class="card"> 
+            <div class="face front">
+				<div class="table-responsive">
+					<table class="dashboard-email">
+						<tbody>
+							<tr>
+								<td class="text-left">Valid Addresses</td>
+								<td class="text-center">:</td>
+								<td class="text-right">80</td>
+							</tr>
+							<tr>
+								<td class="text-left">Invalid Addresses</td>
+								<td class="text-center">:</td>
+								<td class="text-right">25</td>
+							</tr>
+							<tr>
+								<td class="text-left">Unknown Addresses</td>
+								<td class="text-center">:</td>
+								<td class="text-right">27</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+            </div> 
+            <div class="face back"> 
+				<p class="text-left">Valid Addresses</p>
+				<div class="skillbar clearfix " data-percent="63%">
+					<div class="skillbar-bar" style="background: #1c2857;"></div>
+					<div class="skill-bar-percent">63%</div>
+				</div>
+
+				<p class="text-left">Invalid Addresses</p>
+				<div class="skillbar clearfix " data-percent="18%">
+					<div class="skillbar-bar" style="background: #f56954;"></div>
+					<div class="skill-bar-percent">18%</div>
+				</div>
+
+				<p class="text-left">Unknown Addresses</p>
+				<div class="skillbar clearfix " data-percent="19%">
+
+					<div class="skillbar-bar" style="background: #d4af37;"></div>
+					<div class="skill-bar-percent">19%</div>
+				</div>
+			</div> 
+		</div> 
+	</div>  </section> </div>
+	
+ </div-->
+
+ 
+ </div><div class="col-md-4" style="padding-right:0px;"><section class="tile" fullscreen="isFullscreen02" ng-controller="BrowseUsageCtrl"> <div class="tile-header dvd dvd-btm"> <h4 class="custom-font" style="color:#fff !important; font-size:18px;">Donut Chart</h4> <ul class="controls"> <li class="dropdown" uib-dropdown on-toggle="toggled(open)"> <a href uib-dropdown-toggle class="dropdown-toggle settings"><i class="fa fa-cog"></i></a> <ul class="dropdown-menu pull-right with-arrow animated littleFadeInUp"> <li> <a href tile-control-toggle> <span class="minimize"><fa name="angle-down"></fa>&nbsp;&nbsp;&nbsp;Minimize</span> <span class="expand"><fa name="angle-up"></fa>&nbsp;&nbsp;&nbsp;Expand</span> </a> </li> <li> <a href tile-control-refresh ng-click="ajaxFaker()"> <fa name="refresh"></fa> Refresh </a> </li> <li> <a href tile-control-fullscreen ng-click="isFullscreen02 = !isFullscreen02"> <fa name="expand"></fa> Fullscreen </a> </li> </ul> </li> <li class="remove"><a href tile-control-close><i class="fa fa-times"></i></a></li> </ul> </div> <div class="tile-widget" style="padding-top:0px !Important;"> <div morris-donut-chart donut-data="donutData" style="height: 294px;"></div> </div>  <!--div class="tile-body p-0"> <uib-accordion close-others="oneAtATime"> <uib-accordion-group is-open="status.tab1.open" class="panel-transparent"> <uib-accordion-heading> <span style="color:#000 !important;" ng-class="{'text-default lt': !status.tab1.open}"><i class="fa text-sm mr-5" ng-class="{'fa-minus': status.tab1.open, 'fa-plus': !status.tab1.open}"></i> This Month</span><span class="badge pull-right bg-lightred"></span> </uib-accordion-heading> <table class="table table-no-border m-0"> <tbody> <tr> <td><td>Email<td>1985 <td><i class="fa fa-caret-up text-success"></i>  <tr> <td><td>Phone<td>2697 <td><i class="fa fa-caret-up text-success"></i>  <tr> <td> <td>Postal<td>3597 <td><i class="fa fa-caret-down text-danger"></i>  <tr> <td> <td>Name Verify<td>2145 <td><i class="fa fa-caret-up text-success"></i>  <tr> <td> <td>De-Duplication<td>1854 <td><i class="fa fa-caret-down text-danger"></i>  <tr> <td> <td>NCOA<td>654 <td><i class="fa fa-caret-up text-success"></i>   </table> </uib-accordion-group> <uib-accordion-group is-open="status.tab2.open" class="panel-transparent"> <uib-accordion-heading> <span ng-class="{'text-default lt': !status.tab2.open}"><i class="fa text-sm mr-5" ng-class="{'fa-minus': status.tab2.open, 'fa-plus': !status.tab2.open}"></i> Last Month</span> </uib-accordion-heading> <table class="table table-no-border m-0"> <tbody> <tr> <td>1 <td>Email<td>1985 <td><i class="fa fa-caret-up text-success"></i>  <tr> <td>2 <td>Phone<td>2697 <td><i class="fa fa-caret-up text-success"></i>  <tr> <td>3 <td>Postal<td>3597 <td><i class="fa fa-caret-down text-danger"></i>  <tr> <td>4 <td>Name Verify<td>2145 <td><i class="fa fa-caret-up text-success"></i>  <tr> <td>5 <td>De-Duplication<td>1854 <td><i class="fa fa-caret-down text-danger"></i>  <tr> <td>6 <td>NCOA<td>654 <td><i class="fa fa-caret-up text-success"></i>   </table> </uib-accordion-group> <uib-accordion-group is-open="status.tab3.open" class="panel-transparent"> <uib-accordion-heading> <span ng-class="{'text-default lt': !status.tab3.open}"><i class="fa text-sm mr-5" ng-class="{'fa-minus': status.tab3.open, 'fa-plus': !status.tab3.open}"></i> This Year</span> </uib-accordion-heading> <table class="table table-no-border m-0"> <tbody> <tr> <td>1 <td>Email<td>1985 <td><i class="fa fa-caret-up text-success"></i>  <tr> <td>2 <td>Phone<td>2697 <td><i class="fa fa-caret-up text-success"></i>  <tr> <td>3 <td>Postal<td>3597 <td><i class="fa fa-caret-down text-danger"></i>  <tr> <td>4 <td>Name Verify<td>2145 <td><i class="fa fa-caret-up text-success"></i>  <tr> <td>5 <td>De-Duplication<td>1854 <td><i class="fa fa-caret-down text-danger"></i>  <tr> <td>6 <td>NCOA<td>654 <td><i class="fa fa-caret-up text-success"></i>   </table> </uib-accordion-group> </uib-accordion> </div--> </section>  </div> </div> <!-- row -->
+ 
+ <script src="scripts/canvasjs.min.js"></script>
+
+ <script>
+ $('.flip').mouseover(function(){
+        $(this).find('.card').addClass('flipped').mouseleave(function(){
+            $(this).removeClass('flipped');
+        });
+        return false;
+    });
+ </script>
+<script>
+jQuery('.skillbar').each(function(){
+	jQuery(this).find('.skillbar-bar').animate({
+		width:jQuery(this).attr('data-percent')
+	},2000);
+});
+</script>
+ 
