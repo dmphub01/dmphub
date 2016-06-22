@@ -3670,7 +3670,7 @@ h5 {
     border: medium none;
     color: #ffffff;
     font-size: 18px;
-    margin-top: 20px;
+    margin-top: 6px;
     padding: 10px 50px; border-radius:7px;
 }
 .submit-review:hover {
@@ -4875,7 +4875,7 @@ h5 {
 	margin: 30px 0px;
 }
 .contact-form {
-	padding: 30px 15px; margin-top:10px;
+	padding: 0px 15px; margin-top:10px;
 }
 .contact-form .form-control {
 	height: 40px;
@@ -6967,7 +6967,7 @@ background:#d4af37 !important; color:#1c2857 !important;
 	margin: 0px 5px;
 }
 .main-footer-nav {
-	padding: 30px 0px;
+	padding: 30px 0px 15px 0px;
 	background: #0A3152;
 	color: #BEC4C8;
 	position: relative;
@@ -7733,7 +7733,7 @@ background:#d4af37 !important; color:#1c2857 !important;
 
 .forms h2 { font-family:'Helvetica Neue', Helvetica, Arial, sans-serif !important; color:#F7941D; }
 
-.signup-form { overflow:hidden; box-shadow:0px 0px 5px #333; padding:25px; background-color:#1c2857; color:#fff; border-radius:10px;}
+.signup-form { overflow:hidden; box-shadow:0px 0px 5px #333; padding:25px; background-color:#1c2857; color:#fff; border-radius:10px; margin-bottom:40px;}
 .signup-form h3 {margin-top:10px!important;margin-bottom:10px;}
 .signup-form a { color:#fff; font-size:14px;}
 .signup-form a:hover {color:#fff !important; text-decoration:underline;}
@@ -7923,11 +7923,7 @@ input[type="checkbox"]:checked ~ .reveal-if-active {
     border: none;
     font-weight: bold;
     letter-spacing: 1px;
- 
-   
-   
     border-radius: 2px 2px 0 0;
-    margin-right: 4px;
 }
 .searchtxtbgcolor {
  
