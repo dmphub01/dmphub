@@ -76,9 +76,9 @@
                 templateUrl: 'views/email.view.html',
                 controllerAs: 'vm'
             })
-			.when('/uploadfileemail', {
+			.when('/uploadfilephone', {
                 controller: 'UploadfileemailController',
-                templateUrl: 'views/uploadfileemail.view.html',
+                templateUrl: 'views/uploadfilephone.view.html',
                 controllerAs: 'vm'
             })
 			

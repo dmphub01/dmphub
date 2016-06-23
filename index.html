@@ -182,35 +182,6 @@
 
 <script src="assets/js/kloudless.explorer.js"></script>
 <script>
-	<!---  Phone & Email Validation  -->
-		<!--script>
-function isEmail(email) {
-  var regex = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
-  var result=regex.test(email);
-  if(result)
-{
-$('#modal-success').modal('toggle')
-}
-else{
-$('#modal-danger').modal('toggle')
-}
-}
-
-
-function isPhone(phone) {
-
-   var phoneNumberPattern = /^\(?(\d{3})\)?[- ]?(\d{3})[- ]?(\d{4})$/;  
-   var result= phoneNumberPattern.test(phone); 
-  if(result)
-{
-$('#phone-success').modal('toggle')
-}
-else{
-$('#phone-danger').modal('toggle')
-}
-}
-</script-->
-<script>
 	$(document).ready(function() {
     $("div.bhoechie-tab-menu>div.list-group>a").click(function(e) {
         e.preventDefault();
@@ -240,89 +211,6 @@ $('#phone-danger').modal('toggle')
 		</script>
 		
 
-<script>
-function mypostalevent2() {	
-	 var x = document.getElementById("phoneselect").value;
-	 if(x=="number1"){
-	 $('#number1').modal("show");
-	 }
-	 else if(x=="number2"){
-	 $('#number2').modal("show");
-	 }
-        else if(x=="number3"){
-	 $('#number3').modal("show");
-	 } 
-       else if(x=="number4"){
-	   $('#number4').modal("show");
-	   }
-	   else if(x=="number5"){
-	   $('#number5').modal("show");
-	   }
-	}	
-
-</script>
-
-<script>
-function mypostalevent3() {	
-	 var x = document.getElementById("emailselect").value;
-	 if(x=="email1"){
-	 $('#email-suribabu').modal("show");
-	 }
-	 else if(x=="email2"){
-	 $('#email2').modal("show");
-	 }
-        else if(x=="email3"){
-	 $('#email3').modal("show");
-	 } 
-       else if(x=="email4"){
-	   $('#email4').modal("show");
-	   }
-	   else if(x=="email5"){
-	   $('#email5').modal("show");
-	   }
-	   else if(x=="email6"){
-	   $('#email6').modal("show");
-	   }
-	   else if(x=="email7"){
-	   $('#email7').modal("show");
-	   }
-	   else if(x=="email8"){
-	   $('#email8').modal("show");
-	   }
-	   else if(x=="email9"){
-	   $('#email9').modal("show");
-	   }
-	   else if(x=="email10"){
-	   $('#email10').modal("show");
-	   }
-	}	
-
-</script>
-
-
-	
-	<!---  Zipcode Validation  -->
-<script>
-function mypostalevent() {	
-	 var x = document.getElementById("zipselect").value;
-	 if(x=="zipcode1"){
-	 $('#zipcode1').modal("show");
-	 }
-	 else if(x=="zipcode2"){
-	 $('#zipcode2').modal("show");
-	 }
-        else if(x=="zipcode3"){
-	 $('#zipcode3').modal("show");
-	 } 
-       else if(x=="zipcode4"){
-	   $('#zipcode4').modal("show");
-	   }
-	   else if(x=="zipcode5"){
-	   $('#zipcode5').modal("show");
-	   }
-	}	
-
-</script>
 
 <!--- File Manager -->
 
@@ -745,6 +633,12 @@ explorer.savify($("#saver"), files);
 
     <!-- Angular Google picker -->
     <script src="scripts/google-picker.min.js"></script>
+	<script src="assets/js/jquery.ui.widget.js"></script>
+		<script src="assets/js/jquery.iframe-transport.js"></script>
+		<script src="assets/js/jquery.fileupload.js"></script>
+		<script src="assets/js/jquery.knob.js"></script>
+		<!-- Our main JS file -->
+		<script src="assets/js/script.js"></script>
 
 </body>
 </html>
