@@ -1408,7 +1408,7 @@ margin-right:5px;
 #upload ul li span{
     width: 15px;
     height: 12px;
-    background: url('../images/icons3.png') no-repeat;
+    background: url('../images/icon2.png') no-repeat;
     position: absolute;
     top: 34px;
     right: 33px;
@@ -1803,3 +1803,13 @@ a:hover {
 */
 
 .flot-text {left:12px !important;}
+
+.middle {
+    display: inline-block;
+    margin-right:0 auto;
+  margin-left:0 auto;
+    margin: 0 auto;
+    float: none !important;
+    display: block;
+ 
+}
