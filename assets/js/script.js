@@ -5,6 +5,7 @@ $(function(){
     $('#drop a').click(function(){
         // Simulate a click on the file input button
         // to show the file browser dialog
+		
         $(this).parent().find('input').click();
     });
 
@@ -17,16 +18,25 @@ $(function(){
         // This function is called when a file is added to the queue;
         // either via the browse button, or via drag/drop:
         add: function (e, data) {
-
+		 if($('#upload ul li').length==0)
+		 {
             var tpl = $('<li class="working"><img src="assets/images/Excel-2.png" width="48" height="48" /><p></p><span></span></li>');
-
+             
             // Append the file name and file size
             tpl.find('p').text(data.files[0].name)
                          .append('<i>' + formatFileSize(data.files[0].size) + '</i>');
-
+		
             // Add the HTML to the UL element
             data.context = tpl.appendTo(ul);
-
+			$("#disableButton").removeAttr('disabled');
+		 }
+		 else
+		 {
+			alert("Only 1 file Allowed");
+				
+			}
+			
+		
             // Initialize the knob plugin
             tpl.find('input').knob();
 
@@ -34,17 +44,17 @@ $(function(){
             tpl.find('span').click(function(){
 
                 if(tpl.hasClass('working')){
-                    jqXHR.abort();
-                }
 
                 tpl.fadeOut(function(){
                     tpl.remove();
+					if($('.working').html()==undefined)
+					$("#disableButton").attr('disabled',true);
                 });
-
+ }
             });
 
             // Automatically upload the file once it is added to the queue
-            var jqXHR = data.submit();
+            // var jqXHR = data.submit();
         },
 
         progress: function(e, data){
@@ -71,7 +81,7 @@ $(function(){
 
     // Prevent the default action when a file is dropped on the window
     $(document).on('drop dragover', function (e) {
-        e.preventDefault();
+        
     });
 
     // Helper function that formats the file sizes

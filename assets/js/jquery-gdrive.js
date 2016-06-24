@@ -58,7 +58,6 @@
 			gopts.init_stage |= 2;
 		}});
 	};
-	
 	function set_results(target_id, data) {
 		if (data.action == google.picker.Action.PICKED) {
 			var doc = data.docs[0];
@@ -68,6 +67,11 @@
 	        var fullpath = "gdrive://" + filename + "/" + file_id;
 	        $('#'+target_id).val(fullpath);
 	        $('#'+target_id).change();
+			$('#disableButton2').removeAttr('disabled')
+		}
+		else
+		{		
+			$('#disableButton2').attr('disabled',true)
 		}
 	};
 	

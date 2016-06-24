@@ -11,9 +11,14 @@
                   <img src="assets/images/desktop-pc.png" class="img-responsive center-block" />From Local
                 </a>
                 <a href="" class="list-group-item text-center">
-                  <img src="assets/images/drive.png" class="img-responsive center-block" />From Other Resources
+                  <img src="assets/images/drive.png" class="img-responsive center-block" />From Google Drive
                 </a>
-				
+				<a href="" class="list-group-item text-center">
+                  <img src="assets/images/dropbox-logo.png" class="img-responsive center-block" />From Dropbox
+                </a>
+				<a href="" class="list-group-item text-center">
+                  <img src="assets/images/box.png" class="img-responsive center-block" />From Box
+                </a>
               </div>
             </div>
             <div class="col-lg-10 col-md-10 col-sm-8 col-xs-8 bhoechie-tab">
@@ -21,12 +26,16 @@
                 <div class="bhoechie-tab-content active">
                       <form id="upload" method="post" enctype="multipart/form-data">
 						<div id="drop">
-							<h4>Drag & Drop or Select a File</h4>
-
-							<a>Browse</a>
-							
-							<input type="file" name="upl" multiple /></br>
-							
+							<div class="drophere">
+								<h3 class="color">Drop Here</h3>
+								<p class="color">or</p>
+								<h4 class="color">Select a File</h4>
+								<a id="browse">Browse</a>
+								<input type="file" name="file-1[]" name="file-1"  id="file-1" class="inputfile inputfile-1"/>
+								<!-- <input type="file" name="upl" onchange="txtchange()" multiple /></br> -->
+							</div>
+						</div>
+						<div id="drop2">
 							<div class="control-group">
 							<h5 class="text-center">Select Verification type</h5>
 								<label class="control control--radio">Email
@@ -49,7 +58,7 @@
 			</ul>
 
 		</form>
-		<button type="submit" class="btn search-button center-block middle" onclick="location.href='#postalupload';">Verify</button>
+		<button type="submit" class="btn search-button center-block" disabled="disabled" id="disableButton" onclick="location.href='#postalupload';">Verify</button>
                     </center>
                 </div>
                 <!-- train section -->
@@ -57,12 +66,12 @@
 				<form id="upload">
                     <center>
 					<div id="drop">
-                      <h4 class="text-center" style="color:#1c2857; margin-top:40px;">Upload a File</h4>
-					<button class="btn search-button">Choose a file</button>
-
-							<div id="file-info"><pre></pre></div>
-					<input id="gdrive_file" type="text" />
-					<div class="control-group">
+                      <h4 class="text-center" style="color:#1c2857; margin-top:40px;">Upload a File from Google Drive</h4>
+					<a type="submit" id="gdrive_file_selector" class="btn search-button">Import a File</a></br>
+					<input id="gdrive_file" type="text" readonly />
+					</div>
+					<div id="drop2">
+							<div class="control-group">
 							<h5 class="text-center">Select Verification type</h5>
 								<label class="control control--radio">Email
 									<input type="radio" name="radio"/>
@@ -77,80 +86,74 @@
 									<div class="control__indicator"></div>
 								</label>
 							</div>
-					</div>
-					
-	<!--div class="container" ng-controller="ExampleCtrl" ng-init="initialize()">
-      <div class="row">
-        <div class="col-sm-8 col-sm-offset-2">
-          <div class="text-center">
-            <img src="images/logo-drive.png" class="logo" alt="Drive logo" />
-            <div class="heading-headline">
-              Angular Google Picker {{ selectedLocale.name }}
-            </div>
-
-            <p>
-              The plugin also support locales, which allow you to open the Picker using the language of your choice :
-              <a href="#" data-toggle="modal" data-target="#language">Select a language</a>
-            </p>
-
-            <div>
-              <a href="javascript:;" lk-google-picker on-picked="onPicked(docs)" on-loaded="onLoaded()" on-cancel="onCancel()" class="btn btn-2 btn-2c btn-blue">
-                <i class="fa fa-inbox"></i>
-                <span>Pick files</span>
-              </a>
-
-              <a href="https://github.com/softmonkeyjapan/angular-google-picker" class="btn btn-2 btn-2c btn-blue">
-                <i class="fa fa-github"></i>
-                <span>Fork me</span>
-              </a>
-            </div>
-          </div>
-
-          <div class="row dashed-border" ng-switch="files.length > 0">
-            <div class="text-center" ng-switch-when="false">
-              <div class="none">No files selected yet</div>
-            </div>
-
-            <div ng-switch-when="true">
-              <div class="col-sm-4 item item-test" ng-repeat="file in files">
-                <a href="{{ file.url }}" target="_blank">
-                  <div class="icon">
-                    <div class="document">
-                      <span class="ng-binding">
-                        {{ file.name | getExtension }}
-                      </span>
-                    </div>
-                  </div>
-                  <span>{{ file.name | limitTo:20 }}</span><span ng-if="file.name.length >=20">...</span>
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div-->
-					
-					
-					
+						</div>
                     </center>
 				</form>
-				<button type="submit" class="btn search-button center-block middle" onclick="location.href='#postalupload';">Verify</button>
-                </div>
+				<button type="submit" class="btn search-button center-block" disabled="disabled" id="disableButton2" onclick="location.href='#postalupload';">Verify</button>
+    
+                <!-- hotel search -->
+                
+            </div>
     
                 <!-- hotel search -->
                 <div class="bhoechie-tab-content">
+				<form id="upload">
                     <center>
-                      <h4 class="text-center" style="color:#1c2857; margin-top:130px;">Upload a file from Dropbox</h4>
-					  <input type="dropbox-chooser" class="btn search-button" name="selected-file" id="db-chooser"/>
+					<div id="drop">
+                      <h4 class="text-center" style="color:#1c2857; margin-top:40px;">Upload a File from Dropbox</h4>
+					<a type="submit" id="gdrive_file_selector" class="btn search-button">Import a File</a></br>
+					<input id="gdrive_file" type="text" readonly />
+					</div>
+					<div id="drop2">
+							<div class="control-group">
+							<h5 class="text-center">Select Verification type</h5>
+								<label class="control control--radio">Email
+									<input type="radio" name="radio"/>
+									<div class="control__indicator"></div>
+								</label>
+								<label class="control control--radio">Postal Address
+									<input type="radio" name="radio"/>
+									<div class="control__indicator"></div>
+								</label>
+								<label class="control control--radio">Phone
+									<input type="radio" name="radio"/>
+									<div class="control__indicator"></div>
+								</label>
+							</div>
+						</div>
                     </center>
-                </div>
+				</form>
+				<button type="submit" class="btn search-button center-block" disabled="disabled" id="disableButton2" onclick="location.href='#postalupload';">Verify</button>
+            </div>
                 <div class="bhoechie-tab-content">
+				<form id="upload">
                     <center>
-					
-                      <h4 class="text-center" style="color:#1c2857; margin-top:130px;">Upload a file from Box</h4>
-					  <button type="submit" class="btn search-button">Import file from Box</button>
+					<div id="drop">
+                      <h4 class="text-center" style="color:#1c2857; margin-top:40px;">Upload a File from Box</h4>
+					<a type="submit" id="gdrive_file_selector" class="btn search-button">Import a File</a></br>
+					<input id="gdrive_file" type="text" readonly />
+					</div>
+					<div id="drop2">
+							<div class="control-group">
+							<h5 class="text-center">Select Verification type</h5>
+								<label class="control control--radio">Email
+									<input type="radio" name="radio"/>
+									<div class="control__indicator"></div>
+								</label>
+								<label class="control control--radio">Postal Address
+									<input type="radio" name="radio"/>
+									<div class="control__indicator"></div>
+								</label>
+								<label class="control control--radio">Phone
+									<input type="radio" name="radio"/>
+									<div class="control__indicator"></div>
+								</label>
+							</div>
+						</div>
                     </center>
-                </div>
+				</form>
+				<button type="submit" class="btn search-button center-block" disabled="disabled" id="disableButton2" onclick="location.href='#postalupload';">Verify</button>
+            </div>
             </div>
         </div>
 		</div>
