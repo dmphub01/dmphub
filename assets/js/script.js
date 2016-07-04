@@ -6,7 +6,9 @@ $(function(){
         // Simulate a click on the file input button
         // to show the file browser dialog
 		
+		
         $(this).parent().find('input').click();
+		
     });
 
     // Initialize the jQuery File Upload plugin
@@ -14,14 +16,21 @@ $(function(){
 
         // This element will accept file drag/drop uploading
         dropZone: $('#drop'),
-
+	
         // This function is called when a file is added to the queue;
         // either via the browse button, or via drag/drop:
         add: function (e, data) {
 		 if($('#upload ul li').length==0)
 		 {
+			 
             var tpl = $('<li class="working"><img src="assets/images/Excel-2.png" width="48" height="48" /><p></p><span></span></li>');
-             
+			var nameoffile = data.files[0].name;		
+			var extension = nameoffile.substr( (nameoffile.lastIndexOf('.') +1) );			
+if($.inArray(extension, ['xls','xlsx']) == -1) {
+    alert('invalid extension!');
+}
+             else
+			 {
             // Append the file name and file size
             tpl.find('p').text(data.files[0].name)
                          .append('<i>' + formatFileSize(data.files[0].size) + '</i>');
@@ -29,6 +38,7 @@ $(function(){
             // Add the HTML to the UL element
             data.context = tpl.appendTo(ul);
 			$("#disableButton").removeAttr('disabled');
+			 }
 		 }
 		 else
 		 {

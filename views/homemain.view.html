@@ -9,7 +9,7 @@
 			</div>
 	
 		<div class="container clear-padding">
-			<div class="col-md-8 col-md-offset-2 tran-search-box">
+			<div class="col-md-7 col-md-offset-2 tran-search-box">
 			
 			<div id="tabs" ng-controller="TabsCtrl"  class="search-section tran-search-box tabpanel">
         <ul class="nav nav-tabs search-top">
@@ -22,11 +22,11 @@
         </div>
     </div>
     <script type="text/ng-template" id="one.tpl.html">
-		<div role="tabpanel"  id="email-address" style="padding:20px;">
+		<div role="tabpanel"  id="email-address" style="padding:20px; padding-bottom:5px !important;">
 								<div ng-controller="emailctrl">
 									<div class="col-md-12 product-search-title">Email Verification</div>
 									<div class="col-md-12 col-sm-12 col-lg-12 col-xs-12">
-									<div class="col-md-6 col-sm-6 search-col-padding">
+									<div class="col-md-7 col-sm-7 search-col-padding">
 										<div class="input-group">
 											<!--input type="email"  class="form-control searchtxtbgcolor"  ng-model="email" name="email" required placeholder="rayestevez@gmail.com"-->
 											<select class="mail-dropdown" id="emailselect">
@@ -47,10 +47,10 @@
 							<input type="submit" id="btnsubmit" onclick="mypostalevent3()" class="search-button btn transition-effect" value="Verify"/>
 									</div>
 									</div>
-									<div class="col-md-6 col-sm-6">
+									<div class="col-md-4 col-sm-4">
 									<div class="or-text">OR</div>
 					<div class="col-md-4 col-lg-4 col-sm-12 col-xs-12">
-					<a href="#uploadfile" class="search-button btn">Upload&nbsp;&nbsp;<i class="fa fa-upload"></i></a>
+					<a href="#uploadfile" target="_self" class="search-button btn uploadfile mbl-search">Upload&nbsp;&nbsp;<i class="fa fa-upload"></i></a>
 					</div>
 									</div>
 									</div>
@@ -67,14 +67,14 @@
 								
 									<div class="col-md-12 product-search-title">Postal Address Verification</div>
 									<div class="col-md-12 col-lg-12 col-sm-12 col-xs-12">
-									<div class="col-md-6 col-xs-12 search-col-padding">
+									<div class="col-md-7 col-xs-12 search-col-padding">
 										<div class="input-group">
 											<select class="mail-dropdown" id="zipselect">
-												<option value="zipcode1" selected>JAMES 523 ALDEN AVE WESTFIELD NJ 07090-3040</option>
-												<option value="zipcode2">WATSON 133 BENSON PL WESTFIELD NJ 7090-2006</option>
-												<option value="zipcode3">VERONICA 211 N SCOTCH PLAINS AVE WESTFIELD NJ 7090-4400</option>
-												<option value="zipcode4">DESMOND 109 DICKSON DR WESTFIELD NJ 07090-3525</option>
-												<option value="zipcode5">JOHN 560 FAIRMONT AVE WESTFIELD NJ 07090-1359</option>
+												<option value="zipcode1" selected>523 ALDEN AVE WESTFIELD NJ 07090-3040</option>
+												<option value="zipcode2">133 BENSON PL WESTFIELD NJ 7090-2006</option>
+												<option value="zipcode3">211 N SCOTCH PLAINS AVE WESTFIELD NJ 7090-4400</option>
+												<option value="zipcode4">109 DICKSON DR WESTFIELD NJ 07090-3525</option>
+												<option value="zipcode5">560 FAIRMONT AVE WESTFIELD NJ 07090-1359</option>
 											</select>
 											<span class="input-group-addon"><i class="fa fa-map-marker fa-fw"></i></span>
 										</div>
@@ -82,7 +82,7 @@
 										<input type="submit" id="zipcode" onclick="mypostalevent()" class="search-button btn transition-effect" value="Verify"/>
 									</div>
 									</div>
-									<div class="col-md-6 col-sm-6">
+									<div class="col-md-4 col-sm-4">
 									<div class="or-text">OR</div>
 					<div class="col-md-4 col-lg-4 col-sm-12 col-xs-12">
 					<a href="#postalfile" class="search-button btn">Upload&nbsp;&nbsp;<i class="fa fa-upload"></i></a>
@@ -101,7 +101,7 @@
 									<div ng-controller="phnecntrl">
 									<div class="col-md-12 product-search-title">Phone Verification</div>
 									<div class="col-md=12 col-xs-12 col-lg-12 col-sm-12">
-									<div class="col-md-6 col-sm-6 search-col-padding">
+									<div class="col-md-7 col-sm-7 search-col-padding">
 										<div class="input-group">
 											<!--input type="email"  class="form-control searchtxtbgcolor"  ng-model="email" name="email" required placeholder="rayestevez@gmail.com"-->
 											<select class="phone-dropdown" id="phoneselect">
@@ -116,7 +116,7 @@
 							<input type="submit" onclick="mypostalevent2()" id="phone-number" class="search-button btn transition-effect" value="Verify"/>
 									</div>
 									</div>
-									<div class="col-md-6 col-sm-6">
+									<div class="col-md-4 col-sm-4">
 									<div class="or-text">OR</div>
 					<div class="col-md-4 col-lg-4 col-sm-12 col-xs-12">
 					<a href="#uploadfilephone" class="search-button btn">Upload&nbsp;&nbsp;<i class="fa fa-upload"></i></a>
@@ -432,9 +432,9 @@
         <h3>Free <p style="font-size:13px !important; margin-top:10px;">For Life</p><span>$0</span></h3>
                 
         <ul>
-            <li>Verify upto 250 emails</li>
-            <li>Verify upto 250 postals</li>
-            <li>Verify upto 250 phones</li>
+            <li>Verify up to 250 emails</li>
+            <li>Verify up to 250 postals</li>
+            <li>Verify up to 250 phones</li>
 		<li class="disabled">Suppresion</li>
 		<li class="disabled">N.C.O.A</li>
 		<li class="disabled">Deceased</li>
@@ -449,10 +449,10 @@
         <h3>Small Business<span>$99/mo</span></h3>
                
         <ul>
-            <li>Verify upto 5000 Emails</li>
-            <li>Verify upto 5000 Postals</li>
-            <li>Verify upto 5000 Phones</li>
-	    <li>Parse & Verify upto 5000 names</li>
+            <li>Verify up to 5000 Emails</li>
+            <li>Verify up to 5000 Postals</li>
+            <li>Verify up to 5000 Phones</li>
+	    <li>Parse & Verify up to 5000 names</li>
 <li>Suppresion</li>
 <li>Quarterly N.C.O.A (5000)</li>
 <li>Quarterly Deceased</li>
@@ -467,9 +467,9 @@
         <h3>Mid Market <p style="font-size:13px !important; margin-top:10px;">Best Value</p><span>$299/mo</span></h3>
 		
         <ul>
-            <li>Verify upto 100,000 Emails</li>
-            <li>Verify upto 100,000 Postal</li>
-            <li>Verify upto 100,000 Phones</li>
+            <li>Verify up to 100,000 Emails</li>
+            <li>Verify up to 100,000 Postal</li>
+            <li>Verify up to 100,000 Phones</li>
 			<li>Parse & Verify 100,000 names</li>
 <li>Suppresion</li>
 <li>Quarterly N.C.O.A (50,000)</li>
@@ -485,9 +485,9 @@
         <h3>Enterprise<span>$999/mo</span></h3>
         		
         <ul>
-            <li>Verify upto 500,000 Emails</li>
-            <li>Verify upto 500,000 Postal</li>
-            <li>Verify upto 500,000 Phones</li>
+            <li>Verify up to 500,000 Emails</li>
+            <li>Verify up to 500,000 Postal</li>
+            <li>Verify up to 500,000 Phones</li>
 			<li>Parse & Verify 500,000 names</li>
 <li>Suppresion</li>
 <li>Quarterly N.C.O.A (250,000)</li>
@@ -560,7 +560,7 @@
 			</div>
 			<div class="col-md-6 col-sm-12 col-lg-6 col-xs-12 contact-form">
 				<form >
-					<div class="col-md-6 col-lg-6 col-sm-6 col-xs-12">
+					<div class="col-md-6 col-lg-6 col-sm-6 col-xs-12" style="padding-right:0px !Important;">
 						<input type="text" name="name" required class="form-control" placeholder="Your Name">
 					</div>
 					<div class="col-md-6 col-lg-6 col-sm-6 col-xs-12" style="padding-right:0px !important;">
@@ -577,8 +577,10 @@
 					
 					<div class="clearfix"></div>
 					<div class="col-md-12 col-lg-12 col-sm-12 col-xs-12" style="padding-right:0px !important;">
-						<div class="g-recaptcha" data-sitekey="6LeeKiITAAAAAAMLMwMW1FGgGhILSL_IBG45ykRt"style="transform:scale(0.83);-webkit-transform:scale(0.83);transform-origin:0 0;-webkit-transform-origin:0 0; margin-top:12px;"></div>
-						<input type="hidden" name="recaptcha" data-rule-recaptcha="true">
+						<div class="recaptcha-wrap">
+							<div class="g-recaptcha" data-sitekey="6LeeKiITAAAAAAMLMwMW1FGgGhILSL_IBG45ykRt"style="transform:scale(0.83);-webkit-transform:scale(0.83);transform-origin:0 0;-webkit-transform-origin:0 0; margin-top:12px;"></div>
+							<input type="hidden" name="recaptcha" data-rule-recaptcha="true">
+						</div>
 					</div>
 					<div class="clearfix"></div>
 					<div class="col-md-12 col-lg-12 col-sm-12 col-xs-12" style="padding-right:0px !important;">

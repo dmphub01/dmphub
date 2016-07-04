@@ -1,21 +1,11 @@
 <link href="http://www.jqueryscript.net/css/jquerysctipttop.css" rel="stylesheet" type="text/css">
 
-<script>
-// Show full page Loading Overlay
-$.LoadingOverlay("show");
-// Hide it after 3 seconds
-setTimeout(function(){
-    $.LoadingOverlay("hide");
-}, 1500);
-</script>
-
 <!-- BEGIN: SITE-WRAPPER -->
 <div class="site-wrapper">
 
 	
 <!-- START: FOOTER -->
-<section id="footer">
-	<footer>
+<section>
 		
 		<div class="main-footer row main-bg">
 			
@@ -57,7 +47,7 @@ setTimeout(function(){
 							<p style="color: #9b9b9b;">Total Emails: <span style="color:#1c2857;">100</span><span style="color:#000;border-right:1px solid #000;padding:0 10px"></span></p>
 						</div>
 						<div>
-							<p style="color: #9b9b9b;">Run Time: <span style="color:#1c2857;">2 min</span></p>
+							<p style="color: #9b9b9b;">Run Time: <span style="color:#1c2857;">6 Sec</span></p>
 						</div>
 					</div>
 				</div>
@@ -166,7 +156,7 @@ setTimeout(function(){
 			
 		</div>
 		
-	</footer>
+
 </section>
 <!-- END: FOOTER -->
 
@@ -177,4 +167,18 @@ setTimeout(function(){
 <script src="assets/js/svg-donut-chart-framework.js"></script>
 <script src='http://cdnjs.cloudflare.com/ajax/libs/snap.svg/0.3.0/snap.svg-min.js'></script> 
 
+<script>
+// Show full page Loading Overlay
+$.LoadingOverlay("show");
+// Hide it after 3 seconds
+setTimeout(function(){
+    $.LoadingOverlay("hide");
+}, 1500);
+</script>
 
+<script>
+window.onhashchange = function() {
+ window.location = "";
+
+}
+</script>
