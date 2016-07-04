@@ -8,9 +8,10 @@
  * # HomeCtrl
  * Controller of the moreYourApp
  */
+ 
 angular.module('app')
   .controller('UploadfileController', function ($scope) {
-    $scope.awesomeThings = [
-      
-    ];
+	
+   
   });
+  

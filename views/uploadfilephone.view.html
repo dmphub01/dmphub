@@ -1,7 +1,4 @@
-
-		
-		
-	<div class="upload-file">
+<div class="upload-file">
 	<div class="row">
 		<div class="container">
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 bhoechie-tab-container">
@@ -30,10 +27,11 @@
 								<h3 class="color">Drop Here</h3>
 								<p class="color">or</p>
 								<h4 class="color">Select a File</h4>
-								<a id="browse">Browse</a>
+								<a id="browse" class="hidden-xs">Browse</a>
 								<input type="file" name="file-1[]" name="file-1"  id="file-1" class="inputfile inputfile-1"/>
 								<!-- <input type="file" name="upl" onchange="txtchange()" multiple /></br> -->
 							</div>
+							<a id="browse" class="visible-xs mbl-button">Browse</a>
 						</div>
 						<div id="drop2">
 							<div class="control-group">
@@ -67,7 +65,7 @@
                     <center>
 					<div id="drop">
                       <h4 class="text-center" style="color:#1c2857; margin-top:40px;">Upload a File from Google Drive</h4>
-					<a type="submit" id="gdrive_file_selector" class="btn search-button">Import a File</a></br>
+					<a type="submit" id="gdrive_file_selector" class="btn search-button">Choose a File</a></br>
 					<input id="gdrive_file" type="text" readonly />
 					</div>
 					<div id="drop2">
@@ -155,9 +153,8 @@
                     <center>
 					<div id="drop">
                       <h4 class="text-center" style="color:#1c2857; margin-top:40px;">Upload a File from Dropbox</h4>
-					<a type="submit" id="gdrive_file_selector" class="btn search-button">Import a File</a></br>
-					<input id="gdrive_file" type="text" readonly />
-					</div>
+							<input id="chooser" type="dropbox-chooser" name="selected-file" class="center-block" data-link-type="preview" readonly />
+					</div>	
 					<div id="drop2">
 							<div class="control-group">
 							<h5 class="text-center">Select Verification type</h5>
@@ -177,18 +174,18 @@
 						</div>
                     </center>
 				</form>
-				<button type="submit" class="btn search-button center-block" disabled="disabled" id="disableButton2" onclick="location.href='#uploadphone';">Verify</button>
+				<button type="button" class="btn search-button center-block" id="disableButton3">Verify</button>
             </div>
                 <div class="bhoechie-tab-content">
 				<form id="upload">
                     <center>
-					<div id="drop">
+					<div id="box-popup">
                       <h4 class="text-center" style="color:#1c2857; margin-top:40px;">Upload a File from Box</h4>
-					<a type="submit" id="gdrive_file_selector" class="btn search-button">Import a File</a></br>
-					<input id="gdrive_file" type="text" readonly />
-					</div>
+					 
+<button id="box-select" type="button" class="btn search-button center-block" data-link-type="shared" data-multiselect="false" data-client-id="5gv6e9ncnxh7l9c1032d6gr34prper5x">Choose a File</button>
+<a class="center-block" id="box-link" target="_blank"></a>
 					<div id="drop2">
-							<div class="control-group">
+						<div class="control-group">
 							<h5 class="text-center">Select Verification type</h5>
 								<label class="control control--radio">Email
 									<input type="radio" name="radio"/>
@@ -202,11 +199,12 @@
 									<input type="radio" name="radio"/>
 									<div class="control__indicator"></div>
 								</label>
-							</div>
 						</div>
+					</div>
+					</div>
                     </center>
 				</form>
-				<button type="submit" class="btn search-button center-block" disabled="disabled" id="disableButton2" onclick="location.href='#uploadphone';">Verify</button>
+				<button type="button" class="btn search-button center-block" id="disableButton4">Verify</button>
     
                 <!-- hotel search -->
                 
@@ -250,46 +248,61 @@
 			});
 		</script>
 		<script src="https://apis.google.com/js/platform.js?onload=onLoadCallback" async defer></script>
-		<script type="text/javascript" src="https://www.dropbox.com/static/api/1/dropins.js" id="dropboxjs" data-app-key="btbx55h8xrag6pb"></script>
-		<script type="text/javascript">
-    // add an event listener to a Chooser button
-    document.getElementById("db-chooser").addEventListener("DbxChooserSuccess",
-        function(e) {
-            alert("Here's the chosen file: " + e.files[0].link)
-			window.location.href = 'e.files[0].link';
-        }, false);
+
+<script type="text/javascript" src="https://app.box.com/js/static/select.js"></script>
+	  <script type="text/javascript">
+$('#disableButton3').click(function(){
+		var value=$('#chooser').val();
+		if(value==""){
+		alert("Please select any file")
+		}
+		else
+		{
+	window.location.href = "#uploadphone";		
+		}
+		});
 </script>
-
 <script>
-/*
- *    Welcome to the Kloudless JS File Explorer!
- *
- *    To view the explorer in action click 'Result'!
- */
+var options = {
+  clientId:'5gv6e9ncnxh7l9c1032d6gr34prper5x',
+  linkType: 'shared',
+  multiselect: 'true'
+};
 
-// File Explorer with jQuery
-// For a version without jQuery, and with all options and event handlers, see here: http://jsfiddle.net/pseudonumos/ax4wuxkp/
+var boxSelect = new BoxSelect(options);
 
-var explorer = window.Kloudless.explorer({
-    app_id: 'iCZ_ICMy43H0NSoz0QbLvmyjzCHf2frAOPaBfWVgh9_vrFIM',
-    multiselect: true,
-    computer: true,
+// Register a success callback handler
+boxSelect.success(function(response) {
+var fileNames = [];
+var sharedLinks = response;
+
+console.log(response);
+debugger;
+//Get current value for file-list div
+//var currentStr = document.getElementById("file-list").innerHTML;
+
+//Add sharedLinks to file-list div with file names as anchor text
+for (var i=0; i<sharedLinks.length; i++) {
+  $('#box-link').attr('href',response[i].url);
+  $('#box-link').html(response[i].url);
+}
+
 });
 
-explorer.on('success', function(files) {
-
-console.log(files)
-    $("#file-info > pre").replaceWith('<pre>' +files[0].name  + '</pre>');
+// Register a cancel callback handler
+boxSelect.cancel(function() {
 });
-
-explorer.choosify($('#chooser'));
-
-var files = [{
-    url: "http://localhost/assets/images/dmp_edited_origin.png",
-    name: "dmp_edited_origin.png"
-}];
-
-
 </script>
-	  
 <script>
+		$('#disableButton4').click(function(){
+		var value=$('#box-link').html();
+		if(value==""){
+		alert("Please select any file")
+		}
+		else
+		{
+	window.location.href = "#uploadphone";		
+		}
+		});
+		</script>
+		<script type="text/javascript" src="assets/js/dropins.js" id="dropboxjs" data-app-key="jrcl6k5obgzumgj"></script>

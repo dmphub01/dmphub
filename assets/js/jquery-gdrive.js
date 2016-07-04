@@ -14,6 +14,8 @@
 		'debug': false
 	};
 	
+	
+	
 	var dlgopts = {};
 	
 	function do_auth(callback) {
@@ -58,14 +60,19 @@
 			gopts.init_stage |= 2;
 		}});
 	};
+	
 	function set_results(target_id, data) {
 		if (data.action == google.picker.Action.PICKED) {
 			var doc = data.docs[0];
 			var file_id = doc.id;
 	        var url = doc[google.picker.Document.URL];
+			
 	        var filename = doc[google.picker.Document.NAME];
+			
 	        var fullpath = "gdrive://" + filename + "/" + file_id;
+			
 	        $('#'+target_id).val(fullpath);
+			
 	        $('#'+target_id).change();
 			$('#disableButton2').removeAttr('disabled')
 		}
@@ -155,6 +162,7 @@
                 if(null != callback) callback();
             });
         }
+		
 		if(action == 'debug') {
 			return gopts;
 		}

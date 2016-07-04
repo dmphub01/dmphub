@@ -121,25 +121,8 @@
                 $location.path('/');
             }
         });
+		*/
 		
-		
-*/
     }
 	
 	
-	app.module('app', ['lk-google-picker'])
-
-.config(['lkGoogleSettingsProvider', function (lkGoogleSettingsProvider) {
-
-  // Configure the API credentials here
-  lkGoogleSettingsProvider.configure({
-    apiKey   : 'AIzaSyAEu079vZFFeuFjpfWOrcmw2uGxISgmWwI',
-    clientId : '20787361493-372fi66o31k7t4t2ha3nvj5j36blm417.apps.googleusercontent.com'
-  });
-}])
-
-.filter('getExtension', function () {
-  return function (url) {
-    return url.split('.').pop();
-  };
-})
