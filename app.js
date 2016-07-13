@@ -100,6 +100,12 @@
                 controllerAs: 'vm'
             })
 			
+			.when('/paidregister', {
+                controller: 'RegisterpaidController',
+                templateUrl: 'views/register_paid.view.html',
+                controllerAs: 'vm'
+            })
+			
             .otherwise({ redirectTo: '/' });
     }
 
