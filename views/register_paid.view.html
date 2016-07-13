@@ -10,20 +10,20 @@
 <div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2 col-xs-12 signup-form" style="padding:15px 25px;">
 <h3 class="text-center">Create Account</h3>
 	<!--hr style="width:60%; margin-bottom:30px; margin:10px auto;"-->
-    <form name="form" class="col-md-12" ng-submit="vm.register()" role="form" style="padding:0px !important;">
+    <form name="form" class="col-md-12" ng-submit="vm.suri()" role="form" style="padding:0px !important;">
 	<div class="col-md-12" style="padding:0px !important;">
 		<div class="col-md-6" style="padding:0px !important;">
         <div class="form-group" ng-class="{ 'has-error': form.firstName.$dirty && form.firstName.$error.required }">
             <label for="username"></label>
             <input type="text" name="firstName" id="firstName" class="form-control" ng-model="vm.user.firstName" placeholder="First Name" required />
-            <span ng-show="form.firstName.$dirty && form.firstName.$error.required" class="help-block">First name is required</span>
+            
         </div>
 		</div>
 		<div class="col-md-6" style="padding-right:0px !important;">
         <div class="form-group" ng-class="{ 'has-error': form.lastName.$dirty && form.lastName.$error.required }">
             <label for="username"></label>
             <input type="text" name="lastName" id="Text1" class="form-control" ng-model="vm.user.lastName" placeholder="Last Name" required />
-            <span ng-show="form.lastName.$dirty && form.lastName.$error.required" class="help-block">Last name is required</span>
+            
         </div>
 		</div>
 		</div>
@@ -33,7 +33,6 @@
         <div class="form-group" ng-class="{ 'has-error': form.username.$dirty && form.username.$error.required }">
             <label for="username"></label>
             <input type="email" name="username" id="username" class="form-control" placeholder="xxx@yyy.zzz" ng-model="vm.user.username" required />
-            <span ng-show="form.username.$dirty && form.username.$error.required" class="help-block">Username is required</span>
 			<p style="font-size:10px;">Your email address serves as your username</p>
         </div>
 		</div>
@@ -50,7 +49,7 @@
         <div class="form-group" ng-class="{ 'has-error': form.password.$dirty && form.password.$error.required }">
             
             <input type="password" name="password" id="password" class="form-control" ng-model="vm.user.password"  placeholder="Password"required />
-            <span ng-show="form.password.$dirty && form.password.$error.required" class="help-block">Password is required</span>
+            
 			<p style="font-size:10px;">Your password must be 8 characters or more</p>
         </div>
 		</div>
@@ -58,7 +57,7 @@
         <div class="form-group" ng-class="{ 'has-error': form.conformpassword.$dirty && form.conformpassword.$error.required }">
             
             <input type="password" name="confirmpassword" id="confirmpassword" class="form-control" ng-model="vm.user.confirmpassword"  placeholder="Confirm Password" required />
-            <span ng-show="form.password.$dirty && form.password.$error.required" class="help-block">Password is required</span>
+            
 			<!--p style="font-size:10px;">Your password must be 6 characters or more</p-->
         </div>
 		</div>
@@ -68,7 +67,7 @@
 		<div class="form-group" ng-class="{ 'has-error': form.organization.$dirty && form.organization.$error.required }">
 
             <input type="organization" name="organization" id="organization" class="form-control" ng-model="vm.user.organization" placeholder="Organization Name" required />
-            <span ng-show="form.organization.$dirty && form.organization.$error.required" class="help-block">Organization Name is required</span>
+            
         </div>
 		</div>
 		<div class="col-md-12" style="padding:0px !important;">
@@ -95,12 +94,51 @@
         </div>
 		</div>
 		</div>
-		<div class="col-md-12 col-lg-12 col-sm-12 col-xs-12" style="padding:0px !important;">
-		<div class="col-md-5 col-lg-5 col-sm-12 col-xs-12" style="padding-left:0px !important;">
-		<!--div class="recaptcha-wrap">
-			<div class="g-recaptcha" id="g-recaptcha" data-sitekey="6LeeKiITAAAAAAMLMwMW1FGgGhILSL_IBG45ykRt"style="transform:scale(0.83);-webkit-transform:scale(0.83);transform-origin:0 0;-webkit-transform-origin:0 0;"></div>
-			</div-->
-			<div class="reCaptcha">
+		<div class="col-md-12" style="padding:0px !important;">
+		<button type="button" class="btn btn-primary center-block top" onClick = "this.style.display= 'none';" id="forms-button" style="margin-top:20px !important;">Submit</button>
+		</div>
+		<div class="bottom">
+		<div class="col-md-12" style="padding:0px !important;">
+		<div class="form-group" style="overflow:hidden;">
+		<div class="col-md-6 col-lg-6 col-sm-12 col-xs-12" style="padding:0px !Important;" ng-class="{ 'has-error': form.city.$dirty && form.city.$error.required }">
+            <select class="card-dropdown" style="margin-top:20px;">
+				<option value="card">Select Card Type</option>
+				<option value="card">Credit Card</option>
+				<option value="card">Debit Card</option>
+				<option value="card">Paypal</option>
+				<option value="card">ACH</option>
+			</select>
+        </div>
+		
+		<div class="col-md-6 col-lg-6 col-sm-12 col-xs-12" ng-class="{ 'has-error': form.card.$dirty && form.card.$error.required }" style="padding-right:0px">
+            <label for="card"></label>
+            <input id="txtChar" onkeypress="return isNumberKey(event)" type="text" name="txtChar"class="form-control" ng-model="vm.user.card" placeholder="Card Number"/>
+			
+        </div>
+		</div>
+		</div>
+		<label for="State" style="margin:10px 0px;">Expiration Date</label>
+		<div class="col-md-12" style="padding:0px !important;">
+		
+		<div class="form-group" style="overflow:hidden;">
+		<div class="col-md-3 col-lg-3 col-sm-3 col-xs-12" style="padding:0px !Important;" ng-class="{ 'has-error': form.cvv.$dirty && form.cvv.$error.required }">
+          
+            <input id="txtChar" onkeypress="return isNumberKey(event)" type="cvv" name="txtChar"class="form-control" ng-model="vm.user.cvv" placeholder="CVV" style="margin-top:5px;"/>
+        </div>
+		
+		<div class="col-md-5 col-lg-5 col-sm-5 col-xs-12" style="padding:5px 15px !Important;" ng-class="{ 'has-error': form.month.$dirty && form.month.$error.required }">
+            
+            <input type="mnt" name="month" id="month" class="form-control" ng-model="vm.user.month" placeholder="Month"/>
+        </div>
+		
+		<div class="col-md-4 col-lg-4 col-sm-4 col-xs-12" style="padding:0px !Important;" ng-class="{ 'has-error': form.year.$dirty && form.year.$error.required }">
+       
+            <input type="year" name="year" id="year" class="form-control" ng-model="vm.user.year" placeholder="Year" style="margin-top:5px"/>
+        </div>
+		</div>
+		</div>
+		<div class="col-md-5 col-lg-5 col-sm-12 col-xs-12" style="padding:0px !important;">
+		<div class="reCaptcha">
 			<div class="col-md-8 col-lg-8" style="padding:0px;">
 				
 					<input type="checkbox" id="test1" />
@@ -113,7 +151,8 @@
 				<p>reCaptcha</p>
 			</div></div>
 		</div>
-		
+		</div>
+		<!--div class="col-md-12 col-lg-12 col-sm-12 col-xs-12" style="padding:0px !important;">
 		<div class="col-md-7 col-lg-7 col-sm-12 col-xs-12" style="padding-right:0px !important; margin:20px 0px;">
         <div class="form-group" ng-class="{ 'has-error': form.pricing.$dirty && form.pricing.$error.required }">
             <select class="signup-select">
@@ -122,14 +161,14 @@
 				<option value="3">Mid Market</option>
 				<option value="4">Enterprise</option>
 			</select>
-			<!--p style="font-size:10px;">Your password must be 6 characters or more</p-->
+			<!--p style="font-size:10px;">Your password must be 6 characters or more</p>
         </div>
 		</div>
-		</div>
+		</div-->
 		
 		<div class="col-md-12 col-lg-12 col-sm-12 col-xs-12">
 		<div class="form-actions">
-		<button type="submit" class="btn btn-primary center-block" id="forms-button" style="margin-top:0px !important;">Submit</button><!--a href="#/login" class="btn btn-link">Cancel</a-->
+		<button type="submit" class="btn btn-primary center-block submit-btn" id="forms-button" style="margin-top:20px !important;">Submit</button><!--a href="#/login" class="btn btn-link">Cancel</a-->
             <img ng-if="vm.dataLoading" src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA==" />
 		
         </div>
@@ -153,3 +192,26 @@ $('.signup-select').val('1');
 
 })
 </script>
+
+<script>
+$('.bottom').hide();
+$('.submit-btn').hide();
+$('.top').on('click', function() {
+	$('.bottom').show();
+	$('.submit-btn').show();
+});
+
+</script>
+
+<script language=Javascript>
+      <!--
+      function isNumberKey(evt)
+      {
+         var charCode = (evt.which) ? evt.which : event.keyCode
+         if (charCode > 31 && (charCode < 48 || charCode > 57))
+            return false;
+
+         return true;
+      }
+      //-->
+   </script>
