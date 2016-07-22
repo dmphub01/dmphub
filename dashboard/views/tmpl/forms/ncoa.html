@@ -1,0 +1,588 @@
+
+<div class="page page-dashboard"> <div class="pageheader"><div class="page-bar"> <ul class="page-breadcrumb"> <li> <a ui-sref="app.dashboard"><i class="fa fa-home"></i> {{main.title}}</a> </li> <li> <a ui-sref="app.datafiles" class="current">{{page.title}}</a> </li> </ul></div> </div> <!-- cards row -->
+
+<div class="row">
+	<div class="col-md-12 col-sm-12 col-xs-12 col-lg-12" style="padding:0px !important;">
+		<div class="container-fluid">
+			<div class="email-content">
+<div ng-controller="AppController" nv-file-drop="" uploader="uploader" filters="queueLimit, customFilter" id="file-upload">
+
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-12 col-lg-12" style="padding:0px;">
+                    <div ng-show="uploader.isHTML5">
+                        <!-- 3. nv-file-over uploader="link" over-class="className" -->
+                        <div class="well my-drop-zone" nv-file-over="" uploader="uploader">
+                            <h3 class="color">Drop Here</h3>
+							<p>Or</p>
+							<input type="file" name="file" id="file" class="inputfile center-block" nv-file-select="" uploader="uploader" class="search-button center-block" />
+							<label for="file" id="file-local"><span class="fa fa-upload"></span>Choose a file</label>
+                        </div>
+                        <!-- Example: nv-file-drop="" uploader="{Object}" options="{Object}" filters="{String}" -->
+
+                    </div>
+                    <!-- Example: nv-file-select="" uploader="{Object}" options="{Object}" filters="{String}" -->
+                    
+                </div>
+                <div class="col-md-8 col-lg-8 col-sm-12 col-xs-12 col-md-offset-2 col-lg-offset-2" style="margin-bottom: 40px">
+                    <table class="table file-table table-responsive">
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th ng-show="uploader.isHTML5">Size</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr ng-repeat="item in uploader.queue">
+                                <td style="padding-top:10px !important;" id="local-file"><strong>{{ item.file.name }}</strong></td>
+                                <td ng-show="uploader.isHTML5" nowrap style="padding-top:10px !important;">{{ item.file.size/1024/1024|number:2 }} MB</td>
+                                <td nowrap style="padding-top:10px !important;">
+                                    <!--button type="button" class="btn btn-success btn-xs" ng-click="item.upload()" ng-disabled="item.isReady || item.isUploading || item.isSuccess">
+                                        <span class="glyphicon glyphicon-upload"></span> Upload
+                                    </button-->
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div>
+    
+                    </div>
+                </div>
+            </div>
+        </div>
+		  <div ng-controller="ModalDemoCtrl">
+			<div class="btn-group col-md-12 col-lg-12 col-sm-12 col-xs-12" id="dropdown" uib-dropdown dropdown-append-to-body>
+				<button id="btn-append-to-body" type="button" class="cloud-button center-block" uib-dropdown-toggle>
+				Import List from Cloud Storage&nbsp;&nbsp;<span class="caret"></span>
+				</button>
+				<div ng-controller="DropBoxCtrl" class="clouddropdown">
+				  <ul class="dropdown-menu cloud-dropdown" uib-dropdown-menu role="menu" aria-labelledby="btn-append-to-body">
+					<li role="menuitem"><a href="javascript:;" lk-google-picker on-picked="onPicked(docs)" on-loaded="onLoaded()" on-cancel="onCancel()" class="btn btn-2 btn-2c">
+						<img src="images/Logo_of_Google_Drive.png" />
+						<span>Google Drive</span>
+					</a></li>
+					<li role="menuitem"><a href="javascript:;" drop-box-picker dbpicker-files="dpfiles">
+						<img src="images/dropbox.png" />
+						<span>Dropbox</span>
+					</a></li>
+					<li role="menuitem"><a href="javascript:;" box-picker boxpicker-files="boxfiles">
+						<img src="images/box.png" />
+						<span>Box</span>
+					</a></li>
+				  </ul>
+				  <div class="row show-grid" ng-switch="dpfiles.length > 0 || boxfiles.length > 0">
+                <div ng-switch-when="true">
+                    <div class="col-sm-12 col-md-8 col-md-offset-3 col-lg-8 col-lg-offset-3 col-xs-12" ng-repeat="file in dpfiles">
+                        <a href="{{ file.link }}" target="_blank" class="text-center" id="dropboxchange">{{ file.link }}</a>
+                        
+                    </div>
+                    <div class="col-sm-12 col-md-8 col-md-offset-3 col-lg-8 col-lg-offset-3 col-xs-12" ng-repeat="file in boxfiles">
+                        <a href="{{ file.url }}" target="_blank" class="text-center" id="boxchange">{{ file.url }}</a>
+                                         </div>
+                </div>
+            </div></div>
+				 <div>
+				  <a href="{{files[0].embedUrl}}" target="_blank" class="google-link center-block">{{files[0].embedUrl}}</a>
+		
+			</div>
+		  </div>
+		  </div>
+		  
+		  </div>
+		  
+		  </div>
+		  
+		  </div>
+		  
+
+		  </div></div> 
+		  
+<div class="row">
+	<div class="col-md-12 col-lg-12 col-sm-12 col-xs-12">
+	<div ng-controller="CollapseDemoCtrl">
+<button type="button" ng-model="isCollapsed" ng-click="showMsg(true)" class="search-button center-block" id="process-btn">Process</button>
+			<div class="postal-results"  ng-if="isCollapsed">
+							<div ng-controller="TabsDemoCtrl">
+								<uib-tabset active="activeJustified" justified="true">
+									<uib-tab index="5" heading="Valid Postal Addresses">
+										<table class="table table-hover table-responsive table-striped tbl-alg">
+										  <thead>
+											<tr>
+											  <th>House Number</th>
+											  <th>Street</th>
+											  <th>Locality</th>
+											  <th>Province</th>
+											  <th>Postal Code</th>
+											  <th>Country</th>
+											  <th>Result</th>
+											  <th><a href="pdfs/address-validreport.pdf" target="_blank"><img src="images/pdf.gif" style="float:right"></a></th>
+											</tr>
+										  </thead>
+										  <tbody>
+											<tr>
+											  <td>523</td>
+											  <td>ALDEN AVE</td>
+											  <td>WESTFIELD</td>
+											  <td>NJ</td>
+											  <td>07090-3040</td>
+											  <td>UNION</td>
+											  <td>Valid</td>
+											  <td></td>
+											</tr>
+											<tr>
+											  <td>644</td>
+											  <td>SHADOWLAWN DR</td>
+											  <td>WESTFIELD</td>
+											  <td>NJ</td>
+											  <td>07090-3349</td>
+											  <td>UNION</td>
+											  <td>Valid</td>
+											  <td></td>
+											</tr>
+											<tr>
+											  <td>753</td>
+											  <td>WARREN ST</td>
+											  <td>WESTFIELD</td>
+											  <td>NJ</td>
+											  <td>07090-4447</td>
+											  <td>UNION</td>
+											  <td>Valid</td>
+											  <td></td>
+											</tr>
+											<tr>
+											  <td>1317</td>
+											  <td>FRANCIS TER</td>
+											  <td>WESTFIELD</td>
+											  <td>NJ</td>
+											  <td>07090-2252</td>
+											  <td>UNION</td>
+											  <td>Valid</td>
+											  <td></td>
+											</tr>
+											<tr>
+											  <td>820</td>
+											  <td>OAK AVE</td>
+											  <td>WESTFIELD</td>
+											  <td>NJ</td>
+											  <td>07090-2330</td>
+											  <td>UNION</td>
+											  <td>Valid</td>
+											  <td></td>
+											</tr>
+											<tr>
+											  <td>463</td>
+											  <td>EDGEWOOD AVE</td>
+											  <td>WESTFIELD</td>
+											  <td>NJ</td>
+											  <td>07090-4305</td>
+											  <td>UNION</td>
+											  <td>Valid</td>
+											  <td></td>
+											</tr>
+											<tr>
+											  <td>787</td>
+											  <td>KNOLLWOOD TER</td>
+											  <td>WESTFIELD</td>
+											  <td>NJ</td>
+											  <td>07090-3418</td>
+											  <td>UNION</td>
+											  <td>Valid</td>
+											  <td></td>
+											</tr>
+											<tr>
+											  <td>634</td>
+											  <td>FAIRMONT AVE</td>
+											  <td>WESTFIELD</td>
+											  <td>NJ</td>
+											  <td>07090-1361</td>
+											  <td>UNION</td>
+											  <td>Valid</td>
+											  <td></td>
+											</tr>
+											<tr>
+											  <td>111</td>
+											  <td>PROSPECT ST</td>
+											  <td>WESTFIELD</td>
+											  <td>NJ</td>
+											  <td>07090-4071</td>
+											  <td>UNION</td>
+											  <td>Valid</td>
+											  <td></td>
+											</tr>
+											<tr>
+											  <td>418</td>
+											  <td>ALDEN AVE</td>
+											  <td>WESTFIELD</td>
+											  <td>NJ</td>
+											  <td>07090-3039</td>
+											  <td>UNION</td>
+											  <td>Valid</td>
+											  <td></td>
+											</tr>
+											<tr>
+											  <td>550</td>
+											  <td>HILLCREST AVE</td>
+											  <td>WESTFIELD</td>
+											  <td>NJ</td>
+											  <td>07090-1365</td>
+											  <td>UNION</td>
+											  <td>Valid</td>
+											  <td></td>
+											</tr>
+											<tr>
+											  <td>322</td>
+											  <td>LAWRENCE AVE</td>
+											  <td>WESTFIELD</td>
+											  <td>NJ</td>
+											  <td>07090-3114</td>
+											  <td>UNION</td>
+											  <td>Valid</td>
+											  <td></td>
+											</tr>
+											<tr>
+											  <td>322</td>
+											  <td>LAWRENCE AVE</td>
+											  <td>WESTFIELD</td>
+											  <td>NJ</td>
+											  <td>07090-3114</td>
+											  <td>UNION</td>
+											  <td>Valid</td>
+											  <td></td>
+											</tr>
+											<tr>
+											  <td>868</td>
+											  <td>SHACKAMAXON DR</td>
+											  <td>WESTFIELD</td>
+											  <td>NJ</td>
+											  <td>07090-7090</td>
+											  <td>UNION</td>
+											  <td>Valid</td>
+											  <td></td>
+											</tr>
+											<tr>
+											  <td>34</td>
+											  <td>COWPERTHWAITE SQ</td>
+											  <td>WESTFIELD</td>
+											  <td>NJ</td>
+											  <td>07090-4050</td>
+											  <td>UNION</td>
+											  <td>Valid</td>
+											  <td></td>
+											</tr>
+											<tr>
+											  <td>569</td>
+											  <td>DOWNER ST</td>
+											  <td>WESTFIELD</td>
+											  <td>NJ</td>
+											  <td>07090-4112</td>
+											  <td>UNION</td>
+											  <td>Valid</td>
+											  <td></td>
+											</tr>
+											<tr>
+											  <td>720</td>
+											  <td>LAWRENCE AVE</td>
+											  <td>WESTFIELD</td>
+											  <td>NJ</td>
+											  <td>07090-3802</td>
+											  <td>UNION</td>
+											  <td>Valid</td>
+											  <td></td>
+											</tr>
+											<tr>
+											  <td>720</td>
+											  <td>LAWRENCE AVE</td>
+											  <td>WESTFIELD</td>
+											  <td>NJ</td>
+											  <td>07090-3802</td>
+											  <td>UNION</td>
+											  <td>Valid</td>
+											  <td></td>
+											</tr>
+											<tr>
+											  <td>952</td>
+											  <td>WYANDOTTE TRL</td>
+											  <td>WESTFIELD</td>
+											  <td>NJ</td>
+											  <td>07090-3733</td>
+											  <td>UNION</td>
+											  <td>Valid</td>
+											  <td></td>
+											</tr>
+										  </tbody>
+										</table>
+									</uib-tab>
+									<uib-tab index="6" heading="Invalid Postal Addresses">
+										<table class="table table-hover table-responsive table-striped tbl-alg">
+										  <thead>
+											<tr>
+											  <th>House Number</th>
+											  <th>Street</th>
+											  <th>Locality</th>
+											  <th>Province</th>
+											  <th>Postal Code</th>
+											  <th>Country</th>
+											  <th>Result</th>
+											  <th><a href="pdfs/address-invalidreport.pdf" target="_blank"><img src="images/pdf.gif" style="float:right"></a></th>
+											</tr>
+										  </thead>
+										  <tbody>
+											<tr>
+											  <td>101</td>
+											  <td>PARK ST</td>
+											  <td>WESTFIELD</td>
+											  <td>NJ</td>
+											  <td>07090-2511</td>
+											  <td>UNION</td>
+											  <td>Invalid</td>
+											  <td></td>
+											</tr>
+											<tr>
+											  <td>133</td>
+											  <td>BENSON PL</td>
+											  <td>WESTFIELD</td>
+											  <td>NJ</td>
+											  <td>37090-2006</td>
+											  <td>UNION</td>
+											  <td>Invalid</td>
+											  <td></td>
+											</tr>
+											<tr>
+											  <td>211</td>
+											  <td>N SCOTCH PLAINS AVE</td>
+											  <td>WESTFIELD</td>
+											  <td>NJ</td>
+											  <td>37090-4400</td>
+											  <td>UNION</td>
+											  <td>Invalid</td>
+											  <td></td>
+											</tr>
+											<tr>
+											  <td>21</td>
+											  <td>MANITOU CIR</td>
+											  <td>WESTFIELD</td>
+											  <td>NJ</td>
+											  <td>37090-1003</td>
+											  <td>UNION</td>
+											  <td>Invalid</td>
+											  <td></td>
+											</tr>
+											
+											<tr>
+											  <td>114</td>
+											  <td>PARK ST</td>
+											  <td>WESTFIELD</td>
+											  <td>NJ</td>
+											  <td>37090-2512</td>
+											  <td>UNION</td>
+											  <td>Invalid</td>
+											  <td></td>
+											</tr>
+											<tr>
+											  <td>752</td>
+											  <td>SAINT MARKS AVE</td>
+											  <td>WESTFIELD</td>
+											  <td>NJ</td>
+											  <td>37090-2032</td>
+											  <td>UNION</td>
+											  <td>Invalid</td>
+											  <td></td>
+											</tr>
+											<tr>
+											  <td>605</td>
+											  <td>BENSON PL</td>
+											  <td>WESTFIELD</td>
+											  <td>NJ</td>
+											  <td>37090-1305</td>
+											  <td>UNION</td>
+											  <td>Invalid</td>
+											  <td></td>
+											</tr>
+											
+											<tr>
+											  <td>218</td>
+											  <td>HAZEL AVE</td>
+											  <td>WESTFIELD</td>
+											  <td>NJ</td>
+											  <td>37090-4143</td>
+											  <td>UNION</td>
+											  <td>Invalid</td>
+											  <td></td>
+											</tr>
+											<tr>
+											  <td>112</td>
+											  <td>PARK ST</td>
+											  <td>WESTFIELD</td>
+											  <td>NJ</td>
+											  <td>37090-2512</td>
+											  <td>UNION</td>
+											  <td>Invalid</td>
+											  <td></td>
+											</tr>
+										  </tbody>
+										</table>
+									</uib-tab>
+									<uib-tab index="7" heading="Unknown Postal Addresses">
+										<table class="table table-hover table-responsive table-striped tbl-alg">
+										  <thead>
+											<tr>
+											  <th>House Number</th>
+											  <th>Street</th>
+											  <th>Locality</th>
+											  <th>Province</th>
+											  <th>Postal Code</th>
+											  <th>Country</th>
+											  <th>Result</th>
+											  <th><a href="pdfs/address-unknownreport.pdf" target="_blank"><img src="images/pdf.gif" style="float:right"></a></th>
+											</tr>
+										  </thead>
+										  <tbody>
+											<tr>
+											  <td>429</td>
+											  <td>EDGEWOOD AVE</td>
+											  <td>WESTFIELD</td>
+											  <td>NJ</td>
+											  <td>70190-4383</td>
+											  <td>UNION</td>
+											  <td>Unkown</td>
+											  <td></td>
+											</tr>
+											<tr>
+											  <td>218</td>
+											  <td>HAZEL AVE</td>
+											  <td>WESTFIELD</td>
+											  <td>NJ</td>
+											  <td>70190-4143</td>
+											  <td>UNION</td>
+											  <td>Unkown</td>
+											  <td></td>
+											</tr>
+											<tr>
+											  <td>112</td>
+											  <td>PARK ST</td>
+											  <td>WESTFIELD</td>
+											  <td>NJ</td>
+											  <td>70190-2512</td>
+											  <td>UNION</td>
+											  <td>Unkown</td>
+											  <td></td>
+											</tr>
+											<tr>
+											  <td>1133</td>
+											  <td>BOYNTON AVE</td>
+											  <td>WESTFIELD</td>
+											  <td>NJ</td>
+											  <td>70190-1667</td>
+											  <td>UNION</td>
+											  <td>Unkown</td>
+											  <td></td>
+											</tr>
+											<tr>
+											  <td>561</td>
+											  <td>NORTH AVE E</td>
+											  <td>WESTFIELD</td>
+											  <td>NJ</td>
+											  <td>70190-1445</td>
+											  <td>UNION</td>
+											  <td>Unkown</td>
+											  <td></td>
+											</tr>
+											<tr>
+											  <td>216</td>
+											  <td>BAKER AVE</td>
+											  <td>WESTFIELD</td>
+											  <td>NJ</td>
+											  <td>70190-1902</td>
+											  <td>UNION</td>
+											  <td>Unkown</td>
+											  <td></td>
+											</tr><tr>
+											  <td>615</td>
+											  <td>GIRARD AVE</td>
+											  <td>WESTFIELD</td>
+											  <td>NJ</td>
+											  <td>70190-2318</td>
+											  <td>UNION</td>
+											  <td>Unkown</td>
+											  <td></td>
+											</tr>
+											<tr>
+											  <td>762</td>
+											  <td>CENTRAL AVE</td>
+											  <td>WESTFIELD</td>
+											  <td>NJ</td>
+											  <td>70190-2527</td>
+											  <td>UNION</td>
+											  <td>Unkown</td>
+											  <td></td>
+											</tr>
+											<tr>
+											  <td>45</td>
+											  <td>MICHAEL DR</td>
+											  <td>WESTFIELD</td>
+											  <td>NJ</td>
+											  <td>70190-1112</td>
+											  <td>UNION</td>
+											  <td>Unkown</td>
+											  <td></td>
+											</tr>
+											<tr>
+											  <td>615</td>
+											  <td>HANFORD PL</td>
+											  <td>WESTFIELD</td>
+											  <td>NJ</td>
+											  <td>70190-4329</td>
+											  <td>UNION</td>
+											  <td>Unkown</td>
+											  <td></td>
+											</tr>
+											<tr>
+											  <td>1132</td>
+											  <td>RAHWAY AVE</td>
+											  <td>WESTFIELD</td>
+											  <td>NJ</td>
+											  <td>70190-3632</td>
+											  <td>UNION</td>
+											  <td>Unkown</td>
+											  <td></td>
+											</tr>
+											<tr>
+											  <td>310</td>
+											  <td>SPRINGFIELD AVE</td>
+											  <td>WESTFIELD</td>
+											  <td>NJ</td>
+											  <td>70190-1000</td>
+											  <td>UNION</td>
+											  <td>Unkown</td>
+											  <td></td>
+											</tr>
+										  </tbody>
+										</table>
+									</uib-tab>
+									
+								</uib-tabset>
+							</div>
+						</div>
+	</div></div>
+</div>
+		  
+		  <script>
+		  $("#process-btn").hide();
+		  $('#file').change(function(){
+    $("#process-btn").show();
+});
+
+$('.google-link').on("DOMSubtreeModified",function(){
+  if($('.google-link').html()!=''){
+  $("#process-btn").show();
+  }
+});
+
+$('#boxchange').on("DOMSubtreeModified",function(){
+alert("jays")
+  if($('#boxchange').html()!=''){
+  $("#process-btn").show();
+  }
+});
+		</script>
+		

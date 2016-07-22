@@ -17,6 +17,7 @@
                 .then(function (response) {
                     if (response.success) {
                         FlashService.Success('Registration successful', true);
+						alert("Registered Successfully !");
                         $location.path('/login');
                     } else {
                         FlashService.Error(response.message);

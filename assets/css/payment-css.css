@@ -1,48 +1,51 @@
 #wrap{
- background-color:#fff; padding:160px 60px 60px 60px;overflow:hidden;
+ background-color:#fff; padding:75px 60px 60px 60px;overflow:hidden;
 }
 #accordian{
   width:100%;
 }
+
+#accordian h3 { margin-bottom:18px;}
+
 #accordian .number{
-  width:50px;
-  height:50px;
+  
   background:#fff;
   color:#888;
-  font-size:36px;
+  font-size:18px;
+  padding:1px 9px;
   text-align: center;
   border-radius:50%;
   float:left;
 }
 #accordian .step{
   width:100%;
-  height:63px;
-  background:#194374;
+  background:#1c2857;
   color:#FFF;
-  padding-left:1%;
-  padding-top:5px;
-  border-bottom:3px solid #d9d9d9;
+ padding:10px 20px;
+  border-bottom:3px solid #fff;
   border-radius:2px;
   float:left;
 }
 #accordian .title{
   float:left;
   width:80%;
-  height:50px;
-  margin-left:1%;
+ 
+  margin-left:20px;
   font-size:1em;
   font-weight:300;
 }
-#accordian .title h1{
-  font-size:2em;
+#accordian .title h4{
+
   font-weight:400;
-  margin-top:10px;
+  margin-top:5px;
+  margin-bottom:0px; float:left;
 
 }
+
+#accordian .title span {float:left; margin-right:15px; font-size:25px;}
 #accordian .modify{
   float:left;
-  width:40px;
-  height:40px;
+
   color:#aaa;
   background:#FFF;
   text-align:center;
@@ -57,7 +60,7 @@
   display:block;
 }
 #accordian .content{
-  padding:2em 2em;
+  padding:10px 20px;
   width:100%;
   margin:0 auto;
   background:#FFF;
@@ -66,38 +69,33 @@
   float:left;
 }
 #accordian .content label{
-  font-size:1.3em;
+  font-size:16px;
 }
 #accordian .content input{
-  padding:10px 15px;
-  border:1px solid #ccc;
+  padding:6px 15px;
+  border:1px solid #1c2857;
   border-radius:3px;
   display:inline-block;
-  font-size: 2em;
+  font-size: 16px;
 }
 #accordian .content button{
   display:block;
-  float:right;
-  background:#194374; margin-bottom:10px;
-  width:200px;
+  margin-bottom:10px;
   border:0;
   padding:5px 15px;
-  font-size:1.6em;
+  font-size:15px;
   color:#FFF;
   border-radius:5px;
   clear:both;
 }
 #accordian .content .continue{
   display:block;
-  float:right;
-  background:#194374;
-  width:200px;
   border:0;
-  padding:5px 15px;
-  font-size:1.6em;
-  color:#FFF;
+  padding:7px 15px;
+  font-size:17px;
+  color:#FFF; letter-spacing:0px !important; margin-top:30px !important;
  
-  border-radius:2px;
+  border-radius:5px;
   clear:both;
   text-align:center;
   text-decoration: none;
@@ -116,37 +114,30 @@
   display: inline-block;
   margin-left:0;
   margin-bottom: 5px;
-  margin-top:5px;
-  border: 1px solid #ccc;
+  border: 1px solid #1c2857;
   border-radius: 3px;
   display: inline-block;
 }
 #accordian .country_options label,
 #accordian .state_options label{
-  background: #80c0ff;
-  color: white;
-  padding: 4px 6px;
+  background: #fff;
+  color: #1c2857;
+
   z-index: 2;
-  text-transform: uppercase;
-  top: 5px;
-  right: 100%;
-  width: 100%;
-  margin-right: -100%;
-  bottom: 8px;
-  border-bottom-right-radius: 3px;
-  border-top-right-radius: 3px;
+  top: 7px;
+  text-align:left;
 }
 #accordian .state_options select,
 #accordian .country_options select{
   background: transparent;
   display:inline-block;
   width: 100%;
-  padding: 5px;
-  font-size: 2em;
+  padding: 7px;
+  font-size: 16px;
   line-height: 1;
   border: 0;
-  border-radius:0;
-  height: 40px;
+  border-radius:0; color:#1c2857;
+ 
 }
 #accordian #address label.state,
 #accordian #address label.country{
@@ -181,45 +172,38 @@ form.go-right input:focus + label.same{
   display:inline-block;
 }
 #accordian #payment #card_number{
-  width:52%;
+ 
 }
-#accordian .left,
-#accordian .right{
-  width:50%;
-  float:left;
-}
+
 #accordian #payment label{
   display:inline-block;
 }
 #accordian #payment .expiry{
-  margin-top:5px;
+ 
 }
 #accordian #payment label.exp_date{
-  margin-right:0;
-  background: #194374;
-  color: white;
-  padding: 4px 6px;
-  z-index: 2;
-  text-transform: uppercase;
-  right: 100%;
-  width: 100%;
-  margin-right: -100%;
+  
+  background: #fff;
+  color: #1c2857;
+ margin-bottom:0px;
+ text-transform:none !important;
+  width: 33%;
+  text-align:left;
+  float:left;
   border-bottom-right-radius: 3px;
   border-top-right-radius: 3px;
-  width:70px;
-  height:39px; margin-top:5px;
-  top:5px; font-size:13px; padding-top:11px;
+ font-size:16px; padding:5px 0px;
 }
 #accordian #payment .month_select,
 #accordian #payment .year_select{
-  width: 160px;
-  height: 40px;
-  border: 1px solid #ccc;
+  width: 176px;
+ 
+  border: 1px solid #1c2857;
   border-radius: 2px;
   display: inline-block;
 }
 #accordian #payment span.divider{
-  font-size: 2em;
+  font-size: 16px;
   display: inline-block;
   padding-left:5px;
   padding-right:5px;
@@ -230,31 +214,29 @@ form.go-right input:focus + label.same{
   background: transparent;
   display:inline-block;
   width: 100%;
-  padding: 5px;
-  font-size: 2em;
+  padding: 8px 10px;
+  font-size: 16px;
   line-height: 1;
   border: 0;
   border-radius:0;
-  height: 40px;
 }
-#accordian #payment .sec_num,
+
 #accordian #payment .expiry{
   display:block;
   float:left;
 }
 #accordian #payment .sec_num{
-  margin-top:5px;
+  margin-top:10px; width:47%; 
 }
 #accordian .credit_card{
-  padding:3em 1em;
+  padding:10px 0px; overflow:hidden; text-align:center;
 }
-#accordian #payment .sec_num input{
+#accordian #payment .sec_num input{ width:100%; margin-top:15px; float:left;
 }
 #accordian .accepted{
   width:100%;
-  padding-right:1em;
-  padding-left:1em;
-  margin-top:30px;
+ overflow:hidden;
+  margin-top:6px;
 }
 #accordian .accepted span{
   display: initial;
@@ -303,7 +285,7 @@ form.go-right input:focus + label.same{
   display:table-cell;
   vertical-align: middle;
   margin-top:30%;
-  font-size: 1.5em;
+  font-size: 20px;
   color:#aaa;
 }
 #accordian .totals{
@@ -312,7 +294,7 @@ form.go-right input:focus + label.same{
   border-bottom:3px solid #aaa;
 }
 #accordian .totals .subtitle{
-  font-size:2em;
+  font-size:22px;
   display:block;
   text-align: right;
   color:#aaa;
@@ -326,7 +308,7 @@ form.go-right input:focus + label.same{
 #accordian .final{
   width:100%;
   float:left;
-  font-size:2.2em;
+  font-size:22px;
   text-align: right;
   color:#888;
 }
@@ -336,24 +318,22 @@ form.go-right input:focus + label.same{
   font-weight:bold;
 }
 #accordian #reviewed .title{
-  width:49%;
-  font-size:1.8em;
+  width:100%;
+  font-size:20px;
   float:left;
 }
 #accordian #reviewed .billing,
 #accordian #reviewed .shipping{
-  width:100%;
+
   float:left;
   margin-bottom:5px;
 }
 #accordian #reviewed .billing .address_reviewed,
 #accordian #reviewed .shipping .address_reviewed,
 #accordian #reviewed .payment .payment_reviewed{
-  color:#aaa;
-  font-size:1.2em;
-  height:80px;
-  width:50%;
-  float:left;
+  color:#333;
+  font-size:17px;
+  float:left; margin-left:30px;
 }
 #accordian #reviewed .billing .address_reviewed span,
 #accordian #reviewed .shipping .address_reviewed span,
@@ -363,20 +343,18 @@ form.go-right input:focus + label.same{
 #accordian #reviewed #complete{
   float:left;
   width:100%;
-  padding-top:5px;
-  border-top:1px dotted #aaa;
+	margin-top:15px;
 }
 #accordian #reviewed .big_button{
   clear:both;
   display:block;
   width:70%;
   margin:0 auto;
-  padding-top:15px;
-  padding-bottom:10px;
+  padding:7px 15px;
   color:#fff;
-  font-size:2em;
+  font-size:22px;
   text-decoration: none;
-  background:#194374;
+  background:#1c2857;
   text-align:center;
   border-radius: 2px;
 }
@@ -400,14 +378,13 @@ color:#fff!important;
   }
 }
 .payment-form > div {
-  position: relative;
   overflow: hidden;
-  width:100%;
+
   
 }
 .payment-form input, form textarea {
   width: 100%;
-  max-width:320px;
+
   border: 2px solid gray;
   background: none;
   position: relative;
@@ -424,7 +401,7 @@ color:#fff!important;
   border-color: #f06d06;
 }
 .payment-form input:focus + label, form textarea:focus + label {
-  background:#80c0ff;
+  background:#1c2857;
   color: white;
   font-size: 70%;
   padding: 1px 6px;
@@ -433,9 +410,8 @@ color:#fff!important;
 }
 .payment-form label {
   transition: background 0.4s, color 0.4s, top 0.4s, bottom 0.4s, right 0.4s, left 0.4s;
-  position: absolute;
-  color: #999;
-  padding: 7px 6px; font-weight:normal;
+  color: #1c2857;
+ font-weight:normal;
 }
 .payment-form textarea {
   display: block;
@@ -443,11 +419,8 @@ color:#fff!important;
 }
 
 .payment-form.go-right label {
-  top: 2px;
-  right: 100%;
+  
   width: 100%;
-  margin-right: -100%;
-  bottom: 2px;
   border-bottom-right-radius:3px;
   border-top-right-radius:3px;
 }
@@ -458,6 +431,8 @@ color:#fff!important;
   padding-top: 5px;
 }
 
-#accordian .accepted img { width:12%;}
+#accordian .accepted img { width:9%; float:right; margin-right:10px;}
 
-#accordian .content input { margin-bottom:10px;}
+#accordian .content input { margin-bottom:14px;}
+
+#address2 {margin:30px 0px !important;}

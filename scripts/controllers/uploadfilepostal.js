@@ -9,7 +9,7 @@
  * Controller of the moreYourApp
  */
 angular.module('app')
-  .controller('UploadfilepostalController', function ($scope) {
+  .controller('PostalfileuploadController', function ($scope) {
     $scope.awesomeThings = [
       
     ];

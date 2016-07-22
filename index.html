@@ -52,7 +52,8 @@
         <!-- endbower -->
         <!-- endbuild -->
 <link href="http://www.jqueryscript.net/css/jquerysctipttop.css" rel="stylesheet" type="text/css">
-
+<link rel="stylesheet" href="assets/css/alertify.core.css" />
+	<link rel="stylesheet" href="assets/css/alertify.default.css" id="toggleCSS" />
         <!-- build:css(.tmp) styles/main.css -->
 
         <!-- endbuild -->
@@ -95,7 +96,7 @@
 
 <div ng-include src="'views/header.html'" class="ng-scope"></div>
 <!-- BEGIN: SITE-WRAPPER -->
-				<div ng-view="" autoscroll>
+	<div ng-view="" autoscroll>
 				</div>
 <!--div ng-include src="'views/homemain.view.html'" class="ng-scope"></div-->
 
@@ -129,6 +130,7 @@
 <script src="assets/js/index.js"></script>
 	
 	<script src="scripts/js/slider.js"></script>
+	<script src="scripts/js/paymentpr.js"></script>
     <!-- build:js(.) scripts/vendor.js -->
     <!-- bower:js -->
 <!--script src="//code.jquery.com/jquery-2.0.3.min.js"></script-->
@@ -145,9 +147,7 @@
 <!--script type="text/javascript-lazy" src="assets/js/loadscript.js"></script-->
 
 <script src="scripts/controllers/uploadfile.js"></script>
-
-<script src="scripts/controllers/uploademail.js"></script>
-
+<script src="scripts/controllers/uploadfilepostal.js"></script>
 
 	<script src="scripts/controllers/homemain.js"></script>
 <script src="scripts/controllers/contact.js"></script>
@@ -157,7 +157,7 @@
 	<script src="scripts/controllers/login.js"></script>
 	<script src="scripts/controllers/hometabs.js"></script>
 	<script src="scripts/controllers/anchor.js"></script>
-	
+	<script src="assets/js/alertify.min.js"></script>
 
 
 	
@@ -167,13 +167,11 @@
     <script src="//cdn.rawgit.com/cornflourblue/angular-registration-login-example/master/app-services/flash.service.js"></script>
 
     <!-- Real user service that uses an api -->
-    <!-- <script src="//cdn.rawgit.com/cornflourblue/angular-registration-login-example/master/app-services/user.service.js"></script> -->
+    <script src="//cdn.rawgit.com/cornflourblue/angular-registration-login-example/master/app-services/user.service.js"></script>
 
     <!-- Fake user service for demo that uses local storage -->
     <script src="//cdn.rawgit.com/cornflourblue/angular-registration-login-example/master/app-services/user.service.local-storage.js"></script>
 	
-		
-	<script src="scripts/js/paymentpr.js"></script>
 	<!-- <script src="scripts/js/profile.js"></script> -->
 	<script src="assets/js/jquery.easing.1.3.js"></script>
 	<script src="assets/js/custom-file-input.js"></script>
@@ -182,6 +180,9 @@
 <script src="assets/js/jquery-gdrive.js"></script>
 <script src="https://apis.google.com/js/platform.js?onload=onLoadCallback" async defer></script>
 
+
+    <script type="text/javascript" src="https://www.dropbox.com/static/api/2/dropins.js" id="dropboxjs" data-app-key="opsuezjazxy8x2q"></script>
+<script src="assets/js/dropbox-picker.min.js"></script>
 <script>
 	$(document).ready(function() {
 	
@@ -240,6 +241,7 @@ function mypostalevent3() {
 	 var x = document.getElementById("emailselect").value;
 	 if(x=="email1"){
 	 $('#email-suribabu').modal("show");
+	 
 	 }
 	 else if(x=="email2"){
 	 $('#email2').modal("show");
@@ -710,6 +712,7 @@ for (var i=0; i<sharedLinks.length; i++) {
 boxSelect.cancel(function() {
 });
 </script-->
+
 
 </body>
 </html>

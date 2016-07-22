@@ -1,0 +1,130 @@
+<style>
+.modal-dialog {width:330px !important;}
+.modal-footer {padding:10px 0px !important; background:#f8f8f8 !important; border-top: 1px solid #e5e5e5 !important;}
+</style>
+
+<div class="page page-dashboard"> <div class="pageheader"><div class="page-bar"> <ul class="page-breadcrumb"> <li> <a ui-sref="app.dashboard"><i class="fa fa-home"></i> {{main.title}}</a> </li> <li> <a ui-sref="app.datafiles">{{page.title}}</a> </li> </ul> </div> </div> <!-- cards row --> 
+
+<div class="row">
+	<div class="col-md-12 col-sm-12 col-xs-12 col-lg-12" style="padding:0px !important;">
+		<div class="container-fluid">
+			<div class="file-manager">
+				<div class="file-header">
+					<div class="col-md-2 col-sm-4 col-xs-12 col-lg-2" style="padding:0px !important;">
+						<div class="file-head-left">
+							<img src="images/folder.png" class="img-responsive">
+							<span>File Manager</span>
+						</div>
+					</div>
+					<div class="col-md-2 col-sm-4 col-xs-12 col-lg-2 pull-right">
+						<div class="slinput" ng-init="">
+							<i class="fa fa-search left-icon"></i> 
+							<input placeholder="Search here" ng-model="searchInputVal"/> 
+							<i ng-class="{'fa' : true, 'fa-close' : true, 'right-icon' : true, active : (searchInputVal.length > 0)}" ng-click="searchInputVal = ''"></i>
+						</div>
+					</div>
+					<div class="col-md-2 col-sm-4 col-xs-12 col-lg-2 pull-right">
+						<div class="views-img">
+							<a  ui-sref="app.view"><span class="fa fa-bars"></span></a>
+							<a href=""><span class="fa fa-cogs" style="padding-left:10px;"></span></a>
+							<a href=""><span class="fa fa-trash" style="padding-left:10px;"></span></a>
+						</div>
+						
+					</div>
+					<div class="col-md-4 col-lg-4 col-sm-6 col-xs-12 pull-right">
+						
+						<div ng-controller="ModalDemoCtrl">
+    <script type="text/ng-template" id="myModalContent.html">
+        <div class="modal-header">
+		<a class="fa fa-close pull-right close-icon" type="button" ng-click="cancel()"></a>
+            <h4 class="modal-title">Create a File</h4>
+        </div>
+        <div class="modal-body">
+            <label>Enter the File name: </label>
+			<input type="text" class="file-input" onClick="this.setSelectionRange(0, this.value.length)"  value="New File" />
+        </div>
+        <div class="modal-footer">
+	
+            <button ui-sref="app.pages.addnewfile" ng-click="cancel()" class="btn create-files center-block">Create</button>
+            
+        </div>
+    </script>
+    <button type="button" class="btn add-file pull-right" ng-click="open()"><span class="fa fa-plus"></span>&nbsp;New File</button>
+	<div ng-controller="SplashDemoCtrl">
+	<script type="text/ng-template" id="mySplashContent.html"><div class="modal-header">
+		<a class="fa fa-close pull-right close-icon" type="button" ng-click="cancel()"></a>
+            <h4 class="modal-title">Create a Folder</h4>
+        </div>
+        <div class="modal-body">
+            <label>Enter the Folder name: </label>
+			<input type="text" class="file-input" onClick="this.setSelectionRange(0, this.value.length)"  value="New Folder" />
+        </div>
+        <div class="modal-footer">
+            <button ui-sref="app.pages.addnewfolder" ng-click="cancel()" class="btn create-files center-block">Create</button>
+        </div>
+		</script>
+			  <button class="btn add-file pull-right" ng-click="openSplash($event)" data-options="splash-2 splash-ef-12"><span class="fa fa-plus"></span>&nbsp;New Folder</button>
+			  </div>
+				</div>
+					</div>
+				</div>
+				<div class="col-md-12 col-lg-12 col-sm-12 col-xs-12 file-content">
+					<div class="breadcrumb-file">
+						<span class="fa fa-chevron-circle-left" style="margin-top:7px; font-size:18px;"></span>
+						<span>My Storage</span>
+					</div>
+				</div>
+				<div class="col-md-12 col-lg-12 col-sm-12 col-xs-12 file-content">
+				<div class="col-md-3 col-lg-3 col-sm-4 col-xs-12 folder-icon">
+					<img src="images/folder-icon4.png" class="img-responsive" />
+					<h5>Images</h5>
+					<p>1 Item</p>
+				</div>
+				<div class="col-md-3 col-lg-3 col-sm-4 col-xs-12 folder-icon">
+					<img src="images/folder-icon4.png" class="img-responsive" />
+					<h5>My Files</h5>
+					<p>3 Items</p>
+				</div>
+				<div class="col-md-3 col-lg-3 col-sm-4 col-xs-12 folder-icon">
+					<img src="images/Excel-4.png" class="img-responsive" />
+					<h5>Email.xlsx</h5>
+					<p>16kb</p>
+				</div>
+				<div class="col-md-3 col-lg-3 col-sm-4 col-xs-12 folder-icon">
+					<img src="images/Excel-4.png" class="img-responsive" />
+					<h5>Postal.xlsx</h5>
+					<p>16kb</p>
+				</div>
+				<div class="col-md-3 col-lg-3 col-sm-4 col-xs-12 folder-icon">
+					<img src="images/Excel-4.png" class="img-responsive" />
+					<h5>Phone.xlsx</h5>
+					<p>11kb</p>
+				</div>
+				<div class="col-md-3 col-lg-3 col-sm-4 col-xs-12 folder-icon">
+					<img src="images/Excel-4.png" class="img-responsive" />
+					<h5>Name.xlsx</h5>
+					<p>17kb</p>
+				</div>
+				<div class="col-md-3 col-lg-3 col-sm-4 col-xs-12 folder-icon">
+					<img src="images/folder-icon4.png" class="img-responsive" />
+					<h5>My Folder</h5>
+					<p>10 Items</p>
+				</div>
+				<div class="col-md-3 col-lg-3 col-sm-4 col-xs-12 folder-icon">
+					<img src="images/folder-icon4.png" class="img-responsive" />
+					<h5>Excel</h5>
+					<p>8 Items</p>
+				</div>
+				<div class="col-md-3 col-lg-3 col-sm-4 col-xs-12 folder-icon">
+					<img src="images/Excel-4.png" class="img-responsive" />
+					<h5>supression.xlsx</h5>
+					<p>12kb</p>
+				</div>
+			</div>
+		</div>
+	</div>
+
+</div> <!-- /row --> <!-- row --> <div class="row"> <!-- col --><section class="tile" fullscreen="isFullscreen02" ng-controller="BrowseUsageCtrl"> <!-- tile header --></section> <!-- /tile --> </div> <!-- /col --> 
+
+</div>
+</div>

@@ -1,90 +1,94 @@
-<div class="upload-file">
+
+
+	<div class="upload-file" ng-controller="UploadfileController";>
 	<div class="row">
 		<div class="container">
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 bhoechie-tab-container">
-            <div class="col-lg-2 col-md-2 col-sm-4 col-xs-4 bhoechie-tab-menu">
+            <div class="col-lg-2 col-md-2 col-sm-4 col-xs-6 bhoechie-tab-menu">
               <div class="list-group">
                 <a href="" class="list-group-item active text-center">
-                  <img src="assets/images/desktop-pc.png" class="img-responsive center-block" />From Local
+                  <img src="assets/images/desktop-pc.png" class="img-responsive center-block" />Local Drive
                 </a>
                 <a href="" class="list-group-item text-center">
-                  <img src="assets/images/drive.png" class="img-responsive center-block" />From Google Drive
+                  <img src="assets/images/drive.png" class="img-responsive center-block" />Google Drive
+                </a>
+				<a href="#" class="list-group-item text-center">
+                  <img src="assets/images/dropbox-logo.png" class="img-responsive center-block" />Dropbox
                 </a>
 				<a href="" class="list-group-item text-center">
-                  <img src="assets/images/dropbox-logo.png" class="img-responsive center-block" />From Dropbox
-                </a>
-				<a href="" class="list-group-item text-center">
-                  <img src="assets/images/box.png" class="img-responsive center-block" />From Box
+                  <img src="assets/images/box.png" class="img-responsive center-block" />Box
                 </a>
               </div>
             </div>
-            <div class="col-lg-10 col-md-10 col-sm-8 col-xs-8 bhoechie-tab">
+            <div class="col-lg-10 col-md-10 col-sm-8 col-xs-12 bhoechie-tab">
                 <!-- flight section -->
-                <div class="bhoechie-tab-content active">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 bhoechie-tab-content active">
                       <form id="upload" method="post" enctype="multipart/form-data">
+						<div id="drop2">
+							<div class="control-group">
+							<h5 class="text-center"><strong>Select Verification type</strong></h5>
+								<a href="#uploadfile"><label class="control control--radio">Email
+									<input type="radio" name="radio"/>
+									<div class="control__indicator"></div>
+								</label></a>
+								<a href="#postalfile"><label class="control control--radio">Postal Address
+									<input type="radio" name="radio"/>
+									<div class="control__indicator"></div>
+								</label></a>
+								<a href="#uploadfilephone"><label class="control control--radio">Phone
+									<input type="radio" name="radio" checked="checked"/>
+									<div class="control__indicator"></div>
+								</label></a>
+							</div>
+						</div>
 						<div id="drop">
 							<div class="drophere">
-								<h3 class="color">Drop Here</h3>
+								<h4 class="color">Drop Here</h4>
 								<p class="color">or</p>
 								<h4 class="color">Select a File</h4>
-								<a id="browse" class="hidden-xs">Browse</a>
+								<a id="browse" class="hidden-xs file">Browse</a>
 								<input type="file" name="file-1[]" name="file-1"  id="file-1" class="inputfile inputfile-1"/>
 								<!-- <input type="file" name="upl" onchange="txtchange()" multiple /></br> -->
 							</div>
 							<a id="browse" class="visible-xs mbl-button">Browse</a>
 						</div>
-						<div id="drop2">
-							<div class="control-group">
-							<h5 class="text-center">Select Verification type</h5>
-								<label class="control control--radio">Email
-									<input type="radio" name="radio"/>
-									<div class="control__indicator"></div>
-								</label>
-								<label class="control control--radio">Postal Address
-									<input type="radio" name="radio"/>
-									<div class="control__indicator"></div>
-								</label>
-								<label class="control control--radio">Phone
-									<input type="radio" name="radio"/>
-									<div class="control__indicator"></div>
-								</label>
-							</div>
-						</div>
+						
 	
 			<ul>
 				<!-- The file uploads will be shown here -->
 			</ul>
 
 		</form>
-		<button type="submit" class="btn search-button center-block" disabled="disabled" id="disableButton" onclick="location.href='#uploadphone';">Verify</button>
+		<button type="button" class="btn search-button center-block" disabled="disabled" id="disableButton" onclick="location.href='#uploadphone';">Verify</button>
                     </center>
                 </div>
                 <!-- train section -->
-                <div class="bhoechie-tab-content">
+                <div class="bhoechie-tab-content col-lg-12 col-md-12 col-sm-12 col-xs-12">
 				<form id="upload">
                     <center>
+					<div id="drop2">
+							<div class="control-group">
+							<h5 class="text-center"><strong>Select Verification type</strong></h5>
+								<a href="#uploadfile"><label class="control control--radio">Email
+									<input type="radio" name="radio" id="email" />
+									<div class="control__indicator"></div>
+								</label></a></a>
+								<a href="#postalfile"><label class="control control--radio">Postal Address
+									<input type="radio" name="radio" id="postal"/>
+									<div class="control__indicator"></div>
+								</label></a>
+								<a href="#uploadfilephone"><label class="control control--radio">Phone
+									<input type="radio" name="radio" id="phone" checked="checked"/>
+									<div class="control__indicator"></div>
+								</label></a>
+							</div>
+						</div>
 					<div id="drop">
-                      <h4 class="text-center" style="color:#1c2857; margin-top:40px;">Upload a File from Google Drive</h4>
+                      <h4 class="text-center" style="color:#1c2857; margin-top:33px;">Upload a File from Google Drive</h4>
 					<a type="submit" id="gdrive_file_selector" class="btn search-button">Choose a File</a></br>
 					<input id="gdrive_file" type="text" readonly />
 					</div>
-					<div id="drop2">
-							<div class="control-group">
-							<h5 class="text-center">Select Verification type</h5>
-								<label class="control control--radio">Email
-									<input type="radio" name="radio"/>
-									<div class="control__indicator"></div>
-								</label>
-								<label class="control control--radio">Postal Address
-									<input type="radio" name="radio"/>
-									<div class="control__indicator"></div>
-								</label>
-								<label class="control control--radio">Phone
-									<input type="radio" name="radio"/>
-									<div class="control__indicator"></div>
-								</label>
-							</div>
-						</div>
+					
 					
 	<!--div class="container" ng-controller="ExampleCtrl" ng-init="initialize()">
       <div class="row">
@@ -141,79 +145,88 @@
 					
                     </center>
 				</form>
-				<button type="submit" class="btn search-button center-block" disabled="disabled" id="disableButton2" onclick="location.href='#uploadphone';">Verify</button>
+				<button type="button" class="btn search-button center-block" disabled="disabled" id="disableButton2" onclick="location.href='#uploadphone';">Verify</button>
     
                 <!-- hotel search -->
                 
             </div>
-    
-                <!-- hotel search -->
-                <div class="bhoechie-tab-content">
-				<form id="upload">
+			
+			<div class="bhoechie-tab-content col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <form id="upload">
                     <center>
-					<div id="drop">
-                      <h4 class="text-center" style="color:#1c2857; margin-top:40px;">Upload a File from Dropbox</h4>
-							<input id="chooser" type="dropbox-chooser" name="selected-file" class="center-block" data-link-type="preview" readonly />
-					</div>	
 					<div id="drop2">
 							<div class="control-group">
-							<h5 class="text-center">Select Verification type</h5>
-								<label class="control control--radio">Email
+							<h5 class="text-center"><strong>Select Verification type</strong></h5>
+								<a href="#uploadfile"><label class="control control--radio">Email
 									<input type="radio" name="radio"/>
 									<div class="control__indicator"></div>
-								</label>
-								<label class="control control--radio">Postal Address
+								</label></a>
+								<a href="#postalfile"><label class="control control--radio">Postal Address
 									<input type="radio" name="radio"/>
 									<div class="control__indicator"></div>
-								</label>
-								<label class="control control--radio">Phone
-									<input type="radio" name="radio"/>
+								</label></a>
+								<a href="#uploadfilephone"><label class="control control--radio">Phone
+									<input type="radio" name="radio" checked="checked"/>
 									<div class="control__indicator"></div>
-								</label>
+								</label></a>
 							</div>
 						</div>
+					<div id="drop">
+                      <h4 class="text-center" style="color:#1c2857; margin-top:33px;">Upload a File from Dropbox</h4>
+		<div ng-controller="DropBoxCtrl" style="overflow:hidden;">
+                <button class="btn search-button center-block" href="javascript:;" drop-box-picker dbpicker-files="dpfiles" style="margin-top:5px; margin-bottom:34px;">Choose a File</button>
+            <div class="row show-grid" ng-switch="dpfiles.length > 0 || boxfiles.length > 0">
+                <div ng-switch-when="true">
+                    <div ng-repeat="file in dpfiles">
+                        <a href="{{ file.link }}" id="dropbox-file" target="_blank">{{ file.link }}</a>
+                    </div>
+                </div>
+            </div>
+    </div>
+							
+					</div>	
+					
                     </center>
 				</form>
 				<button type="button" class="btn search-button center-block" id="disableButton3">Verify</button>
-            </div>
-                <div class="bhoechie-tab-content">
-				<form id="upload">
+                </div>
+                <div class="bhoechie-tab-content col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <form id="upload">
                     <center>
-					<div id="box-popup">
-                      <h4 class="text-center" style="color:#1c2857; margin-top:40px;">Upload a File from Box</h4>
-					 
-<button id="box-select" type="button" class="btn search-button center-block" data-link-type="shared" data-multiselect="false" data-client-id="5gv6e9ncnxh7l9c1032d6gr34prper5x">Choose a File</button>
-<a class="center-block" id="box-link" target="_blank"></a>
 					<div id="drop2">
-						<div class="control-group">
-							<h5 class="text-center">Select Verification type</h5>
-								<label class="control control--radio">Email
+						<div class="control-group box-upload">
+							<h5 class="text-center"><strong>Select Verification type</strong></h5>
+								<a href="#uploadfile"><label class="control control--radio">Email
 									<input type="radio" name="radio"/>
 									<div class="control__indicator"></div>
-								</label>
-								<label class="control control--radio">Postal Address
+								</label></a>
+								<a href="#postalfile"><label class="control control--radio">Postal Address
 									<input type="radio" name="radio"/>
 									<div class="control__indicator"></div>
-								</label>
-								<label class="control control--radio">Phone
-									<input type="radio" name="radio"/>
+								</label></a>
+								<a href="#uploadfilephone"><label class="control control--radio">Phone
+									<input type="radio" name="radio" checked="checked"/>
 									<div class="control__indicator"></div>
-								</label>
+								</label></a>
+							</div>
 						</div>
-					</div>
-					</div>
+					<div id="box-popup">
+                      <h4 class="text-center" style="color:#1c2857; margin-top:16px;">Upload a File from Box</h4>
+					 
+<button type="button" id="box-select" class="btn search-button center-block" data-link-type="shared" data-multiselect="false" data-client-id="5gv6e9ncnxh7l9c1032d6gr34prper5x" style="margin-top: 15px;
+    margin-bottom: 34px;">Choose a File</button>
+<a class="center-block" id="box-link" target="_blank"></a>
+</div>
+					
                     </center>
 				</form>
 				<button type="button" class="btn search-button center-block" id="disableButton4">Verify</button>
-    
-                <!-- hotel search -->
-                
-            </div>
-            </div>
+                </div>
+			
         </div>
 		</div>
 		</div></div>
-
+</div>
 		<script>
 	
     $("div.bhoechie-tab-menu>div.list-group>a").click(function(e) {
@@ -225,13 +238,15 @@
         $("div.bhoechie-tab>div.bhoechie-tab-content").eq(index).addClass("active");
     });
 </script>
+ <script type="text/javascript" src="https://www.dropbox.com/static/api/2/dropins.js" id="dropboxjs" data-app-key="jrcl6k5obgzumgj"></script>
+<script src="assets/js/dropbox-picker.min.js"></script>
 <script src="assets/js/jquery.ui.widget.js"></script>
 		<script src="assets/js/jquery.iframe-transport.js"></script>
 		<script src="assets/js/jquery.fileupload.js"></script>
 		<script src="assets/js/jquery.knob.js"></script>
 		<!-- Our main JS file -->
 		<script src="assets/js/script.js"></script>
-
+		
 		<script src="assets/js/jquery-gdrive.js"></script>
 		<script>
 		$(document).ready(function() {
@@ -246,22 +261,24 @@
 					'filter': ''
 				});
 			});
-		</script>
-		<script src="https://apis.google.com/js/platform.js?onload=onLoadCallback" async defer></script>
-
-<script type="text/javascript" src="https://app.box.com/js/static/select.js"></script>
-	  <script type="text/javascript">
-$('#disableButton3').click(function(){
-		var value=$('#chooser').val();
-		if(value==""){
-		alert("Please select any file")
+			
+		$('#disableButton3').click(function(){
+		var value=$('#dropbox-file').html();
+		if(value==undefined){
+		alert("Please select Excel file")
 		}
 		else
 		{
 	window.location.href = "#uploadphone";		
 		}
 		});
-</script>
+		</script>
+		
+		<script src="https://apis.google.com/js/platform.js?onload=onLoadCallback" async defer></script>
+
+
+	  <!-- Replace data-app-key with yours -->
+	 
 <script>
 var options = {
   clientId:'5gv6e9ncnxh7l9c1032d6gr34prper5x',
@@ -293,11 +310,12 @@ for (var i=0; i<sharedLinks.length; i++) {
 boxSelect.cancel(function() {
 });
 </script>
+
 <script>
 		$('#disableButton4').click(function(){
 		var value=$('#box-link').html();
 		if(value==""){
-		alert("Please select any file")
+		alert("Please select Excel file")
 		}
 		else
 		{
@@ -305,4 +323,4 @@ boxSelect.cancel(function() {
 		}
 		});
 		</script>
-		<script type="text/javascript" src="assets/js/dropins.js" id="dropboxjs" data-app-key="jrcl6k5obgzumgj"></script>
+		

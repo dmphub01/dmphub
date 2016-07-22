@@ -51,7 +51,7 @@
 }
 
 
-.forms { background-color:#fff; padding:20px 10px;overflow:hidden; padding-left:20px !important;}
+.forms { background-color:#fff; padding:55px 10px 20px 10px;overflow:hidden; padding-left:20px !important;}
 
 .forms h2 { font-family: Narkisim !important; color:#F7941D; }
 
@@ -1160,7 +1160,7 @@ color: #fff;
 
 #changeFilene {color:#fff;}
 
-.signup-select {width:100%; height:35px; padding:5px; color:#333 !important; border-radius:7px;}
+.signup-select {width:100%; height:35px; padding:5px; color:#333 !important; border-radius:7px; border-color:#1c2857;}
 
 /*  bhoechie tab */
 div.bhoechie-tab-container{
@@ -1402,7 +1402,7 @@ margin-right:5px;
 
 #drop{
     background-color: #fff;
-    padding: 1px 30px 5px 30px;
+    padding: 1px 1px 5px 1px;
     text-align: center;
     text-transform: uppercase;
     font-size:16px;
@@ -1422,19 +1422,19 @@ margin-right:5px;
 
 
 #drop a{
-    background-color:#ca9f16;
+    background-color:#d4af37;
     padding:9px 30px;
-    color:#fff !important;
-    font-size:15px; font-weight:normal !important;
+    color:#fff;
+    font-size:15px; font-weight:normal;
     border-radius:7px;
     cursor:pointer;
     display:inline-block;
-    margin-top:1px; text-transform:none !important;
+    margin-top:5px; text-transform:none !important;
     letter-spacing:1px;
 }
 
 #drop a:hover{
-    background-color:#b18b0f !important; color:#fff !important;
+    background-color:#b18b0f; color:#fff ;
 }
 
 #drop a:active, #drop a:focus{color:#fff; }
@@ -1894,7 +1894,7 @@ a:hover {
  
 }
 
-.drophere{width:100%; margin:10px auto; border:dashed 2px #1c2857; padding-bottom:20px; text-transform:none !important;}
+.drophere{ margin:10px 13px; border:dashed 2px #1c2857; padding-bottom:20px; text-transform:none !important;}
 
 .color {color:#1c2857;}
 
@@ -1968,21 +1968,21 @@ a:hover {
 
 	
 
-[type="checkbox"]:not(:checked),
-[type="checkbox"]:checked {
+.reCaptcha [type="checkbox"]:not(:checked),
+.reCaptcha [type="checkbox"]:checked {
   position: absolute;
   left: -9999px;
 }
-[type="checkbox"]:not(:checked) + label,
-[type="checkbox"]:checked + label {
+.reCaptcha [type="checkbox"]:not(:checked) + label,
+.reCaptcha [type="checkbox"]:checked + label {
   position: relative;
   padding-left: 25px;
   cursor: pointer;
 }
 
 
-[type="checkbox"]:not(:checked) + label:before,
-[type="checkbox"]:checked + label:before {
+.reCaptcha [type="checkbox"]:not(:checked) + label:before,
+.reCaptcha [type="checkbox"]:checked + label:before {
   content: '';
   position: absolute;
   left:2px; top: 8px;
@@ -1993,10 +1993,10 @@ a:hover {
   box-shadow: inset 0 1px 3px rgba(0,0,0,.3)
 }
 
-[type="checkbox"]:checked + label:before {display:none;}
+.reCaptcha [type="checkbox"]:checked + label:before {display:none;}
 
-[type="checkbox"]:not(:checked) + label:after,
-[type="checkbox"]:checked + label:after {
+.reCaptcha [type="checkbox"]:not(:checked) + label:after,
+.reCaptcha [type="checkbox"]:checked + label:after {
   content: '✔';
   position: absolute;
   top: 12px; left: 4px;
@@ -2006,34 +2006,43 @@ a:hover {
   transition: all 1.3s;
 }
 
-[type="checkbox"]:not(:checked) + label:after {
+.reCaptcha [type="checkbox"]:not(:checked) + label:after {
   opacity: 0;
   transform: scale(0);
 }
-[type="checkbox"]:checked + label:after {
+.reCaptcha [type="checkbox"]:checked + label:after {
   opacity: 1;
   transform: scale(1.58);
 }
 
-[type="checkbox"]:disabled:not(:checked) + label:before,
-[type="checkbox"]:disabled:checked + label:before {
+.reCaptcha [type="checkbox"]:disabled:not(:checked) + label:before,
+.reCaptcha [type="checkbox"]:disabled:checked + label:before {
   box-shadow: none;
   border-color: #bbb;
   background-color: #ddd;
 }
-[type="checkbox"]:disabled:checked + label:after {
+.reCaptcha [type="checkbox"]:disabled:checked + label:after {
   color: #999;
 }
-[type="checkbox"]:disabled + label {
+.reCaptcha [type="checkbox"]:disabled + label {
   color: #aaa;
 }
 
-[type="checkbox"]:checked:focus + label:before,
-[type="checkbox"]:not(:checked):focus + label:before {
+.reCaptcha [type="checkbox"]:checked:focus + label:before,
+.reCaptcha [type="checkbox"]:not(:checked):focus + label:before {
   border: 1px dotted blue;
 }
 
 
-label:hover:before {
+.reCaptcha label:hover:before {
   border: 1px solid #cbcaca!important;
 }
+
+.bottom h4 {margin:0px;}
+
+#dropbox-file {background:#fff !important; color:#1c2857 !important; font-weight:700 !important; padding:0px 0px 5px 0px !important; font-size:inherit !important;}
+#dropbox-file:hover {background:#fff !important; color:#1c2857 !important;}
+
+.file a:hover {color:#fff !important;}
+
+.modal-open .modal {z-index:99999;}

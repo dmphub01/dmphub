@@ -1,0 +1,711 @@
+
+<div class="page page-dashboard"> <div class="pageheader"><div class="page-bar"> <ul class="page-breadcrumb"> <li> <a ui-sref="app.dashboard"><i class="fa fa-home"></i> {{main.title}}</a> </li> <li> <a ui-sref="app.datafiles" class="current">{{page.title}}</a> </li> </ul></div> </div> <!-- cards row -->
+
+<div class="row">
+	<div class="col-md-12 col-sm-12 col-xs-12 col-lg-12" style="padding:0px !important;">
+		<div class="container-fluid">
+			<div class="email-content">
+<div ng-controller="AppController" nv-file-drop="" uploader="uploader" filters="queueLimit, customFilter" id="file-upload">
+
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-12 col-lg-12" style="padding:0px;">
+                    <div ng-show="uploader.isHTML5">
+                        <!-- 3. nv-file-over uploader="link" over-class="className" -->
+                        <div class="well my-drop-zone" nv-file-over="" uploader="uploader">
+                            <h3 class="color">Drop Here</h3>
+							<p>Or</p>
+							<input type="file" name="file" id="file" class="inputfile center-block" nv-file-select="" uploader="uploader" class="search-button center-block" />
+							<label for="file" id="file-local"><span class="fa fa-upload"></span>Choose a file</label>
+                        </div>
+                        <!-- Example: nv-file-drop="" uploader="{Object}" options="{Object}" filters="{String}" -->
+
+                    </div>
+                    <!-- Example: nv-file-select="" uploader="{Object}" options="{Object}" filters="{String}" -->
+                    
+                </div>
+                <div class="col-md-8 col-lg-8 col-sm-12 col-xs-12 col-md-offset-2 col-lg-offset-2" style="margin-bottom: 40px">
+                    <table class="table file-table table-responsive">
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th ng-show="uploader.isHTML5">Size</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr ng-repeat="item in uploader.queue">
+                                <td style="padding-top:10px !important;" id="local-file"><strong>{{ item.file.name }}</strong></td>
+                                <td ng-show="uploader.isHTML5" nowrap style="padding-top:10px !important;">{{ item.file.size/1024/1024|number:2 }} MB</td>
+                                <td nowrap style="padding-top:10px !important;">
+                                    <!--button type="button" class="btn btn-success btn-xs" ng-click="item.upload()" ng-disabled="item.isReady || item.isUploading || item.isSuccess">
+                                        <span class="glyphicon glyphicon-upload"></span> Upload
+                                    </button-->
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div>
+    
+                    </div>
+                </div>
+            </div>
+        </div>
+		  <div ng-controller="ModalDemoCtrl">
+			<div class="btn-group col-md-12 col-lg-12 col-sm-12 col-xs-12" id="dropdown" uib-dropdown dropdown-append-to-body>
+				<button id="btn-append-to-body" type="button" class="cloud-button center-block" uib-dropdown-toggle>
+				Import List from Cloud Storage&nbsp;&nbsp;<span class="caret"></span>
+				</button>
+				<div ng-controller="DropBoxCtrl" class="clouddropdown">
+				  <ul class="dropdown-menu cloud-dropdown" uib-dropdown-menu role="menu" aria-labelledby="btn-append-to-body">
+					<li role="menuitem"><a href="javascript:;" lk-google-picker on-picked="onPicked(docs)" on-loaded="onLoaded()" on-cancel="onCancel()" class="btn btn-2 btn-2c">
+						<img src="images/Logo_of_Google_Drive.png" />
+						<span>Google Drive</span>
+					</a></li>
+					<li role="menuitem"><a href="javascript:;" drop-box-picker dbpicker-files="dpfiles">
+						<img src="images/dropbox.png" />
+						<span>Dropbox</span>
+					</a></li>
+					<li role="menuitem"><a href="javascript:;" box-picker boxpicker-files="boxfiles">
+						<img src="images/box.png" />
+						<span>Box</span>
+					</a></li>
+				  </ul>
+				  <div class="row show-grid" ng-switch="dpfiles.length > 0 || boxfiles.length > 0">
+                <div ng-switch-when="true">
+                    <div class="col-sm-12 col-md-8 col-md-offset-3 col-lg-8 col-lg-offset-3 col-xs-12" ng-repeat="file in dpfiles">
+                        <a href="{{ file.link }}" target="_blank" class="text-center" id="dropboxchange">{{ file.link }}</a>
+                        
+                    </div>
+                    <div class="col-sm-12 col-md-8 col-md-offset-3 col-lg-8 col-lg-offset-3 col-xs-12" ng-repeat="file in boxfiles">
+                        <a href="{{ file.url }}" target="_blank" class="text-center" id="boxchange">{{ file.url }}</a>
+                                         </div>
+                </div>
+            </div></div>
+				 <div>
+				  <a href="{{files[0].embedUrl}}" target="_blank" class="google-link center-block">{{files[0].embedUrl}}</a>
+		
+			</div>
+		  </div>
+		  </div>
+		  
+		  </div>
+		  
+		  </div>
+		  
+		  </div>
+		  
+
+		  </div></div> 
+		  
+<div class="row">
+	<div class="col-md-12 col-lg-12 col-sm-12 col-xs-12">
+	<div ng-controller="CollapseDemoCtrl">
+<button type="button" ng-model="isCollapsed" ng-click="showMsg(true)" class="search-button center-block" id="process-btn">Process</button>
+			<div class="email-results"  ng-if="isCollapsed">
+							<div ng-controller="TabsDemoCtrl">
+								<uib-tabset active="activeJustified" justified="true">
+									<uib-tab index="0" heading="Valid Emails">
+									
+										<table class="table table-hover table-responsive table-striped tbl-alg">
+										  <thead>
+											<tr>
+											  <th>Email</th>
+											  <th>Syntax</th>
+											  <th>Deliverability</th>
+											  <th>User</th>
+											  <th>Domain</th>
+											  <th><a href="pdfs/email-validreport.pdf" target="_blank"><img src="images/pdf.gif" style="float:right"></a></th>
+											</tr>
+										  </thead>
+										  <tbody>
+											<tr>
+											  <td>tgrant@gmcw.org</td>
+											  <td>Valid</td>
+											  <td>Yes</td>
+											  <td>tgrant</td>
+											  <td>gmcw.org</td>
+											<td></td></tr>
+											<tr>
+											  <td>agoldman@kdclargo.com</td>
+											  <td>Valid</td>
+											  <td>No</td>
+											  <td>agoldman</td>
+											  <td>kdclargo.com</td>
+											<td></td></tr>
+											<tr>
+											  <td>pscott@juicetyme.com</td>
+											  <td>Valid</td>
+											  <td>Yes</td>
+											  <td>pscott</td>
+											  <td>juicetyme.com</td>
+											<td></td></tr>
+											<tr>
+											  <td>penny@absatellite.net</td>
+											  <td>Valid</td>
+											  <td>No</td>
+											  <td>penny</td>
+											  <td>absatellite.net</td>
+											  <td></td>
+											</tr><tr>
+											  <td>dkunz@americanasphalt.com</td>
+											  <td>Valid</td>
+											  <td>No</td>
+											  <td>dkunz</td>
+											  <td>americanasphalt.com</td>
+											  <td></td>
+											</tr><tr>
+											  <td>risi@hartford.edu</td>
+											  <td>Valid</td>
+											  <td>Yes</td>
+											  <td>risi</td>
+											  <td>hartford.edu</td>
+											<td></td></tr>
+											<tr>
+											  <td>adam.vore@incapital.com</td>
+											  <td>Valid</td>
+											  <td>Yes</td>
+											  <td>adam.vore</td>
+											  <td>incapital.com</td>
+											<td></td></tr>
+											<tr>
+											  <td>judie@judiefedor.com</td>
+											  <td>Valid</td>
+											  <td>No</td>
+											  <td>judie</td>
+											  <td>judiefedor.com</td>
+											<td></td></tr>
+											<tr>
+											  <td>jeff@eyecaredoctor.com</td>
+											  <td>Valid</td>
+											  <td>Yes</td>
+											  <td>jeff</td>
+											  <td>eyecaredoctor.com</td>
+											<td></td></tr>
+											<tr>
+											  <td>joe@kempfirm.com</td>
+											  <td>Valid</td>
+											  <td>Yes</td>
+											  <td>joe</td>
+											  <td>kempfirm.com</td>
+											<td></td></tr>
+											<tr>
+											  <td>ppryor@unistrut.com</td>
+											  <td>Valid</td>
+											  <td>Yes</td>
+											  <td>ppryor</td>
+											  <td>unistrut.com</td>
+											<td></td></tr>
+											<tr>
+											  <td>gadams@firstcommercecu.org</td>
+											  <td>Valid</td>
+											  <td>No</td>
+											  <td>gadams</td>
+											  <td>firstcommercecu.org</td>
+											<td></td></tr>
+											<tr>
+											  <td>jsexton@fwpclaw.com</td>
+											  <td>Valid</td>
+											  <td>No</td>
+											  <td>jsexton</td>
+											  <td>fwpclaw.com</td>
+											<td></td></tr>
+											<tr>
+											  <td>rahalpin@mspca.org</td>
+											  <td>Valid</td>
+											  <td>No</td>
+											  <td>rahalpin</td>
+											  <td>mspca.org</td>
+											<td></td></tr>
+											<tr>
+											  <td>devault@onyx-pharm.com</td>
+											  <td>Valid</td>
+											  <td>Yes</td>
+											  <td>devault</td>
+											  <td>onyx-pharm.com</td>
+											<td></td></tr>
+											<tr>
+											  <td>johnr@unicoprop.com</td>
+											  <td>Valid</td>
+											  <td>Yes</td>
+											  <td>johnr</td>
+											  <td>unicoprop.com</td>
+											<td></td></tr>
+											<tr>
+											  <td>pete@peachtreeinv.com</td>
+											  <td>Valid</td>
+											  <td>Yes</td>
+											  <td>pete</td>
+											  <td>peachtreeinv.com</td>
+											<td></td></tr>
+											<tr>
+											  <td>gary@mercatorasset.com</td>
+											  <td>Valid</td>
+											  <td>No</td>
+											  <td>gary</td>
+											  <td>mercatorasset.com</td>
+											<td></td></tr>
+											<tr>
+											  <td>tsteig@prindlelaw.com</td>
+											  <td>Valid</td>
+											  <td>No</td>
+											  <td>tsteig</td>
+											  <td>prindlelaw.com</td>
+											<td></td></tr>
+											<tr>
+											  <td>crystal@mdautoinsurance.com</td>
+											  <td>Valid</td>
+											  <td>Yes</td>
+											  <td>crystal</td>
+											  <td>mdautoinsurance.com</td>
+											  <td></td>
+											</tr><tr>
+											  <td>gbridges@insulfab.com</td>
+											  <td>Valid</td>
+											  <td>No</td>
+											  <td>gbridges</td>
+											  <td>insulfab.com</td>
+											<td></td></tr>
+											<tr>
+											  <td>jsignor@caddispartners.com</td>
+											  <td>Valid</td>
+											  <td>No</td>
+											  <td>jsignor</td>
+											  <td>caddispartners.com</td>
+											<td></td></tr>
+											<tr>
+											  <td>rlinzy@bayoufcu.org</td>
+											  <td>Valid</td>
+											  <td>No</td>
+											  <td>rlinzy</td>
+											  <td>bayoufcu.org</td>
+											<td></td></tr>
+											<tr>
+											  <td>robbins@crowellweedon.com</td>
+											  <td>Valid</td>
+											  <td>Yes</td>
+											  <td>robbins</td>
+											  <td>crowellweedon.com</td>
+											<td></td></tr>
+											<tr>
+											  <td>eddiecook@hillerne.com</td>
+											  <td>Valid</td>
+											  <td>Yes</td>
+											  <td>eddiecook</td>
+											  <td>hillerne.com</td>
+											<td></td></tr>
+											<tr>
+											  <td>pfellows@gtt.com</td>
+											  <td>Valid</td>
+											  <td>Yes</td>
+											  <td>pfellows</td>
+											  <td>gtt.com</td>
+											<td></td></tr>
+											<tr>
+											  <td>restes@bcs.ws</td>
+											  <td>Valid</td>
+											  <td>Yes</td>
+											  <td>restes</td>
+											  <td>bcs.ws</td>
+											<td></td></tr>
+											<tr>
+											  <td>marcw@mgasearch.com</td>
+											  <td>Valid</td>
+											  <td>Yes</td>
+											  <td>marcw</td>
+											  <td>mgasearch.com</td>
+											<td></td></tr>
+											<tr>
+											  <td>tony.biggs@tnb.com</td>
+											  <td>Valid</td>
+											  <td>No</td>
+											  <td>tony.biggs</td>
+											  <td>tnb.com</td>
+											<td></td></tr>
+											<tr>
+											  <td>richardd@mhdmlaw.com</td>
+											  <td>Valid</td>
+											  <td>Yes</td>
+											  <td>richardd</td>
+											  <td>mhdmlaw.com</td>
+											<td></td></tr>
+										  </tbody>
+										</table>
+									</uib-tab>
+									<uib-tab index="1" heading="Invalid Emails">
+										<table class="table table-hover table-responsive table-striped tbl-alg">
+										  <thead>
+											<tr>
+											  <th>Email</th>
+											  <th>Syntax</th>
+											  <th>Deliverability</th>
+											  <th>User</th>
+											  <th>Domain</th>
+											  <th><a href="pdfs/email-invalidreport.pdf" target="_blank"><img src="images/pdf.gif" style="float:right"></a></th>
+											 </tr>
+										  </thead>
+										  <tbody>
+											<tr>
+											  <td>merci.vargas@brookfieldpower.com</td>
+											  <td>Valid</td>
+											  <td>Yes</td>
+											  <td>merci.vargas</td>
+											  <td>brookfieldpower.com</td>
+											<td></td></tr>
+											<tr>
+											  <td>allan.long@rrd.com</td>
+											  <td>Invalid</td>
+											  <td>Yes</td>
+											  <td>allan.long</td>
+											  <td>rrd.com</td>
+											<td></td></tr>
+											<tr>
+											  <td>ron@doan.com</td>
+											  <td>Invalid</td>
+											  <td>Yes</td>
+											  <td>ron</td>
+											  <td>doan.com</td>
+											<td></td></tr>
+											<tr>
+											  <td>michael@azusausd.k12.ca.us</td>
+											  <td>Invalid</td>
+											  <td>No</td>
+											  <td>michael</td>
+											  <td>azusausd.k12.ca.us</td>
+											<td></td></tr>
+											<tr>
+											  <td>damiller@obabank.com</td>
+											  <td>Invalid</td>
+											  <td>No</td>
+											  <td>damiller</td>
+											  <td>obabank.com</td>
+											<td></td></tr>
+											<tr>
+											  <td>cmorelli@freyermartin.com</td>
+											  <td>Invalid</td>
+											  <td>Yes</td>
+											  <td>cmorelli</td>
+											  <td>freyermartin.com</td>
+											<td></td></tr>
+											<tr>
+											  <td>alex@lauras-catering.com</td>
+											  <td>Invalid</td>
+											  <td>Yes</td>
+											  <td>alex</td>
+											  <td>lauras-catering.com</td>
+											<td></td></tr>
+											<tr>
+											  <td>tracyg@homefreeusa.org</td>
+											  <td>Invalid</td>
+											  <td>Yes</td>
+											  <td>tracyg</td>
+											  <td>homefreeusa.org</td>
+											<td></td></tr>
+											<tr>
+											  <td>marioborda@interflightconsulting.com</td>
+											  <td>Invalid</td>
+											  <td>Yes</td>
+											  <td>marioborda</td>
+											  <td>interflightconsulting.com</td>
+											<td></td></tr>
+											<tr>
+											  <td>tessa@foyh.org.uk</td>
+											  <td>Invalid</td>
+											  <td>No</td>
+											  <td>tessa</td>
+											  <td>foyh.org.uk</td>
+											<td></td></tr>
+											<tr>
+											  <td>peter@walterandmair.co.uk</td>
+											  <td>Invalid</td>
+											  <td>Yes</td>
+											  <td>peter</td>
+											  <td>walterandmair.co.uk</td>
+											<td></td></tr>
+										  </tbody>
+										</table>
+									</uib-tab>
+									<uib-tab index="2" heading="Unknown Emails">
+										<table class="table table-hover table-responsive table-striped tbl-alg">
+										  <thead>
+											<tr>
+											  <th>Email</th>
+											  <th>Syntax</th>
+											  <th>Deliverability</th>
+											  <th>User</th>
+											  <th>Domain</th>
+											  <th><a href="pdfs/email-unknownreport.pdf" target="_blank"><img src="images/pdf.gif" style="float:right"></th></tr>
+										  </thead>
+										  <tbody>
+											<tr>
+											  <td>genevieve.murray@theactigraph.com</td>
+											  <td>Unknown</td>
+											  <td>No</td>
+											  <td>genevieve.murray</td>
+											  <td>theactigraph.com</td>
+											<td></td></tr>
+											<tr>
+											  <td>brian@georgiapromotions.com</td>
+											  <td>Unknown</td>
+											  <td>Yes</td>
+											  <td>brian</td>
+											  <td>georgiapromotions.com</td>
+											<td></td></tr>
+											<tr>
+											  <td>xhammer@stanfordalumni.org</td>
+											  <td>Unknown</td>
+											  <td>No</td>
+											  <td>xhammer</td>
+											  <td>stanfordalumni.org</td>
+											<td></td></tr>
+											<tr>
+											  <td>seamus@metaresolver.com</td>
+											  <td>Unknown</td>
+											  <td>No</td>
+											  <td>seamus</td>
+											  <td>metaresolver.com</td>
+											<td></td></tr>
+											<tr>
+											  <td>jvasisko@wskg.org</td>
+											  <td>Unknown</td>
+											  <td>No</td>
+											  <td>jvasisko</td>
+											  <td>wskg.org</td>
+											<td></td></tr>
+											<tr>
+											  <td>mike@bowlandcenters.com</td>
+											  <td>Unknown</td>
+											  <td>No</td>
+											  <td>mike</td>
+											  <td>bowlandcenters.com</td>
+											<td></td></tr>
+											<tr>
+											  <td>lthompson@bestwade.com</td>
+											  <td>Unknown</td>
+											  <td>No</td>
+											  <td>lthompson</td>
+											  <td>bestwade.com</td>
+											<td></td></tr>
+											<tr>
+											  <td>rwalker@northkitsapherald.com</td>
+											  <td>Unknown</td>
+											  <td>No</td>
+											  <td>rwalker</td>
+											  <td>northkitsapherald.com</td>
+											<td></td></tr>
+											<tr>
+											  <td>blightle@rocal.com</td>
+											  <td>Unknown</td>
+											  <td>No</td>
+											  <td>blightle</td>
+											  <td>rocal.com</td>
+											<td></td></tr>
+											<tr>
+											  <td>credlien@saintphilips.net</td>
+											  <td>Unknown</td>
+											  <td>No</td>
+											  <td>credlien</td>
+											  <td>saintphilips.net</td>
+											<td></td></tr>
+											<tr>
+											  <td>dherring@sbrecycling.net</td>
+											  <td>Unknown</td>
+											  <td>No</td>
+											  <td>dherring</td>
+											  <td>sbrecycling.net</td>
+											<td></td></tr>
+											
+										  </tbody>
+										</table>
+									</uib-tab>
+									<uib-tab index="3" heading="Disposal Emails">
+										<table class="table table-hover table-responsive table-striped tbl-alg">
+										  <thead>
+											<tr>
+											  <th>Email</th>
+											  <th>Syntax</th>
+											  <th>Deliverability</th>
+											  <th>User</th>
+											  <th>Domain</th>
+											<th><a href="pdfs/email-disposalreport.pdf" target="_blank"><img src="images/pdf.gif" style="float:right"></a></th></tr>
+										  </thead>
+										  <tbody>
+											<tr>
+											  <td>matthew@solidstategroup.com</td>
+											  <td>Disposal</td>
+											  <td>No</td>
+											  <td>matthew</td>
+											  <td>solidstategroup.com</td>
+											<td></td>
+											</tr>
+											<tr>
+											  <td>clive.hatchard@spectrumcf.co.uk</td>
+											  <td>Disposal</td>
+											  <td>No</td>
+											  <td>clive.hatchard</td>
+											  <td>spectrumcf.co.uk</td>
+											<td></td>
+											</tr>
+											<tr>
+											  <td>sarah.boydell@kp360group.com</td>
+											  <td>Disposal</td>
+											  <td>No</td>
+											  <td>sarah.boydell</td>
+											  <td>kp360group.com</td>
+											<td></td>
+											</tr>
+											<tr>
+											  <td>snp@pcblitigation.com</td>
+											  <td>Disposal</td>
+											  <td>No</td>
+											  <td>snp</td>
+											  <td>pcblitigation.com</td>
+											<td></td>
+											</tr>
+											<tr>
+											  <td>sshamsi@ahmm.co.uk</td>
+											  <td>Disposal</td>
+											  <td>No</td>
+											  <td>sshamsi</td>
+											  <td>ahmm.co.uk</td>
+											<td></td>
+											</tr>
+											<tr>
+											  <td>t.casteluci@abro.mod.uk</td>
+											  <td>Disposal</td>
+											  <td>No</td>
+											  <td>t.casteluci</td>
+											  <td>abro.mod.uk</td>
+											<td></td>
+											</tr>
+											<tr>
+											  <td>dave@trial-balance.co.uk</td>
+											  <td>Disposal</td>
+											  <td>No</td>
+											  <td>dave</td>
+											  <td>trial-balance.co.uk</td>
+											<td></td>
+											</tr>
+											<tr>
+											  <td>michael.mccann@apgeotechnics.co.uk</td>
+											  <td>Disposal</td>
+											  <td>No</td>
+											  <td>michael.mccann</td>
+											  <td>apgeotechnics.co.uk</td>
+											<td></td>
+											</tr>
+											<tr>
+											  <td>john@dgpfs.co.uk</td>
+											  <td>Disposal</td>
+											  <td>No</td>
+											  <td>john</td>
+											  <td>dgpfs.co.uk</td>
+											<td></td>
+											</tr>
+										  </tbody>
+										</table>
+									</uib-tab>
+									<uib-tab index="4" heading="Risk Emails">
+										<table class="table table-hover table-responsive table-striped tbl-alg">
+										  <thead>
+											<tr>
+											  <th>Email Address</th>
+											  <th>Syntax</th>
+											  <th>Deliverability</th>
+											  <th>User Name</th>
+											  <th>Domain</th>
+											<th><a href="pdfs/email-riskreport.pdf" target="_blank"><img src="images/pdf.gif" style="float:right"></a></th></tr>
+										  </thead>
+										  <tbody>
+											<tr>
+											  <td>cwebster@raconteurmedia.co.uk</td>
+											  <td>Risk</td>
+											  <td>No</td>
+											  <td>cwebster</td>
+											  <td>raconteurmedia.co.uk</td>
+											  <td></td>
+											</tr>
+											<tr>
+											  <td>jh00202@surrey.ac.uk</td>
+											  <td>Risk</td>
+											  <td>No</td>
+											  <td>jh00202</td>
+											  <td>surrey.ac.uk</td>
+											  <td></td>
+											</tr>
+											<tr>
+											  <td>edavies@winchmorecapital.com</td>
+											  <td>Risk</td>
+											  <td>No</td>
+											  <td>edavies</td>
+											  <td>winchmorecapital.com</td>
+											  <td></td>
+											</tr>
+											<tr>
+											  <td>carole@bradfordgrammar.com</td>
+											  <td>Risk</td>
+											  <td>No</td>
+											  <td>carole</td>
+											  <td>bradfordgrammar.com</td>
+											  <td></td>
+											</tr>
+											<tr>
+											  <td>stuart.clarke@prime-design.co.uk</td>
+											  <td>Risk</td>
+											  <td>No</td>
+											  <td>stuart.clarke</td>
+											  <td>prime-design.co.uk</td>
+											  <td></td>
+											</tr>
+											<tr>
+											  <td>andrew.french@bbh.com</td>
+											  <td>Risk</td>
+											  <td>No</td>
+											  <td>andrew.french</td>
+											  <td>bbh.com</td>
+											  <td></td>
+											</tr>
+											<tr>
+											  <td>polly.pithers@lifetime.co.uk</td>
+											  <td>Risk</td>
+											  <td>No</td>
+											  <td>polly.pithers</td>
+											  <td>lifetime.co.uk</td>
+											  <td></td>
+											</tr>
+											<tr>
+											  <td>office@bishopchallonerschool.com</td>
+											  <td>Risk</td>
+											  <td>No</td>
+											  <td>office</td>
+											  <td>bishopchallonerschool.com</td>
+											  <td></td>
+											</tr>
+										  </tbody>
+										</table>
+									</uib-tab>
+								</uib-tabset>
+							</div>
+						</div>
+	</div></div>
+</div>
+		  
+		  <script>
+		  $("#process-btn").hide();
+		  $('#file').change(function(){
+    $("#process-btn").show();
+});
+
+$('.google-link').on("DOMSubtreeModified",function(){
+  if($('.google-link').html()!=''){
+  $("#process-btn").show();
+  }
+});
+
+$('#boxchange').on("DOMSubtreeModified",function(){
+alert("jays")
+  if($('#boxchange').html()!=''){
+  $("#process-btn").show();
+  }
+});
+		</script>
+		

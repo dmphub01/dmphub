@@ -5,7 +5,7 @@
 .form-group {margin-bottom:0px !important;}
 </style>
 
-<div class="row forms" style="margin-top:78px; padding-right:20px;">
+<div class="row forms" style="margin-top:70px; padding-right:20px;">
 	
 <div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2 col-xs-12 signup-form" style="padding:15px 25px;">
 <h3 class="text-center">Create Account</h3>
@@ -33,14 +33,15 @@
         <div class="form-group" ng-class="{ 'has-error': form.username.$dirty && form.username.$error.required }">
             <label for="username"></label>
             <input type="email" name="username" id="username" class="form-control" placeholder="xxx@yyy.zzz" ng-model="vm.user.username" required />
-            <span ng-show="form.username.$dirty && form.username.$error.required" class="help-block">Username is required</span>
+            <span ng-show="form.username.$dirty && form.username.$error.required" class="help-block">Email is required</span>
+			<span ng-show="form.username.$dirty && form.username.$error.email" class="help-block format-invalid">Email format not valid</span>
 			<p style="font-size:10px;">Your email address serves as your username</p>
         </div>
 		</div>
 		<div class="col-md-6" style="padding-right:0px !important;">
         <div class="form-group" ng-class="{ 'has-error': form.phone.$dirty && form.phone.$error.required }">
             <label for="phone"></label>
-            <input type="tel" name="phone" id="phone" class="form-control" ng-model="vm.user.phone" placeholder="Phone Number"/>
+            <input id="txtChar" onkeypress="return isNumberKey(event)" type="text" name="txtChar"class="form-control" ng-model="vm.user.phone" placeholder="Phone Number"/>
         </div>
 		</div>
 		</div>
@@ -57,7 +58,9 @@
 		<div class="col-md-6" style="padding-right:0px !important;">
         <div class="form-group" ng-class="{ 'has-error': form.conformpassword.$dirty && form.conformpassword.$error.required }">
             
-            <input type="password" name="confirmpassword" id="confirmpassword" class="form-control" ng-model="vm.user.confirmpassword"  placeholder="Confirm Password" required />
+            <input type="password" name="confirmpassword" id="confirmpassword" class="form-control" ng-model="vm.user.confirmpassword"  placeholder="Confirm Password" required compare-to="vm.user.password"/>
+			<div ng-messages="vm.confirmPassword.$error"
+      ng-messages-include="messages.html"></div>
             <span ng-show="form.password.$dirty && form.password.$error.required" class="help-block">Password is required</span>
 			<!--p style="font-size:10px;">Your password must be 6 characters or more</p-->
         </div>
@@ -96,7 +99,7 @@
 		</div>
 		</div>
 		<div class="col-md-12 col-lg-12 col-sm-12 col-xs-12" style="padding:0px !important;">
-		<div class="col-md-5 col-lg-5 col-sm-12 col-xs-12" style="padding-left:0px !important;">
+		<div class="col-md-5 col-lg-5 col-sm-12 col-xs-12" style="padding-left:0px !important; padding-right:0px;">
 		<!--div class="recaptcha-wrap">
 			<div class="g-recaptcha" id="g-recaptcha" data-sitekey="6LeeKiITAAAAAAMLMwMW1FGgGhILSL_IBG45ykRt"style="transform:scale(0.83);-webkit-transform:scale(0.83);transform-origin:0 0;-webkit-transform-origin:0 0;"></div>
 			</div-->
@@ -113,7 +116,6 @@
 				<p>reCaptcha</p>
 			</div></div>
 		</div>
-		
 		<div class="col-md-7 col-lg-7 col-sm-12 col-xs-12" style="padding-right:0px !important; margin:20px 0px;">
         <div class="form-group" ng-class="{ 'has-error': form.pricing.$dirty && form.pricing.$error.required }">
             <select class="signup-select">
@@ -125,18 +127,23 @@
 			<!--p style="font-size:10px;">Your password must be 6 characters or more</p-->
         </div>
 		</div>
+		
 		</div>
 		
 		<div class="col-md-12 col-lg-12 col-sm-12 col-xs-12">
 		<div class="form-actions">
-		<button type="submit" class="btn btn-primary center-block" id="forms-button" style="margin-top:0px !important;">Submit</button><!--a href="#/login" class="btn btn-link">Cancel</a-->
+		<button type="submit" ng-disabled="form.$invalid || vm.dataLoading" class="btn btn-primary center-block submit-btn" id="forms-button">Submit</button><!--a href="#/login" class="btn btn-link">Cancel</a-->
             <img ng-if="vm.dataLoading" src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA==" />
 		
         </div>
+		
 		</div>
     </form>
+	
 </div>
+
 		</div>
+		
 	<script>
 $(document).ready(function(){
 
@@ -150,6 +157,59 @@ $('.signup-select').val(urlval[1]);
 else{
 $('.signup-select').val('1');
 }
-
 })
+
+
+$('.signup-select').change(function(){
+if($(this).val()==1)
+{
+window.location.href='#/register';
+}
+else{
+window.location.href='#/paidregister?id='+$(this).val();
+}
+});
+
 </script>
+<script language=Javascript>
+      <!--
+      function isNumberKey(evt)
+      {
+         var charCode = (evt.which) ? evt.which : event.keyCode
+         if (charCode > 31 && (charCode < 48 || charCode > 57))
+            return false;
+
+         return true;
+      }
+      //-->
+   </script>
+   
+   <script>
+		function reset () {
+			$("#toggleCSS").attr("href", "assets/css/alertify.default.css");
+			
+			alertify.set({
+				labels : {
+					ok     : "OK",
+					cancel     : "Cancel"
+				},
+				delay : 300,
+				buttonReverse : false,
+				buttonFocus   : "ok"
+			});
+		}
+		$("#forms-button").on( 'click', function () {
+			reset();
+			alertify.confirm("Registered Successfully !", function (e) {
+        if (e) {
+		setTimeout(
+  function() 
+  {
+    window.location.href = "#/login";
+  }, 300);
+            
+        }
+    });
+			return false;
+		});
+	</script>

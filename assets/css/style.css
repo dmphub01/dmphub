@@ -115,13 +115,13 @@ a {
 	text-decoration: none;
 }
 a:hover {
-	text-decoration: none; color:#fff !important;
+	text-decoration: none; color:#fff;
 }
 a:focus {
-	outline: none; color:#fff !Important;
+	outline: none; color:#fff;
 }
 a:active {
-	text-decoration: none; color:#fff !Important;
+	text-decoration: none; color:#fff ;
 }
 h5 {
 	font-size: 15px;
@@ -7694,7 +7694,7 @@ background:#d4af37 !important; color:#1c2857 !important;
 .flight-details2 .modal-dialog {margin-top:40px;}
 
 	a {text-decoration:none;}
-	a:hover, a:focus, a:active {color:#194374 !important; text-decoration:none;}
+	a:hover, a:focus, a:active {color:#194374; text-decoration:none;}
 	
 .flight-details2 .modal-header { background-color:#F7941D;}
 .close {opacity:0.8;color:#fff;}
@@ -7734,7 +7734,7 @@ background:#d4af37 !important; color:#1c2857 !important;
 .forms h2 { font-family:'Helvetica Neue', Helvetica, Arial, sans-serif !important; color:#F7941D; }
 
 .signup-form { overflow:hidden; box-shadow:0px 0px 5px #333; padding:25px; background-color:#1c2857; color:#fff; border-radius:10px; margin-bottom:40px;}
-.signup-form h3 {margin-top:10px!important;margin-bottom:10px;}
+.signup-form h3 {margin-top:10px!important;margin-bottom:0px !important;}
 .signup-form a { color:#fff; font-size:14px;}
 .signup-form a:hover {color:#fff !important; text-decoration:underline;}
 .signup-form a:focus {color:#fff !important;}
@@ -7756,7 +7756,7 @@ background:#d4af37 !important; color:#1c2857 !important;
 
 .forms hr {width:80%; height:1px; background-color:#fff; margin-bottom:15px; margin-top:10px !important; vertical-align:center;}
 
-#forms-button{ background-color:#d4af37 !important; color:#fff; border:none; border-radius:7px; margin-top:10px;padding:9px 25px; font-weight:normal;}
+#forms-button{ background-color:#d4af37 !important; color:#fff; border:none; border-radius:7px; margin-top:20px;padding:9px 25px; font-weight:normal;}
 
 #forms-button:hover {color:#fff !important; background-color:#b18b0f !important;}
 
@@ -7791,7 +7791,7 @@ background:#d4af37 !important; color:#1c2857 !important;
 
 .reveal-if-active {
   opacity: 0;
-  max-height: 0;
+  max-height: auto !important;
   overflow: hidden;
 }
 
@@ -7799,7 +7799,7 @@ background:#d4af37 !important; color:#1c2857 !important;
 input[type="radio"]:checked ~ .reveal-if-active,
 input[type="checkbox"]:checked ~ .reveal-if-active {
   opacity: 1;
-  max-height: 100px; /* little bit of a magic number :( */
+  max-height: auto; /* little bit of a magic number :( */
   overflow: visible;
 }
 
@@ -7878,7 +7878,7 @@ input[type="checkbox"]:checked ~ .reveal-if-active {
 
 	.pricing-signup:hover {color:#fff !important; background:#b18b0f !important; border-radius:5px;}
 	
-	.pricing249-button {float:right; padding:5px 15px; width:200px; background-color:#194374; color:#fff;font-size:1.6em; border-radius:2px; text-align:center;}
+	.pricing249-button {float:right; padding:7px 15px; background-color:#1c2857; color:#fff;font-size:17px; border-radius:5px; text-align:center;}
 	
 	.pricing249-button:hover { color:#fff!important;}
 	
