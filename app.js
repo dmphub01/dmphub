@@ -1,6 +1,6 @@
 
    var app= angular
-        .module('app', ['ngRoute', 'ngCookies'])
+        .module('app', ['ngRoute', 'ngCookies', 'dropbox-picker'])
         .config(config)
         .run(run);
 
@@ -66,7 +66,7 @@
             })
 			
 			.when('/uploadphone', {
-                controller: 'UploadphoneController',
+                controller: 'UploadfileemailController',
                 templateUrl: 'views/phone.view.html',
                 controllerAs: 'vm'
             })
@@ -76,11 +76,13 @@
                 templateUrl: 'views/email.view.html',
                 controllerAs: 'vm'
             })
+			
 			.when('/uploadfilephone', {
-                controller: 'UploadfileemailController',
+                controller: '',
                 templateUrl: 'views/uploadfilephone.view.html',
                 controllerAs: 'vm'
             })
+			
 			
 			.when('/forgotpassword', {
                 controller: 'ForgotController',
@@ -129,6 +131,29 @@
         });
 		*/
 		
+		
+		
+		
+		
     }
+	
+	
+	app.config(['DropBoxSettingsProvider', function(DropBoxSettingsProvider) {
+
+      // Configure the options
+        DropBoxSettingsProvider.configure({
+            linkType: 'preview',//dropbox link type
+            multiselect: false,//dropbox multiselect
+            extensions: ['.xls', '.xlsx']//dropbox file extensions
+          });
+    }])
+
+    .controller('DropBoxCtrl', ['$scope', 'DropBoxSettings', function($scope, DropBoxSettings) {
+        $scope.dpfiles = [];
+        $scope.remove = function(idx){
+            $scope.dpfiles.splice(idx,1);
+            }
+
+    }]);
 	
 	

@@ -1,0 +1,730 @@
+
+<div class="page page-dashboard"> <div class="pageheader"><div class="page-bar"> <ul class="page-breadcrumb"> <li> <a ui-sref="app.dashboard"><i class="fa fa-home"></i> {{main.title}}</a> </li> <li> <a ui-sref="app.datafiles" class="current">{{page.title}}</a> </li> </ul></div> </div> <!-- cards row -->
+
+<div class="row">
+	<div class="col-md-12 col-sm-12 col-xs-12 col-lg-12" style="padding:0px !important;">
+		<div class="container-fluid">
+			<div class="single-file-upload" ng-controller="SingleFileCtrl">
+				<h4 class="color">Single Name parse</h4>
+				<form name="singleFile">
+				<div class="col-md-9 col-lg-9 col-sm-8 col-xs-12" style="padding-left:0px;">
+					<input id="txtsearch" type="text" name="Raymond Estevez" class="form-control" ng-model="name" required />
+				</div>
+				<div class="col-md-3 col-lg-3 col-sm-4 col-xs-12">
+					<button type="button" class="btn search-button" ng-model="isCollapsed" ng-click="showtalbe(name)" ng-disabled="singleFile.$invalid">Verify</button>
+				</div>
+				<div class="col-md-12 col-lg-12 col-sm-12 col-xs-12" ng-if="isvalue">
+					<table class="table table-hover table-responsive table-striped tbl-alg" id="table-show">
+										  <thead>
+											<tr>
+											  <th>First Name</th>
+											  <th>Middle Name</th>
+											  <th>Last Name</th>
+											  <th>Gender</th>
+											  <th>Related Names</th>
+											  <th>Vulgarity Score</th>
+											  <th>Celebrity Score</th>
+											  <th>Bogus Score</th>
+											  <th>Is Name Good</th>
+											</tr>
+										  </thead>
+										  <tbody>
+											<tr>
+											  <td>Raymond</td>
+											  <td></td>
+											  <td>Estevez</td>
+											  <td>Male</td>
+											  <td>Ray, Estevez, Raymond</td>
+											  <td>0</td>
+											  <td>0</td>
+											  <td>0</td>
+											  <td>Yes</td>
+											</tr>
+										  </tbody>
+										</table>
+				</div>
+				</form>
+			</div>
+			<div class="email-content">
+<div ng-controller="AppController" nv-file-drop="" uploader="uploader" filters="queueLimit, customFilter" id="file-upload">
+
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-12 col-lg-12" style="padding:0px;">
+                    <div ng-show="uploader.isHTML5">
+                        <!-- 3. nv-file-over uploader="link" over-class="className" -->
+                        <div class="well my-drop-zone" nv-file-over="" uploader="uploader">
+                            <h3 class="color">Drop Here</h3>
+							<p>Or</p>
+							<input type="file" name="file" id="file" class="inputfile center-block" nv-file-select="" uploader="uploader" class="search-button center-block" />
+							<label for="file" id="file-local"><span class="fa fa-upload"></span>Choose a file</label>
+                        </div>
+                        <!-- Example: nv-file-drop="" uploader="{Object}" options="{Object}" filters="{String}" -->
+
+                    </div>
+                    <!-- Example: nv-file-select="" uploader="{Object}" options="{Object}" filters="{String}" -->
+                    
+                </div>
+                <div class="col-md-8 col-lg-8 col-sm-12 col-xs-12 col-md-offset-2 col-lg-offset-2" style="margin-bottom: 40px">
+                    <table class="table file-table table-responsive">
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th ng-show="uploader.isHTML5">Size</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr ng-repeat="item in uploader.queue">
+                                <td style="padding-top:10px !important;" id="local-file"><strong>{{ item.file.name }}</strong></td>
+                                <td ng-show="uploader.isHTML5" nowrap style="padding-top:10px !important;">{{ item.file.size/1024/1024|number:2 }} MB</td>
+                                <td nowrap style="padding-top:10px !important;">
+                                    <!--button type="button" class="btn btn-success btn-xs" ng-click="item.upload()" ng-disabled="item.isReady || item.isUploading || item.isSuccess">
+                                        <span class="glyphicon glyphicon-upload"></span> Upload
+                                    </button-->
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div>
+    
+                    </div>
+                </div>
+            </div>
+        </div>
+		  <div ng-controller="ModalDemoCtrl">
+			<div class="btn-group col-md-12 col-lg-12 col-sm-12 col-xs-12" id="dropdown" uib-dropdown dropdown-append-to-body>
+				<button id="btn-append-to-body" type="button" class="cloud-button center-block" uib-dropdown-toggle>
+				Import List from Cloud Storage&nbsp;&nbsp;<span class="caret"></span>
+				</button>
+				<div ng-controller="DropBoxCtrl" class="clouddropdown">
+				  <ul class="dropdown-menu cloud-dropdown" uib-dropdown-menu role="menu" aria-labelledby="btn-append-to-body">
+					<li role="menuitem"><a href="javascript:;" lk-google-picker on-picked="onPicked(docs)" on-loaded="onLoaded()" on-cancel="onCancel()" class="btn btn-2 btn-2c">
+						<img src="images/Logo_of_Google_Drive.png" />
+						<span>Google Drive</span>
+					</a></li>
+					<li role="menuitem"><a href="javascript:;" drop-box-picker dbpicker-files="dpfiles">
+						<img src="images/dropbox.png" />
+						<span>Dropbox</span>
+					</a></li>
+					<li role="menuitem"><a href="javascript:;" box-picker boxpicker-files="boxfiles">
+						<img src="images/box.png" />
+						<span>Box</span>
+					</a></li>
+				  </ul>
+				  <div class="row show-grid" ng-switch="dpfiles.length > 0 || boxfiles.length > 0">
+                <div ng-switch-when="true">
+                    <div class="col-sm-12 col-md-8 col-md-offset-3 col-lg-8 col-lg-offset-3 col-xs-12" ng-repeat="file in dpfiles">
+                        <a href="{{ file.link }}" target="_blank" class="text-center" id="dropboxchange">{{ file.link }}</a>
+                        
+                    </div>
+                    <div class="col-sm-12 col-md-8 col-md-offset-3 col-lg-8 col-lg-offset-3 col-xs-12" ng-repeat="file in boxfiles">
+                        <a href="{{ file.url }}" target="_blank" class="text-center" id="boxchange">{{ file.url }}</a>
+                                         </div>
+                </div>
+            </div></div>
+				 <div>
+				  <a href="{{files[0].embedUrl}}" target="_blank" class="google-link center-block">{{files[0].embedUrl}}</a>
+		
+			</div>
+		  </div>
+		  </div>
+		  
+		  </div>
+		  
+		  </div>
+		  
+		  </div>
+		  
+
+		  </div></div> 
+		  
+<div class="row">
+	<div class="col-md-12 col-lg-12 col-sm-12 col-xs-12">
+	<div ng-controller="CollapseDemoCtrl">
+<button type="button" ng-model="isCollapsed" ng-click="showMsg(true)" class="search-button center-block" id="process-btn">Process</button>
+			<div class="email-results"  ng-if="isCollapsed">
+							<div ng-controller="TabsDemoCtrl">
+								<uib-tabset active="activeJustified" justified="true">
+									<uib-tab index="5" heading="Valid Name Parse">
+										<table class="table table-hover table-responsive table-striped tbl-alg">
+										  <thead>
+											<tr>
+											  <th>First Name</th>
+											  <th>Middle Name</th>
+											  <th>Last Name</th>
+											  <th>Gender</th>
+											  <th>Result</th>
+											  <th>Related Names</th>
+											  <th>Vulgarity Score</th>
+											  <th>Celebrity Score</th>
+											  <th>Bogus Score</th>
+											  <th>Is Name Good</th>
+											  <th><a href="pdfs/name-validreport.pdf" target="_blank"><img src="images/pdf.gif" style="float:right"></a></th>
+											</tr>
+										  </thead>
+										  <tbody>
+											<tr>
+												<td>KAREN</td>
+												<td></td>
+												<td>SLUSHER	</td>
+												<td>Female	</td>
+												<td>Valid	</td>
+												<td>KAREN, SLUSHER	</td>
+												<td>0</td>	
+												<td>0</td>	
+												<td>0</td>	
+												<td>Yes</td>
+											</tr>
+											<tr>
+												<td>DAVID	</td>
+												<td>C	</td>
+												<td>JACOBSON	</td>
+												<td>Male	</td>
+												<td>Valid	</td>
+												<td>DAVID, JACOBSON, C DAVID, C JACOBSON	</td>
+												<td>0	</td>
+												<td>6	</td>
+												<td>0	</td>
+												<td>Yes</td>
+											</tr>
+											<tr>
+												<td>NICOLE	</td>
+												<td>W	</td>
+												<td>CAHERLY	</td>
+												<td>Female	</td>
+												<td>Valid	</td>
+												<td>NICOLE, CAHERLY, W NICOLE, W CAHERLY	</td>
+												<td>0	</td>
+												<td>0	</td>
+												<td>0	</td>
+												<td>Yes</td>
+											</tr>
+											<tr>
+												<td>RORY	</td>
+												<td></td>
+												<td>CAHERLY	</td>
+												<td>Male	</td>
+												<td>Valid	</td>
+												<td>RORY, CAHERLY	</td>
+												<td>0	</td>
+												<td>0	</td>
+												<td>6	</td>
+												<td>No</td>
+											</tr>
+											<tr>
+												<td>NATALIE	</td>
+												<td>R	</td>
+												<td>BECKER	</td>
+												<td>Female	</td>
+												<td>Valid	</td>
+												<td>NATALIE, BECKER, R NATALIE, R BECKER	</td>
+												<td>3	</td>
+												<td>0	</td>
+												<td>0	</td>
+												<td>No</td>
+											</tr>
+											<tr>
+												<td>ANNE	</td>
+												<td>D	</td>
+												<td>YEARLEY	</td>
+												<td>Female</td>	
+												<td>Valid	</td>
+												<td>ANNE, YEARLEY, D ANNE, D YEARLEY</td>	
+												<td>0	</td>
+												<td>0	</td>
+												<td>0	</td>
+												<td>Yes</td>
+											</tr>
+											<tr>
+												<td>SEAN	</td>
+												<td>A	</td>
+												<td>FAUST	</td>
+												<td>Male	</td>
+												<td>Valid	</td>
+												<td>SEAN, FAUST, A SEAN, A FAUST</td>	
+												<td>0	</td>
+												<td>2	</td>
+												<td>0	</td>
+												<td>Yes</td>
+											</tr>
+											<tr>
+												<td>JOHN</td>	
+												<td>F	</td>
+												<td>CARPENTER</td>	
+												<td>Male	</td>
+												<td>Valid</td>	
+												<td>JOHN, CARPENTER, F JOHN, F CARPENTER	</td>
+												<td>0	</td>
+												<td>0	</td>
+												<td>0	</td>
+												<td>Yes</td>
+											</tr>
+											<tr>
+												<td>CARLA</td>	
+                                                <td></td>
+												<td>CARPENTER	</td>
+												<td>Female	</td>
+												<td>Valid	</td>
+												<td>CARLA, CARPENTER	</td>
+												<td>1	</td>
+												<td>0	</td>
+												<td>0	</td>
+												<td>No</td>
+											</tr>
+											<tr>
+												<td>ALEXANDER</td>	
+												<td>D	</td>
+												<td>WINNICKER	</td>
+												<td>Male</td>	
+												<td>Valid</td>	
+												<td>ALEXANDER, WINNICKER, D ALEXANDER, D WINNICKER</td>	
+												<td>0	</td>
+												<td>0	</td>
+												<td>4</td>	
+												<td>No</td>
+											</tr>
+											<tr>
+												<td>ROBERT</td>		
+												<td></td>
+												<td>DILLON </td>
+												<td>JR	</td>
+												<td>Male	</td>
+												<td>Valid</td>	
+												<td>ROBERT, DILLON JR	</td>
+												<td>2	</td>
+												<td>0	</td>
+												<td>0	</td>
+												<td>No</td>
+											</tr>
+											<tr>
+												<td>LEIGH</td>		
+												<td></td>
+												<td>PETRUZZELL	</td>
+												<td>Male	</td>
+												<td>Valid	</td>
+												<td>LEIGH, PETRUZZELL</td>	
+												<td>0	</td>
+												<td>0	</td>
+												<td>0	</td>
+												<td>Yes</td>
+											</tr>
+											<tr>
+												<td>DEXTER</td>	
+												<td>B	</td>
+												<td>BLAKE</td>	
+												<td>Male</td>	
+												<td>Valid</td>	
+												<td>DEXTER, BLAKE, B DEXTER, B BLAKE</td>	
+												<td>0	</td>
+												<td>0	</td>
+												<td>0	</td>
+												<td>Yes</td>
+											</tr>
+											<tr>
+												<td>AMY	</td>
+												<td>B	</td>
+												<td>BLAKE</td>	
+												<td>Female</td>	
+												<td>Valid	</td>
+												<td>AMY, BLAKE, B AMY, B BLAKE	</td>
+												<td>0	</td>
+												<td>0	</td>
+												<td>0	</td>
+												<td>Yes</td>
+											</tr>
+											<tr>
+												<td>ADAM	</td>	
+												<td></td>
+												<td>LEVY</td>	
+												<td>Male</td>	
+												<td>Valid</td>	
+												<td>ADAM, LEVY	</td>
+												<td>0	</td>
+												<td>0	</td>
+												<td>0	</td>
+												<td>Yes</td>
+											</tr>
+											<tr>
+												<td>NATALIE</td>	
+												<td>E	</td>
+												<td>LEVY	</td>
+												<td>Female</td>	
+												<td>Valid	</td>
+												<td>NATALIE, LEVY, E NATALIE, E LEVY</td>	
+												<td>0	</td>
+												<td>1	</td>
+												<td>0	</td>
+												<td>Yes</td>
+											</tr>
+											<tr>
+												<td>MARK	</td>
+												<td>A	</td>
+												<td>FROEHLICH	</td>
+												<td>Male	</td>
+												<td>Valid	</td>
+												<td>MARK, FROEHLICH, A MARK, A FROEHLICH</td>
+												<td>0	</td>
+												<td>0	</td>
+												<td>0	</td>
+												<td>Yes</td>
+											</tr>
+											<tr>
+												<td>PATRICIA</td>		
+												<td></td>
+												<td>FROEHLICH</td>	
+												<td>Female	</td>
+												<td>Valid	</td>
+												<td>PATRICIA, FROEHLICH	</td>
+												<td>0	</td>
+												<td>0	</td>
+												<td>2	</td>
+												<td>No</td>
+											</tr>
+											<tr>
+												<td>SCOTT	</td>
+												<td>J	</td>
+												<td>TRUPCHAK</td>	
+												<td>Male	</td>
+												<td>Valid	</td>
+												<td>SCOTT, TRUPCHAK, J SCOTT, J  TRUPCHAK</td>
+												<td>0	</td>
+												<td>0	</td>
+												<td>0	</td>
+												<td>Yes</td>
+											</tr>
+											<tr>
+												<td>ANNE	</td>
+												<td>E	</td>
+												<td>GIULIANO	</td>
+												<td>Female	</td>
+												<td>Valid	</td>
+												<td>ANNE, GIULIANO, E ANNE, E GIULIANO</td>	
+												<td>0	</td>
+												<td>0	</td>
+												<td>0	</td>
+												<td>Yes</td>
+											</tr>
+											<tr>
+												<td>CHARLES	</td>
+												<td>E	</td>
+												<td>LALLY	</td>
+												<td>Male	</td>
+												<td>Valid	</td>
+												<td>CHARLES, LALLY, E CHARLES, E LALLY</td>	
+												<td>0	</td>
+												<td>0	</td>
+												<td>0	</td>
+												<td>Yes</td>
+											</tr>
+										  </tbody>
+										</table>
+									</uib-tab>
+									<uib-tab index="6" heading="Invalid Name Parse">
+										<table class="table table-hover table-responsive table-striped tbl-alg">
+										  <thead>
+											<tr>
+											  <th>First Name</th>
+											  <th>Middle Name</th>
+											  <th>Last Name</th>
+											  <th>Gender</th>
+											  <th>Result</th>
+											  <th>Related Names</th>
+											  <th>Vulgarity Score</th>
+											  <th>Celebrity Score</th>
+											  <th>Bogus Score</th>
+											  <th>Is Name Good</th>
+											  <th><a href="pdfs/name-invalidreport.pdf" target="_blank"><img src="images/pdf.gif" style="float:right"></a></th>
+											</tr>
+										  </thead>
+										  <tbody>
+											<tr>
+												<td>MICHAEL	</td>	
+												<td></td>
+												<td>PASCARELLA	</td>
+												<td>Male	</td>
+												<td>Invalid	</td>
+												<td>MICHAEL, PASCARELLA	</td>
+												<td>0	</td>
+												<td>0	</td>
+												<td>0	</td>
+												<td>Yes</td>
+											</tr>
+											<tr>
+												<td>VERONICA</td>		
+												<td></td>
+												<td>SCHNEPF	</td>
+												<td>Female	</td>
+												<td>Invalid	</td>
+												<td>VERONICA, SCHNEPF</td>	
+												<td>0	</td>
+												<td>6	</td>
+												<td>0	</td>
+												<td>Yes</td>
+											</tr>
+											<tr>
+												<td>JOAN	</td>
+												<td>V	</td>
+												<td>SERPE	</td>
+												<td>Female	</td>
+												<td>Invalid	</td>
+												<td>JOAN, SERPE, V JOAN, V SERPE	</td>
+												<td>0	</td>
+												<td>0	</td>
+												<td>0	</td>
+												<td>Yes</td>
+											</tr>
+											<tr>
+												<td>ANA		</td>
+												<td></td>
+												<td>GALELLA	</td>
+												<td>Female	</td>
+												<td>Invalid	</td>
+												<td>ANA, GALELLA	</td>
+												<td>0	</td>
+												<td>0	</td>
+												<td>6	</td>
+												<td>No</td>
+											</tr>
+											<tr>
+												<td>JOSEPH	</td>	
+												<td></td>
+												<td>HENKEL	</td>
+												<td>Male	</td>
+												<td>Invalid	</td>
+												<td>JOSEPH, HENKEL	</td>
+												<td>3	</td>
+												<td>0	</td>
+												<td>0	</td>
+												<td>No</td>
+											</tr>
+											<tr>
+												<td>DENNIS</td>	
+												<td>C	</td>
+												<td>O'BRIEN	</td>
+												<td>Male	</td>
+												<td>Invalid	</td>
+												<td>DENNIS, O'BRIEN, C DENNIS, C O'BRIEN</td>
+												<td>0	</td>
+												<td>0	</td>
+												<td>0	</td>
+												<td>Yes</td>
+											</tr>
+											<tr>
+												<td>ROSEMARY</td>		
+												<td></td>
+												<td>GALELLA	</td>
+												<td>Female	</td>
+												<td>Invalid	</td>
+												<td>ROSEMARY, GALELLA</td>	
+												<td>0	</td>
+												<td>2	</td>
+												<td>0	</td>
+												<td>Yes</td>
+											</tr>
+											<tr>
+												<td>TIMOTHY	</td>
+												<td>R	</td>
+												<td>GRANT	</td>
+												<td>Male	</td>
+												<td>Invalid	</td>
+												<td>TIMOTHY, GRANT, R TIMOTHY, R GRANT	</td>
+												<td>0	</td>
+												<td>0	</td>
+												<td>0	</td>
+												<td>Yes</td>
+											</tr>
+											<tr>
+												<td>ERICH		</td>
+												<td></td>
+												<td>RADLMANN	</td>
+												<td>Male	</td>
+												<td>Invalid	</td>
+												<td>ERICH, RADLMANN	</td>
+												<td>1	</td>
+												<td>0	</td>
+												<td>0	</td>
+												<td>No</td>
+											</tr>
+											<tr>
+												<td>CHRISTINE</td>		
+												<td></td>
+												<td>RADLMANN</td>	
+												<td>Female	</td>
+												<td>Invalid	</td>
+												<td>CHRISTINE, RADLMANN	</td>
+												<td>0	</td>
+												<td>0	</td>
+												<td>4	</td>
+												<td>No</td>
+											</tr>
+											<tr>
+												<td>RAQUEL</td>	
+												<td>M	</td>
+												<td>BAPTISTA</td>	
+												<td>Female	</td>
+												<td>Invalid	</td>
+												<td>RAQUEL, BAPTISTA, M RAQUEL, M BAPTISTA</td>
+												<td>2	</td>
+												<td>0	</td>
+												<td>0	</td>
+												<td>No</td>
+											</tr>
+											<tr>
+												<td>ANTHONY	</td>
+												<td>C	</td>
+												<td>CICIA	</td>
+												<td>Male	</td>
+												<td>Invalid	</td>
+												<td>ANTHONY, CICIA, C ANTHONY, C CICIA</td>	
+												<td>0	</td>
+												<td>0	</td>
+												<td>0	</td>
+												<td>Yes</td>
+											</tr>
+											<tr>
+												<td>SUZANNE	</td>
+												<td>B	</td>
+												<td>CICIA	</td>
+												<td>Female	</td>
+												<td>Invalid	</td>
+												<td>SUZANNE, CICIA, B SUZANNE, B CICIA</td>	
+												<td>0	</td>
+												<td>0	</td>
+												<td>0	</td>
+												<td>Yes</td>
+											</tr>
+											<tr>
+												<td>CHRISTOPHER	</td>
+												<td>G	</td>
+												<td>LACKETT	</td>
+												<td>Male	</td>
+												<td>Invalid	</td>
+												<td>CHRISTOPHER, LACKETT, G CHRISTOPHER, G LACKETT	</td>
+												<td>0	</td>
+												<td>0	</td>
+												<td>0	</td>
+												<td>Yes</td>
+											</tr>
+											<tr>
+												<td>ELIZABETH</td>	
+												<td>J	</td>
+												<td>KATZ	</td>
+												<td>Female	</td>
+												<td>Invalid	</td>
+												<td>ELIZABETH, KATZ, J ELIZABETH, J KATZ</td>
+												<td>0	</td>
+												<td>0	</td>
+												<td>0	</td>
+												<td>Yes</td>
+											</tr>
+											<tr>
+												<td>ANDREW	</td>
+												<td>J	</td>
+												<td>STEWART	</td>
+												<td>Male	</td>
+												<td>Invalid	</td>
+												<td>ANDREW, STEWART, J ANDREW, J STEWART</td>
+												<td>0	</td>
+												<td>1	</td>
+												<td>0	</td>
+												<td>Yes</td>
+											</tr>
+											<tr>
+												<td>DANYELLE</td>	
+												<td>M	</td>
+												<td>STEWART	</td>
+												<td>Female	</td>
+												<td>Invalid	</td>
+												<td>DANYELLE, STEWART, M DANYELLE, M STEWART	</td>
+												<td>0	</td>
+												<td>0	</td>
+												<td>0	</td>
+												<td>Yes</td>
+											</tr>
+											<tr>
+												<td>VERA	</td>
+												<td>A	</td>
+												<td>DEPALMA	</td>
+												<td>Female	</td>
+												<td>Invalid	</td>
+												<td>VERA, DEPALMA, A VERA,  A DEPALMA</td>	
+												<td>0	</td>
+												<td>0	</td>
+												<td>2	</td>
+												<td>No</td>
+											</tr>
+											<tr>
+												<td>MARC	</td>
+												<td>A	</td>
+												<td>MCABE	</td>
+												<td>Male	</td>
+												<td>Invalid	</td>
+												<td>MARC, MCABE, A MARC, A MCABE</td>	
+												<td>0	</td>
+												<td>0	</td>
+												<td>0	</td>
+												<td>Yes</td>
+											</tr>
+											<tr>
+												<td>CYNTHIA	</td>	
+												<td></td>
+												<td>LAPERA	</td>
+												<td>Female	</td>
+												<td>Invalid	</td>
+												<td>CYNTHIA, LAPERA	</td>
+												<td>0	</td>
+												<td>0	</td>
+												<td>0	</td>
+												<td>Yes</td>
+											</tr>
+										  </tbody>
+										</table>
+									</uib-tab>
+									<uib-tab index="7" heading="Unknown Name Parse">
+										<table class="table table-hover table-responsive table-striped tbl-alg">
+										  <thead>
+											<tr>
+											  <th>First Name</th>
+											  <th>Middle Name</th>
+											  <th>Last Name</th>
+											  <th>Gender</th>
+											  <th>Result</th>
+											  <th>Related Names</th>
+											  <th>Vulgarity Score</th>
+											  <th>Celebrity Score</th>
+											  <th>Bogus Score</th>
+											  <th>Is Name Good</th>
+											  <th><img src="images/pdf.gif" style="float:right"></th>
+											</tr>
+										  </thead>
+										  <tbody>
+											
+										  </tbody>
+										</table>
+									</uib-tab>
+									
+								</uib-tabset>
+							</div>
+						</div>
+	</div></div>
+</div>
+		  
+		  <script>
+		  $("#process-btn").hide();
+		  $('#file').change(function(){
+    $("#process-btn").show();
+});
+
+$('.google-link').on("DOMSubtreeModified",function(){
+  if($('.google-link').html()!=''){
+  $("#process-btn").show();
+  }
+});
+
+$('#boxchange').on("DOMSubtreeModified",function(){
+alert("jays")
+  if($('#boxchange').html()!=''){
+  $("#process-btn").show();
+  }
+});
+		</script>

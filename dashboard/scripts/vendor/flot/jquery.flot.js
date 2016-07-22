@@ -541,6 +541,7 @@ Licensed under the MIT license.
                     autoscaleMargin: null, // margin in % to add if auto-setting min/max
                     ticks: null, // either [1, 3] or [[1, "a"], 3] or (fn: axis info -> ticks) or app. number of ticks for auto-ticks
                     tickFormatter: null, // fn: number -> string
+					
                     labelWidth: null, // size of tick labels in pixels
                     labelHeight: null,
                     reserveSpace: null, // whether to reserve space even if axis isn't shown
@@ -564,6 +565,7 @@ Licensed under the MIT license.
                         fill: true,
                         fillColor: "#ffffff",
                         symbol: "circle" // or callback
+						
                     },
                     lines: {
                         // we don't put in show: false so we can see

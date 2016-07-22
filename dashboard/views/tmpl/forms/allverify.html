@@ -1,0 +1,149 @@
+
+
+
+
+<div class="page page-dashboard all-verify-page"> <div class="pageheader"><div class="page-bar"> <ul class="page-breadcrumb"> <li> <a ui-sref="app.dashboard"><i class="fa fa-home"></i> {{main.title}}</a> </li> <li> <a ui-sref="app.datafiles" class="current">{{page.title}}</a> </li> </ul></div> </div> <!-- cards row --></div> 
+
+<div class="row">
+	<div class="col-md-12 col-sm-12 col-xs-12 col-lg-12" style="padding:0px !important; background:#fff !important;">
+		<div class="container-fluid">
+			<div class="all-content">
+			<div class="all-services">
+			<div ng-controller="AppCtrl" class="md-padding demo">
+  <div layout="row" layout-wrap>
+    <div flex="100" layout="column">
+      <div>
+        <!--
+          In IE, we cannot apply flex directly to <fieldset>
+          @see https://github.com/philipwalton/flexbugs#9-some-html-elements-cant-be-flex-containers
+        -->
+        <fieldset class="demo-fieldset" >
+          
+          
+          <div class="selectall col-md-3 col-lg-3 col-xs-4 col-xs-12" flex-xs flex>
+            <md-checkbox aria-label="Select All"
+                         ng-checked="isChecked()"
+                         md-indeterminate="isIndeterminate()"
+                         ng-click="toggleAll()" class="selectall">
+              <img src="images/allverify/selectall4.png" />
+            </md-checkbox>
+          </div>
+            <div class="demo-select-all-checkboxes col-md-3 col-lg-3 col-xs-4 col-xs-12" ng-repeat="item in items">
+              <md-checkbox ng-checked="exists(item, selected)" ng-click="toggle(item, selected)">
+              <img src="{{ item }}" class="check-img email-toggle" />
+              </md-checkbox>
+            </div>
+
+        </fieldset>
+      </div>
+    </div>
+</div>
+			</div>
+		  </div>
+		  <div ng-controller="AppController" nv-file-drop="" uploader="uploader" filters="queueLimit, customFilter" id="file-upload">
+
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-12 col-lg-12">
+                    <div ng-show="uploader.isHTML5">
+                        <!-- 3. nv-file-over uploader="link" over-class="className" -->
+                        <div class="well my-drop-zone" nv-file-over="" uploader="uploader">
+                            <h3 class="color">Drop Here</h3>
+							<p>Or</p>
+							<input type="file" name="file" id="file" class="inputfile center-block" nv-file-select="" uploader="uploader" class="search-button center-block" />
+							<label for="file"><span class="fa fa-upload"></span>Choose a file</label>
+                        </div>
+                        <!-- Example: nv-file-drop="" uploader="{Object}" options="{Object}" filters="{String}" -->
+
+                    </div>
+                    <!-- Example: nv-file-select="" uploader="{Object}" options="{Object}" filters="{String}" -->
+                    
+                </div>
+                <div class="col-md-8 col-lg-8 col-sm-12 col-xs-12 col-md-offset-2 col-lg-offset-2" style="margin-bottom: 40px">
+                    <table class="table file-table table-responsive">
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th ng-show="uploader.isHTML5">Size</th>
+                           
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr ng-repeat="item in uploader.queue">
+                                <td style="padding-top:10px !important;" id="local-file"><strong>{{ item.file.name }}</strong></td>
+                                <td ng-show="uploader.isHTML5" nowrap style="padding-top:10px !important;">{{ item.file.size/1024/1024|number:2 }} MB</td>
+                                
+                                <td nowrap style="padding-top:10px !important;">
+                                    <!--button type="button" class="btn btn-success btn-xs" ng-click="item.upload()" ng-disabled="item.isReady || item.isUploading || item.isSuccess" id="upload-btn">
+                                        <span class="glyphicon glyphicon-upload"></span> Upload
+                                    </button-->
+                                    <button type="button" class="btn btn-danger btn-xs" ng-click="item.remove()">
+                                        <span class="glyphicon glyphicon-trash"></span> Remove
+                                    </button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div>
+    
+                    </div>
+                </div>
+            </div>
+        </div>
+		  <div ng-controller="ModalDemoCtrl">
+			<div class="btn-group col-md-12 col-lg-12 col-sm-12 col-xs-12" uib-dropdown dropdown-append-to-body>
+				<button id="btn-append-to-body" type="button" class="cloud-button center-block" uib-dropdown-toggle>
+				Import List from Cloud Storage&nbsp;&nbsp;<span class="caret"></span>
+				</button>
+				<div ng-controller="DropBoxCtrl" class="clouddropdown2">
+				  <ul class="dropdown-menu cloud-dropdown2" uib-dropdown-menu role="menu" aria-labelledby="btn-append-to-body">
+					<li role="menuitem"><a href="javascript:;" lk-google-picker on-picked="onPicked(docs)" on-loaded="onLoaded()" on-cancel="onCancel()" class="btn btn-2 btn-2c">
+						<img src="images/Logo_of_Google_Drive.png" />
+						<span>Google Drive</span>
+					</a></li>
+					<li role="menuitem"><a href="javascript:;" drop-box-picker dbpicker-files="dpfiles">
+						<img src="images/dropbox.png" />
+						<span>Dropbox</span>
+					</a></li>
+					<li role="menuitem"><a href="javascript:;" box-picker boxpicker-files="boxfiles">
+						<img src="images/box.png" />
+						<span>Box</span>
+					</a></li>
+				  </ul>
+				 <div class="row show-grid" ng-switch="dpfiles.length > 0 || boxfiles.length > 0">
+                <div ng-switch-when="true">
+                    <div class="col-sm-12 col-md-8 col-md-offset-3 col-lg-8 col-lg-offset-3 col-xs-12" ng-repeat="file in dpfiles">
+                        <a href="{{ file.link }}" target="_blank" class="text-center" id="cloud-files">{{ file.link }}</a>
+                  
+                    </div>
+                    <div class="col-sm-12 col-md-8 col-md-offset-3 col-lg-8 col-lg-offset-3 col-xs-12" ng-repeat="file in boxfiles">
+                        <a href="{{ file.url }}" target="_blank" class="text-center" id="cloud-files">{{ file.url }}</a>
+                        
+                    </div>
+                </div>
+            </div></div>
+				  <a href="{{files[0].embedUrl}}" target="_blank" class="google-link center-block">{{files[0].embedUrl}}</a>
+			</div>
+	
+		  </div>
+		  </div>
+		</div>
+	</div>
+	<button type="button" class="search-button center-block" id="process-btn2">Process</button>
+</div>
+</div>
+
+<script>
+		$('#process-btn2').click(function(){
+		var value=$('#cloud-files').html();
+		var value1=$('#local-file').val();
+		if(value==undefined || value1==undefined){
+		alert("Please select Excel file")
+		}
+		else
+		{
+	window.location.href = "#app";		
+		}
+		});
+		</script>

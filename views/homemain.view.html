@@ -603,7 +603,7 @@
 
 </section>
 <!-- END: WHY CHOOSE US SECTION -->
-<div id="email-suribabu" class="modal modal-message modal-custom fade" tabindex="-1" role="dialog" style="display: none;" aria-hidden="true">
+<div id="email-suribabu" class="modal modal-message modal-custom fade"  data-backdrop="false" tabindex="-1" role="dialog" style="display: none;" aria-hidden="false">
         <div class="modal-dialog suri-email">
             <div class="modal-content">
                 <div class="modal-header">
@@ -1606,6 +1606,7 @@ function mypostalevent3() {
 	 var x = document.getElementById("emailselect").value;
 	 if(x=="email1"){
 	 $('#email-suribabu').modal("show");
+	 
 	 }
 	 else if(x=="email2"){
 	 $('#email2').modal("show");
@@ -1662,4 +1663,3 @@ function mypostalevent() {
 	}	
 
 </script>
-
